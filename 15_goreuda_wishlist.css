@@ -4,7 +4,7 @@
 
 /* 찜한 상품 3개: 한 줄에 3개 */
 .wish-list .product-card { width: 33.33%; }
-.wish-list .card-thumb { height: 340px; }
+.wish-list .card-thumb { height: 280px; }
 
 /* 찜한 상품은 하트 버튼이 항상 보이게 */
 .wish-list .card-actions.wish-on { display: flex; }
