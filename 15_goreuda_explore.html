@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 팀원 정보 -->
+  <meta name="author" content="15팀 고르다: 이지현(팀장), 오현채, 우은민, 이예경">
+  <meta name="description" content="고르다(Goreuda): 받는 사람과 상황에 맞는 선물 인사이트와 추천 상품을 보여주고 판매처로 연결해주는 선물 고민 도우미">
+  <meta name="page-owner" content="담당자: 우은민">
+
+  <title> 상품 탐색 | 고르다, 바르고 고른 선택 </title>
+  <link rel="stylesheet" href="15_goreuda_common.css">
+  <!-- 내 페이지 전용 CSS: 파일명 바꿔서 사용 -->
+  <!-- <link rel="stylesheet" href="15_goreuda_select.css"> -->
+</head>
+<body id="top">
+
+  <a href="#main" class="skip-link">본문 바로가기</a>
+
+  <!-- ================= 헤더 (모든 페이지 공통) ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="15_goreuda_main.html" class="logo" title="고르다 홈으로">
+        <span class="logo-en">Goreuda</span><span class="logo-ko">고르다</span>
+      </a>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="15_goreuda_select.html">선물 추천받기</a></li>
+          <li><a href="15_goreuda_explore.html">상품 탐색</a></li>
+          <li><a href="15_goreuda_report.html">인사이트 리포트</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <form class="search-box" method="get" action="15_goreuda_explore.html">
+          <label for="search" class="hidden-text">상품 검색</label>
+          <input type="search" id="search" name="keyword" placeholder="선물 검색">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        </form>
+        <a href="15_goreuda_wishlist.html" class="icon-btn" title="찜한 선물 3개">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          <span class="count-badge">3</span>
+          <span class="tip">찜한 선물 3개</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- 아래는 공통 컴포넌트 사용 예시. 내 페이지에 필요한 부분만 복사해서 쓰고 나머지는 지우기
+         완성된 예시는 15_goreuda_main.html 참고 -->
+
+    <!-- ===== 예시 1. 상품 카드 (거의 모든 페이지) =====
+         사진에 마우스를 올리면 찜하기, 가격 비교 버튼과 말풍선이 나와요 -->
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Product card</span>
+        <h2 class="section-title small">상품 카드</h2>
+        <ul class="product-list">
+          <li class="product-card">
+            <div class="card-thumb">
+              <img src="images/15_gift01.jpg" alt="록시땅 시어 버터 핸드크림 30ml">
+              <div class="card-actions">
+                <a href="15_goreuda_wishlist.html" class="icon-btn" title="록시땅 시어 버터 핸드크림 30ml 찜하기">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+                  <span class="tip">찜하기</span>
+                </a>
+                <a href="15_goreuda_compare.html" class="icon-btn" title="록시땅 시어 버터 핸드크림 30ml 판매처 가격 비교">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+                  <span class="tip">판매처 가격 비교</span>
+                </a>
+              </div>
+            </div>
+            <a href="15_goreuda_detail.html" class="card-body">
+              <span class="badge">받고 싶은 선물 1위</span>
+              <p class="card-brand">L'Occitane</p>
+              <p class="card-name">록시땅 시어 버터 핸드크림 30ml</p>
+              <div class="card-info">
+                <p class="card-price">16,000원<small>최저가</small></p>
+                <span class="card-rating"><svg width="13" height="13" viewBox="0 0 24 24" fill="#C8603C"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z"/></svg>4.8</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 예시 2. 조건 선택 (오현채님) =====
+         같은 질문의 라디오 버튼은 name을 똑같이. 여러 개 고르게 하려면 type="checkbox" -->
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Choice</span>
+        <h2 class="section-title small">선택 카드</h2>
+        <form class="choice-panel" method="get" action="15_goreuda_result.html">
+          <fieldset class="choice-group">
+            <legend>누구에게 선물하나요?</legend>
+            <div class="choice-list">
+              <label class="choice"><span><input type="radio" name="relation" value="friend" checked><br>친구<small>편하게 주고받는 사이</small></span></label>
+              <label class="choice"><span><input type="radio" name="relation" value="parents"><br>부모님<small>감사의 마음</small></span></label>
+              <label class="choice"><span><input type="radio" name="relation" value="lover"><br>연인<small>특별한 날</small></span></label>
+              <label class="choice"><span><input type="radio" name="relation" value="coworker"><br>직장 동료<small>부담 없는 선물</small></span></label>
+            </div>
+          </fieldset>
+          <button type="submit" class="btn btn-primary">추천 받기<svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFDF9" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== 예시 3. 필터 칩 (상품 탐색 우은민님, 인사이트 리포트 오현채님) =====
+         칩을 누르면 같은 페이지의 해당 섹션(id)으로 이동 (3주차 문서 내 이동 링크)
+         지금 보고 있는 칩에는 class="chip active" -->
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Filter</span>
+        <h2 class="section-title small">필터 칩</h2>
+        <ul class="chip-list">
+          <li><a href="#birthday" class="chip active">생일</a></li>
+          <li><a href="#wedding" class="chip">결혼·집들이</a></li>
+          <li><a href="#cheer" class="chip">응원·격려</a></li>
+        </ul>
+        <section id="birthday"><h3>생일</h3><p>생일 선물 내용</p></section>
+        <section id="wedding"><h3>결혼·집들이</h3><p>결혼·집들이 선물 내용</p></section>
+        <section id="cheer"><h3>응원·격려</h3><p>응원·격려 선물 내용</p></section>
+      </div>
+    </section>
+
+    <!-- ===== 예시 4. GIFT GAP 인사이트 (추천 결과 우은민님, 인사이트 리포트 오현채님) =====
+         막대 길이는 style="width: 숫자%;"로 지정 (수치는 예시 데이터) -->
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Gift gap</span>
+        <h2 class="section-title small">많이 주는 선물 vs 받고 싶은 선물</h2>
+        <div class="gap-compare">
+          <div class="gap-col give">
+            <h3>많이 주는 선물</h3>
+            <p class="gap-item">디퓨저</p>
+            <p class="gap-rate">58%</p>
+          </div>
+          <div class="gap-col want">
+            <h3>실제로 받고 싶은 선물</h3>
+            <p class="gap-item">핸드크림</p>
+            <p class="gap-rate">62%</p>
+          </div>
+        </div>
+
+        <article class="insight-card">
+          <h3>20대 여자 친구, 주는 선물과 받고 싶은 선물이 달라요</h3>
+          <p class="insight-desc">막대 길이는 style="width: 숫자%;"로 지정해요.</p>
+          <p class="legend"><span class="legend-give">많이 주는 선물</span><span class="legend-want">받고 싶은 선물</span></p>
+          <div class="bar-row">
+            <span class="bar-label">핸드크림</span>
+            <div class="bar-group">
+              <div class="bar-line"><div class="bar-track"><div class="bar-fill" style="width: 35%;"></div></div><span class="bar-value">35%</span></div>
+              <div class="bar-line"><div class="bar-track"><div class="bar-fill want" style="width: 62%;"></div></div><span class="bar-value">62%</span></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">디퓨저</span>
+            <div class="bar-group">
+              <div class="bar-line"><div class="bar-track"><div class="bar-fill" style="width: 58%;"></div></div><span class="bar-value">58%</span></div>
+              <div class="bar-line"><div class="bar-track"><div class="bar-fill want" style="width: 21%;"></div></div><span class="bar-value">21%</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 예시 5. 표 (판매처 가격 비교 이예경님, 선물 후보 비교 이지현) =====
+         최저가 행은 class="best-row", 최저가 칸은 class="best" -->
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Table</span>
+        <h2 class="section-title small">판매처 가격 비교 표</h2>
+        <table class="table">
+            <caption>록시땅 시어 버터 핸드크림 30ml 판매처별 가격</caption>
+            <thead>
+              <tr><th>판매처</th><th>가격</th><th>배송비</th><th>구매</th></tr>
+            </thead>
+            <tbody>
+              <tr class="best-row"><td>올리브영</td><td class="best">16,000원 (최저가)</td><td>무료</td><td><a href="#" target="_blank" class="btn btn-primary btn-small">구매하러 가기</a></td></tr>
+              <tr><td>판매처 B</td><td>17,500원</td><td>3,000원</td><td><a href="#" target="_blank" class="btn btn-outline btn-small">구매하러 가기</a></td></tr>
+            </tbody>
+          </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= 푸터 (모든 페이지 공통) ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="15_goreuda_main.html" class="footer-brand">
+          <span class="logo-en">Goreuda</span><span class="logo-ko">바르고 고른 선택</span>
+        </a>
+        <p class="footer-copy">좋은 마음을 위한, 바르고 고른 선택.</p>
+        <a href="#top" class="to-top">최상단으로 가기</a>
+      </div>
+      <p class="footer-note">웹프로그래밍 15팀 고르다 | 상품 이미지 출처: 각 브랜드 공식몰 및 판매처 </p>
+    </div>
+  </footer>
+
+</body>
+</html>
