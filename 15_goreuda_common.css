@@ -465,11 +465,38 @@ label:focus-visible {
 .table .btn { white-space: nowrap; }
 
 /* ---------- 14. 푸터 ---------- */
-.site-footer { margin-top: 80px; padding: 56px 0; background: var(--color-footer); color: var(--color-footer-sub); font-size: 14px; }
-.footer-slogan { font-family: var(--font-serif); font-size: 24px; color: var(--color-surface); margin-bottom: 18px; }
-.site-footer strong { color: var(--color-surface); }
-.footer-links { display: flex; gap: 18px; margin: 10px 0; }
-.footer-links a:hover { color: var(--color-surface); }
+/* 1. 푸터 기본 설정 */
+.site-footer { 
+  font-size: 14px; 
+}
+
+/* 2. 브랜드 로고 영역 */
+.footer-brand {
+  font-size: 20px;       
+  font-weight: bold;
+  text-decoration: none;
+}
+.logo-ko {
+  font-size: 13px;      
+  margin-left: 8px;      
+}
+
+/* 3. 중간 카피라이트 문구 */
+.footer-copy {
+  font-size: 15px;       
+}
+
+/* 4. 최상단으로 가기 버튼 */
+.to-top {
+  font-size: 14px;
+}
+
+/* 5. 맨 아래 출처 및 팀명 */
+.footer-note {
+  font-size: 12px;       /* 작고 흐리게 처리 */
+  opacity: 0.8;          
+}
+
 
 /* ---------- 15. 반응형 ---------- */
 @media (max-width: 1024px) {
