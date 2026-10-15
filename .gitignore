@@ -1,0 +1,11 @@
+# OS가 자동으로 만드는 파일
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 에디터 설정
+.vscode/
+.idea/
+
+# 제출용 압축 파일은 저장소에 올리지 않기
+*.zip
