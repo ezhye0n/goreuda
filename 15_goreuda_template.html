@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 팀원 정보 (과제 필수) -->
+  <!-- 팀원 정보 -->
   <meta name="author" content="15팀 고르다: 이지현(팀장), 오현채, 우은민, 이예경">
   <meta name="description" content="고르다(Goreuda): 받는 사람과 상황에 맞는 선물 인사이트와 추천 상품을 보여주고 판매처로 연결해주는 선물 고민 도우미">
-  <meta name="page-owner" content="담당자 이름">
-  <title>페이지 이름 | 고르다</title>
+  <meta name="page-owner" content="담당자: 이지현">
+
+  <title>페이지 이름 써주세요 !! | 고르다</title>
   <link rel="stylesheet" href="15_goreuda_common.css">
   <!-- 내 페이지 전용 CSS: 파일명 바꿔서 사용 -->
   <!-- <link rel="stylesheet" href="15_goreuda_select.css"> -->
 </head>
-<body>
+<body id="top">
 
   <a href="#main" class="skip-link">본문 바로가기</a>
 
@@ -37,9 +38,10 @@
           <input type="search" id="search" name="keyword" placeholder="선물 검색">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
         </form>
-        <a href="15_goreuda_wishlist.html" class="icon-btn" title="찜한 선물 비교">
+        <a href="15_goreuda_wishlist.html" class="icon-btn" title="찜한 선물 3개">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-          <span class="tip">찜한 선물 비교</span>
+          <span class="count-badge">3</span>
+          <span class="tip">찜한 선물 3개</span>
         </a>
       </div>
     </div>
@@ -74,7 +76,10 @@
               <span class="badge">받고 싶은 선물 1위</span>
               <p class="card-brand">L'Occitane</p>
               <p class="card-name">록시땅 시어 버터 핸드크림 30ml</p>
-              <p class="card-price">16,000원<small>최저가</small></p>
+              <div class="card-info">
+                <p class="card-price">16,000원<small>최저가</small></p>
+                <span class="card-rating"><svg width="13" height="13" viewBox="0 0 24 24" fill="#C8603C"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z"/></svg>4.8</span>
+              </div>
             </a>
           </li>
         </ul>
@@ -184,15 +189,14 @@
   <!-- ================= 푸터 (모든 페이지 공통) ================= -->
   <footer class="site-footer">
     <div class="container">
-      <p class="footer-slogan">바르고 고른 선택, 고르다.</p>
-      <p class="footer-name">고르다 Goreuda</p>
-      <ul class="footer-links">
-        <li><a href="15_goreuda_select.html">선물 추천받기</a></li>
-        <li><a href="15_goreuda_explore.html">상품 탐색</a></li>
-        <li><a href="15_goreuda_report.html">인사이트 리포트</a></li>
-      </ul>
-      <p>웹프로그래밍 중간과제 15팀 고르다 | 이지현, 오현채, 우은민, 이예경</p>
-      <p>상품 이미지 출처: 각 브랜드 공식몰 및 판매처 / 인사이트 수치는 예시 데이터</p>
+      <div class="footer-inner">
+        <a href="15_goreuda_main.html" class="footer-brand">
+          <span class="logo-en">Goreuda</span><span class="logo-ko">바르고 고른 선택</span>
+        </a>
+        <p class="footer-copy">좋은 마음을 위한, 바르고 고른 선택.</p>
+        <a href="#top" class="to-top">맨 위로</a>
+      </div>
+      <p class="footer-note">웹프로그래밍 중간과제 15팀 고르다 | 상품 이미지 출처: 각 브랜드 공식몰 및 판매처 | 별점, 인사이트 수치는 예시 데이터</p>
     </div>
   </footer>
 

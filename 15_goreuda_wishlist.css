@@ -1,0 +1,40 @@
+/* =========================================================
+   선물 후보 비교 (찜) 전용 CSS (15_goreuda_wishlist.css) - 담당: 이지현
+   ========================================================= */
+
+/* 찜한 상품 3개: 한 줄에 3개 */
+.wish-list .product-card { width: 33.33%; }
+.wish-list .card-thumb { height: 340px; }
+
+/* 찜한 상품은 하트 버튼이 항상 보이게 */
+.wish-list .card-actions.wish-on { display: flex; }
+
+.pick-badge { background-color: #C8603C; color: #FFFDF9; }
+
+/* 비교표 영역 */
+.compare-section { padding-top: 0; }
+
+.pick-box {
+  margin-bottom: 32px;
+  padding: 24px 28px;
+  border-left: 4px solid #C8603C;
+  background-color: #F1DCD0;
+}
+.pick-label {
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #B05434;
+}
+.pick-text { font-size: 16px; }
+
+/* 비교표: 첫 칸(비교 항목)은 회색 글자, 추천 열(.pick)은 연한 메인 색 배경 */
+.compare-table { table-layout: fixed; }
+.compare-table th { width: 160px; }
+.compare-table thead th { font-size: 15px; color: #25231F; }
+.compare-table .pick { background-color: #F1DCD0; font-weight: 600; }
+.compare-table tbody tr:hover td { background-color: #F6F3ED; }
+.compare-table tbody tr:hover td.pick { background-color: #EAD8C8; }
+
+.wish-more { margin-top: 48px; text-align: center; }

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 팀원 정보 -->
+  <meta name="author" content="15팀 고르다: 이지현(팀장), 오현채, 우은민, 이예경">
+  <meta name="description" content="고르다(Goreuda): 받는 사람과 상황에 맞는 선물 인사이트와 추천 상품을 보여주고 판매처로 연결해주는 선물 고민 도우미">
+  <meta name="page-owner" content="담당자: 이지현">
+  
+  <title>찜한 선물 비교 | 고르다</title>
+  <link rel="stylesheet" href="15_goreuda_common.css">
+  <link rel="stylesheet" href="15_goreuda_wishlist.css">
+</head>
+<body id="top">
+
+  <a href="#main" class="skip-link">본문 바로가기</a>
+
+  <!-- ================= 헤더 (모든 페이지 공통) ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="15_goreuda_main.html" class="logo" title="고르다 홈으로">
+        <span class="logo-en">Goreuda</span><span class="logo-ko">고르다</span>
+      </a>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="15_goreuda_select.html">선물 추천받기</a></li>
+          <li><a href="15_goreuda_explore.html">상품 탐색</a></li>
+          <li><a href="15_goreuda_report.html">인사이트 리포트</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <form class="search-box" method="get" action="15_goreuda_explore.html">
+          <label for="search" class="hidden-text">상품 검색</label>
+          <input type="search" id="search" name="keyword" placeholder="선물 검색">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        </form>
+        <a href="15_goreuda_wishlist.html" class="icon-btn" title="찜한 선물 3개">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          <span class="count-badge">3</span>
+          <span class="tip">찜한 선물 3개</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= 1. 찜한 선물 ================= -->
+    <section class="section wish-top">
+      <div class="container">
+        <span class="eyebrow">My gift candidates</span>
+        <h1 class="section-title">찜한 선물 3개</h1>
+        <p class="section-desc">마음에 둔 후보들을 나란히 놓고 비교해 보세요.<br>조건: 친구 / 20대 여자 / 3만원대</p>
+
+        <ul class="product-list wish-list">
+          <li class="product-card">
+            <div class="card-thumb">
+              <img src="images/15_gift01.jpg" alt="록시땅 시어 버터 핸드크림 30ml">
+              <div class="card-actions wish-on">
+                <a href="#compare" class="icon-btn" title="찜한 상품">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#C8603C" stroke="#C8603C" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+                  <span class="tip">찜한 상품</span>
+                </a>
+                <a href="15_goreuda_compare.html" class="icon-btn" title="록시땅 시어 버터 핸드크림 30ml 판매처 가격 비교">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+                  <span class="tip">판매처 가격 비교</span>
+                </a>
+              </div>
+            </div>
+            <a href="15_goreuda_detail.html" class="card-body">
+              <span class="badge">찜한 선물</span>
+              <p class="card-brand">L'Occitane</p>
+              <p class="card-name">록시땅 시어 버터 핸드크림 30ml</p>
+              <div class="card-info">
+                <p class="card-price">16,000원<small>최저가</small></p>
+                <span class="card-rating"><svg width="13" height="13" viewBox="0 0 24 24" fill="#C8603C"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z"/></svg>4.8</span>
+              </div>
+            </a>
+          </li>
+
+          <li class="product-card">
+            <div class="card-thumb">
+              <img src="images/15_gift02.jpg" alt="탬버린즈 퍼퓸 핸드크림 30ml">
+              <div class="card-actions wish-on">
+                <a href="#compare" class="icon-btn" title="찜한 상품">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#C8603C" stroke="#C8603C" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+                  <span class="tip">찜한 상품</span>
+                </a>
+                <a href="15_goreuda_compare.html" class="icon-btn" title="탬버린즈 퍼퓸 핸드크림 30ml 판매처 가격 비교">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+                  <span class="tip">판매처 가격 비교</span>
+                </a>
+              </div>
+            </div>
+            <a href="15_goreuda_detail.html" class="card-body">
+              <span class="badge pick-badge">고르다 추천</span>
+              <p class="card-brand">Tamburins</p>
+              <p class="card-name">탬버린즈 퍼퓸 핸드크림 30ml</p>
+              <div class="card-info">
+                <p class="card-price">25,000원<small>최저가</small></p>
+                <span class="card-rating"><svg width="13" height="13" viewBox="0 0 24 24" fill="#C8603C"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z"/></svg>4.9</span>
+              </div>
+            </a>
+          </li>
+
+          <li class="product-card">
+            <div class="card-thumb">
+              <img src="images/15_gift05.jpg" alt="고디바 클래식 골드 컬렉션 8개입">
+              <div class="card-actions wish-on">
+                <a href="#compare" class="icon-btn" title="찜한 상품">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#C8603C" stroke="#C8603C" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+                  <span class="tip">찜한 상품</span>
+                </a>
+                <a href="15_goreuda_compare.html" class="icon-btn" title="고디바 클래식 골드 컬렉션 8개입 판매처 가격 비교">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+                  <span class="tip">판매처 가격 비교</span>
+                </a>
+              </div>
+            </div>
+            <a href="15_goreuda_detail.html" class="card-body">
+              <span class="badge">찜한 선물</span>
+              <p class="card-brand">Godiva</p>
+              <p class="card-name">고디바 클래식 골드 컬렉션 8개입</p>
+              <div class="card-info">
+                <p class="card-price">29,000원<small>최저가</small></p>
+                <span class="card-rating"><svg width="13" height="13" viewBox="0 0 24 24" fill="#C8603C"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z"/></svg>4.7</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= 2. 선물 후보 비교표 ================= -->
+    <section class="section compare-section" id="compare">
+      <div class="container">
+        <span class="eyebrow">Compare</span>
+        <h2 class="section-title small">한눈에 비교하기</h2>
+
+        <div class="pick-box">
+          <p class="pick-label">고르다의 추천</p>
+          <p class="pick-text"><strong>탬버린즈 퍼퓸 핸드크림</strong>을 추천해요. 20대 여자 친구가 가장 받고 싶어 하는 핸드크림이면서, 향과 디자인까지 챙길 수 있어요.</p>
+        </div>
+
+        <table class="table compare-table">
+          <caption>찜한 선물 3개 비교</caption>
+          <thead>
+            <tr>
+              <th>비교 항목</th>
+              <th>록시땅 핸드크림</th>
+              <th class="pick">탬버린즈 퍼퓸 핸드크림 (추천)</th>
+              <th>고디바 초콜릿</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th>최저가</th><td>16,000원</td><td class="pick">25,000원</td><td>29,000원</td></tr>
+            <tr><th>별점</th><td>4.8</td><td class="pick">4.9</td><td>4.7</td></tr>
+            <tr><th>분류</th><td>뷰티</td><td class="pick">뷰티</td><td>푸드</td></tr>
+            <tr><th>특징</th><td>시어버터 보습, 30ml 휴대용</td><td class="pick">향 중심 핸드크림, 디자인 케이스</td><td>초콜릿 8개입 선물 상자</td></tr>
+            <tr><th>이런 친구에게</th><td>실용적인 선물을 좋아하는 친구</td><td class="pick">향과 디자인을 중요하게 보는 친구</td><td>단 것을 좋아하는 친구</td></tr>
+            <tr><th>선물 인사이트</th><td>받고 싶은 선물 1위 카테고리</td><td class="pick">받고 싶은 선물 1위 카테고리</td><td>기념일 선물로 무난</td></tr>
+            <tr><th>사용 기간</th><td>몇 주~몇 달</td><td class="pick">몇 주~몇 달</td><td>짧음 (먹으면 끝)</td></tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>구매</th>
+              <td><a href="15_goreuda_compare.html" class="btn btn-outline btn-small">가격 비교</a></td>
+              <td class="pick"><a href="15_goreuda_compare.html" class="btn btn-primary btn-small">가격 비교</a></td>
+              <td><a href="15_goreuda_compare.html" class="btn btn-outline btn-small">가격 비교</a></td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <p class="wish-more">
+          <a href="15_goreuda_explore.html" class="btn btn-outline">다른 선물 더 둘러보기<svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= 푸터 (모든 페이지 공통) ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="15_goreuda_main.html" class="footer-brand">
+          <span class="logo-en">Goreuda</span><span class="logo-ko">바르고 고른 선택</span>
+        </a>
+        <p class="footer-copy">좋은 마음을 위한, 바르고 고른 선택.</p>
+        <a href="#top" class="to-top">맨 위로</a>
+      </div>
+      <p class="footer-note">웹프로그래밍 중간과제 15팀 고르다 | 상품 이미지 출처: 각 브랜드 공식몰 및 판매처 | 별점, 인사이트 수치는 예시 데이터</p>
+    </div>
+  </footer>
+
+</body>
+</html>
