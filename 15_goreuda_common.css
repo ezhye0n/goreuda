@@ -502,11 +502,7 @@ img { display: block; max-width: 100%; }
 }
 .footer-brand .logo-en { color: #FFFDF9; }
 .footer-brand .logo-ko { color: #AAA69E; font-weight: 400; }
-.footer-copy {
-  font-family: "DM Serif Display", "Noto Sans KR", serif;
-  font-size: 15px;
-  color: #FFFDF9;
-}
+
 .to-top {                           /* 맨 위로: href="#top" */
   color: #FFFDF9;
   font-size: 13px;
