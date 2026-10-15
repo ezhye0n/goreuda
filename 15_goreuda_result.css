@@ -1,0 +1,172 @@
+
+.results-summary {
+  align-items: center;
+  background: #25231f;
+  color: #fffdf9;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px clamp(24px, 7vw, 110px);
+}
+
+.results-summary p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0;
+}
+
+.results-summary p span {
+  border: 1px solid #5c5851;
+  border-radius: 99px;
+  color: #e7e3dc;
+  font-size: 10px;
+  padding: 7px 11px;
+}
+
+.results-summary a {
+  align-items: center;
+  display: flex;
+  font-size: 10px;
+  gap: 10px;
+  color: #e7e3dc;
+}
+
+.results-summary a .arrow {
+  position: relative;
+  left: 0;
+}
+
+.results-summary a:hover .arrow {
+  left: 6px;
+}
+
+.insight-section {
+  background:#f6f3ed;
+  padding: 78px clamp(24px, 7vw, 110px) 72px;
+}
+
+.insight-heading {
+  align-items: end;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 42px;
+  max-width: 1240px;
+}
+
+.report-label {
+  align-items: center;
+  display: flex;
+  gap: 11px;
+  margin-bottom: 22px;
+}
+
+.report-label span {
+  align-items: center;
+  background: #ead8c8;
+  border-radius: 99px;
+  color: #c8603c;
+  display: flex;
+  font-family: "DM Serif Display", serif;
+  font-size: 9px;
+  height: 23px;
+  justify-content: center;
+  width: 29px;
+}
+
+.report-label .eyebrow {
+  margin: 0;
+}
+
+.insight-layout {
+  display: grid;
+  gap: clamp(40px, 6vw, 90px);
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, .65fr);
+  margin: 0 auto;
+  max-width: 1240px;
+}
+
+.insight-list {
+  border-top: 1px solid #25231f;
+}
+
+
+
+<!--바꿈-->
+.insight-row {
+  border-bottom: 1px solid #dcd6cb;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 44px 1fr;
+  padding: 20px 0;
+}
+
+
+
+.insight-rank {
+  color: #c8603c;
+  font-family: "DM Serif Display", serif;
+  font-size: 16px;
+}
+
+.insight-copy > div:first-child {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.insight-copy h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.insight-copy strong {
+  font-family: "DM Serif Display", serif;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.insight-bar {
+  background: #eeeae3;
+  height: 4px;
+  margin: 13px 0;
+  overflow: hidden;
+}
+
+.insight-bar i {
+  background: #c8603c;
+  display: block;
+  height: 100%;
+  transition: width 500ms ease;
+}
+
+.insight-copy p {
+  font-size: 12px;
+  margin: 0 0 7px;
+}
+
+.insight-copy small {
+  color: #777269;
+  font-size: 10px;
+}
+
+.insight-tip {
+  align-self: start;
+  background: #fffdf9;
+  padding: 28px 26px 25px;
+  position: sticky;
+  top: 25px;
+}
+
+.insight-tip h3 {
+  font-family: "DM Serif Display", "Noto Sans KR", serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.35;
+  margin: 0 0 20px;
+}
+
+.insight-tip > p:not(.eyebrow) {
+  color: #777269;
+  font-size: 12px;
+  line-height: 1.9;
+}

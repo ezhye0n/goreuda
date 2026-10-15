@@ -10,8 +10,7 @@
 
   <title> 추천 결과 | 고르다, 바르고 고른 선택 </title>
   <link rel="stylesheet" href="15_goreuda_common.css">
-  <!-- 내 페이지 전용 CSS: 파일명 바꿔서 사용 -->
-  <!-- <link rel="stylesheet" href="15_goreuda_select.css"> -->
+  <link rel="stylesheet" href="15_goreuda_result.css"> 
 </head>
 <body id="top">
 
@@ -48,8 +47,94 @@
   </header>
 
   <main id="main">
-    <!-- 아래는 공통 컴포넌트 사용 예시. 내 페이지에 필요한 부분만 복사해서 쓰고 나머지는 지우기
-         완성된 예시는 15_goreuda_main.html 참고 -->
+  
+  <!--추천 조건 요약-->
+  <div class="results-summary">
+    <p>
+      <span>20대</span>
+      <span>여성</span>
+      <span>친구</span>
+      <span>생일</span>
+      <span>3만원대</span>
+      <span>실용적인</span>
+    </p>
+    <a href="15_goreuda_select.html">
+      조건 다시 보기
+      <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFDF9" stroke-width="1.8">
+        <path d="M5 12h14M13 6l6 6-6 6"/>
+      </svg>
+    </a>
+  </div>
+
+  <section class="insight-section">
+  <!-- 상단 제목 영역 -->
+    <div class="insight-heading">
+      <div class="report-label">
+        <span>01</span>
+        <p class="eyebrow">CATEGORY INSIGHT</p>
+      </div>
+      <h2>20대 여성 친구의 생일에는<br><em>뷰티 · 바디 케어</em>를 가장 많이 원해요.</h2>
+    </div>
+
+  <!-- 하위 메인 + 사이드 레이아웃 -->
+    <div class="insight-layout">
+    <!-- 메인 리스트 (article 활용) -->
+     <div class="insight-list">
+
+        <article class="insight-row">
+          <span class="insight-rank">01</span>
+          <div class="insight-copy">
+            <div>
+              <h3>뷰티 · 바디 케어</h3>
+              <strong>86%</strong>
+            </div>
+            <div class="insight-bar"><i style="width: 86%;"></i></div>
+            <p>매일 쓰고 소진할 수 있어 부담 없이 만족도가 높아요.</p>
+            <small>핸드크림 · 립 케어 · 바디 미스트</small>
+          </div>
+        </article>
+    
+      <!-- 02, 03 항목도 동일하게 반복 -->
+      
+        <article class="insight-row">
+          <span class="insight-rank">02</span>
+          <div class="insight-copy">
+            <div>
+              <h3>디퓨저 · 캔들</h3>
+              <strong>58%</strong>
+            </div>
+            <div class="insight-bar"><i style="width: 58%;"></i></div>
+            <p>집 안 분위기를 바꾸는 선물로, 향이 강하지 않은 제품이 좋아요.</p>
+            <small>디퓨저 · 캔들 · 방향제</small>
+          </div>
+        </article>
+        
+        <article class="insight-row">
+          <span class="insight-rank">03</span>
+          <div class="insight-copy">
+            <div>
+              <h3>패션 소품</h3>
+              <strong>42%</strong>
+            </div>
+            <div class="insight-bar"><i style="width: 42%;"></i></div>
+            <p>스타일에 맞는 제품을 고르기 어려워 부담스러워요.</p>
+            <small>가방 · 지갑 · 액세서리</small>
+          </div>
+        </article>
+    </div>
+
+    <!-- 우측 보조 팁 박스 (aside 활용) -->
+      <aside class="insight-tip">
+        <p class="eyebrow">WHY THIS WORKS</p>
+        <h3>20대 여성 친구에게<br>선물할 때 기억하세요.</h3>
+        <p>실용적인 선물은 자주 사용하면서도 직접 사기에는 조금 망설여지는 제품일수록 만족도가 높아요. 작은 용량의 좋은 브랜드 제품이 안전한 선택이에요.</p>
+        <div class="avoid-box">
+          <span>핵심 선택 기준</span>
+          <strong>소모성 · 휴대성 · 부담 없는 가격</strong>
+        </div>
+      </aside>
+    </div>
+  </section>
 
     <!-- ===== 예시 1. 상품 카드 (거의 모든 페이지) =====
          사진에 마우스를 올리면 찜하기, 가격 비교 버튼과 말풍선이 나와요 -->
@@ -86,44 +171,9 @@
       </div>
     </section>
 
-    <!-- ===== 예시 2. 조건 선택 (오현채님) =====
-         같은 질문의 라디오 버튼은 name을 똑같이. 여러 개 고르게 하려면 type="checkbox" -->
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">Choice</span>
-        <h2 class="section-title small">선택 카드</h2>
-        <form class="choice-panel" method="get" action="15_goreuda_result.html">
-          <fieldset class="choice-group">
-            <legend>누구에게 선물하나요?</legend>
-            <div class="choice-list">
-              <label class="choice"><span><input type="radio" name="relation" value="friend" checked><br>친구<small>편하게 주고받는 사이</small></span></label>
-              <label class="choice"><span><input type="radio" name="relation" value="parents"><br>부모님<small>감사의 마음</small></span></label>
-              <label class="choice"><span><input type="radio" name="relation" value="lover"><br>연인<small>특별한 날</small></span></label>
-              <label class="choice"><span><input type="radio" name="relation" value="coworker"><br>직장 동료<small>부담 없는 선물</small></span></label>
-            </div>
-          </fieldset>
-          <button type="submit" class="btn btn-primary">추천 받기<svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFDF9" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-        </form>
-      </div>
-    </section>
+    
 
-    <!-- ===== 예시 3. 필터 칩 (상품 탐색 우은민님, 인사이트 리포트 오현채님) =====
-         칩을 누르면 같은 페이지의 해당 섹션(id)으로 이동 (3주차 문서 내 이동 링크)
-         지금 보고 있는 칩에는 class="chip active" -->
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">Filter</span>
-        <h2 class="section-title small">필터 칩</h2>
-        <ul class="chip-list">
-          <li><a href="#birthday" class="chip active">생일</a></li>
-          <li><a href="#wedding" class="chip">결혼·집들이</a></li>
-          <li><a href="#cheer" class="chip">응원·격려</a></li>
-        </ul>
-        <section id="birthday"><h3>생일</h3><p>생일 선물 내용</p></section>
-        <section id="wedding"><h3>결혼·집들이</h3><p>결혼·집들이 선물 내용</p></section>
-        <section id="cheer"><h3>응원·격려</h3><p>응원·격려 선물 내용</p></section>
-      </div>
-    </section>
+    
 
     <!-- ===== 예시 4. GIFT GAP 인사이트 (추천 결과 우은민님, 인사이트 리포트 오현채님) =====
          막대 길이는 style="width: 숫자%;"로 지정 (수치는 예시 데이터) -->
@@ -166,24 +216,7 @@
       </div>
     </section>
 
-    <!-- ===== 예시 5. 표 (판매처 가격 비교 이예경님, 선물 후보 비교 이지현) =====
-         최저가 행은 class="best-row", 최저가 칸은 class="best" -->
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">Table</span>
-        <h2 class="section-title small">판매처 가격 비교 표</h2>
-        <table class="table">
-            <caption>록시땅 시어 버터 핸드크림 30ml 판매처별 가격</caption>
-            <thead>
-              <tr><th>판매처</th><th>가격</th><th>배송비</th><th>구매</th></tr>
-            </thead>
-            <tbody>
-              <tr class="best-row"><td>올리브영</td><td class="best">16,000원 (최저가)</td><td>무료</td><td><a href="#" target="_blank" class="btn btn-primary btn-small">구매하러 가기</a></td></tr>
-              <tr><td>판매처 B</td><td>17,500원</td><td>3,000원</td><td><a href="#" target="_blank" class="btn btn-outline btn-small">구매하러 가기</a></td></tr>
-            </tbody>
-          </table>
-      </div>
-    </section>
+    
   </main>
 
   <!-- ================= 푸터 (모든 페이지 공통) ================= -->
