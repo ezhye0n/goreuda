@@ -5,7 +5,9 @@
   color: #fffdf9;
   display: flex;
   justify-content: space-between;
-  padding: 20px clamp(24px, 7vw, 110px);
+  flex-wrap: wrap;
+  padding: 20px clamp(10px, 7vw, 110px);
+  gap: 20px;
 }
 
 .results-summary p {
@@ -13,6 +15,8 @@
   flex-wrap: wrap;
   gap: 7px;
   margin: 0;
+  flex: 0 1 auto;   
+  min-width: 0;
 }
 
 .results-summary p span {
@@ -29,6 +33,9 @@
   font-size: 10px;
   gap: 10px;
   color: #e7e3dc;
+  margin-left: auto;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .results-summary a .arrow {
@@ -41,16 +48,8 @@
 }
 
 .insight-section {
-  background:#f6f3ed;
+  background: #f6f3ed;
   padding: 78px clamp(24px, 7vw, 110px) 72px;
-}
-
-.insight-heading {
-  align-items: end;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto 42px;
-  max-width: 1240px;
 }
 
 .report-label {
@@ -62,7 +61,7 @@
 
 .report-label span {
   align-items: center;
-  background: #ead8c8;
+  background:#ead8c8;
   border-radius: 99px;
   color: #c8603c;
   display: flex;
@@ -77,38 +76,85 @@
   margin: 0;
 }
 
-.insight-layout {
-  display: grid;
-  gap: clamp(40px, 6vw, 90px);
-  grid-template-columns: minmax(0, 1.5fr) minmax(280px, .65fr);
-  margin: 0 auto;
+.insight-heading {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 42px;
   max-width: 1240px;
 }
 
-.insight-list {
-  border-top: 1px solid #25231f;
+.insight-heading h2 em {
+  color: #c8603c;
+  font-style: normal;
 }
 
+.insight-heading h2 {
+  font-size: clamp(32px, 3.5vw, 32px);
+  word-break: keep-all; /* 창이 줄어들 때 타이틀 줄바꿈 방어 */
+}
 
+.data-note {
+  border-left: 1px solid #dcd6cb;
+  padding-left: 22px;
+}
 
-<!--바꿈-->
+.data-note span {
+  color: #c8603c;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.data-note p {
+  color: #777269;
+  font-size: 10px;
+  line-height: 1.7;
+  margin: 7px 0 0;
+}
+
+/* 💡 [수정] Grid -> Flex 전환 (메인 리스트 + 우측 aside 배치) */
+.insight-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(40px, 6vw, 90px);
+  margin: 0 auto;
+  max-width: 1240px;
+  width: 100%;
+  flex-wrap: wrap; /* 창 폭이 극단적으로 좁아질 때 모바일 세로 배치 허용 */
+}
+
+/* 💡 [수정] 메인 리스트 영역이 남은 가로 폭을 다 채우도록 지정 */
+.insight-list {
+  border-top: 1px solid #25231f;
+  flex: 1 1 300px; /* 최소 500px 확보 후 남은 공간 꽉 채우기 */
+  min-width: 0; /* 내부 텍스트 때문에 레이아웃이 멈추는 것 방지 */
+}
+
+/* 💡 [수정] Grid -> Flex 전환 (순위 숫자 + 오른쪽 내용 배치) */
 .insight-row {
   border-bottom: 1px solid #dcd6cb;
-  display: grid;
+  display: flex;
   gap: 20px;
-  grid-template-columns: 44px 1fr;
   padding: 20px 0;
 }
 
-
-
+/* 💡 [수정] 순위 숫자의 고정 너비 지정 */
 .insight-rank {
   color: #c8603c;
   font-family: "DM Serif Display", serif;
   font-size: 16px;
+  width: 44px;
+  flex-shrink: 0; /* 숫자가 찌그러지지 않도록 고정 */
 }
 
-.insight-copy > div:first-child {
+/* 💡 [수정] 오른쪽 카피 내용 영역이 남은 공간 꽉 채우기 */
+.insight-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.insight-copy  div:first-child {
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -142,6 +188,7 @@
 .insight-copy p {
   font-size: 12px;
   margin: 0 0 7px;
+
 }
 
 .insight-copy small {
@@ -149,12 +196,16 @@
   font-size: 10px;
 }
 
+/* 💡 [수정] 우측 aside 박스 너비 고정 및 flex 대응 */
 .insight-tip {
-  align-self: start;
+  align-self: flex-start;
   background: #fffdf9;
   padding: 28px 26px 25px;
-  position: sticky;
-  top: 25px;
+  position: relative;
+  
+  /* 💡 핵심: 280px 이상 공간이 있으면 옆에 붙고, 자리가 없으면 아래로 떨어지며 늘어남 */
+  flex: 1 1 280px; 
+  min-width: 280px;
 }
 
 .insight-tip h3 {
@@ -165,8 +216,57 @@
   margin: 0 0 20px;
 }
 
-.insight-tip > p:not(.eyebrow) {
+
+.insight-tip p:not(.eyebrow) {
   color: #777269;
   font-size: 12px;
   line-height: 1.9;
+
+  
+}
+
+.avoid-box {
+  border-top: 1px solid #dcd6cb;
+  margin-top: 25px;
+  padding-top: 20px;
+}
+
+.avoid-box span {
+  color: #777269;
+  display: block;
+  font-size: 9px;
+  margin-bottom: 7px;
+}
+
+.avoid-box strong {
+  font-size: 12px;
+}
+
+.gift-section {
+  background: #f6f3ed;
+  padding: 30px clamp(24px, 7vw, 110px) 72px;
+}
+
+.gift-heading {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 42px;
+  max-width: 1240px;
+}
+
+.selection-section {
+  background:  #fffdf9;
+  padding: 78px clamp(24px, 7vw, 110px) 72px;
+}
+
+.selection-more .btn {
+  display: inline-flex;
+  align-items: center;
+  
+}
+
+/* 마우스 올렸을 때 SVG 화살표 색상 변경 */
+.btn-outline:hover .arrow{
+  stroke: #FFFDF9; /* 선으로 그려진 SVG일 때 */
 }
