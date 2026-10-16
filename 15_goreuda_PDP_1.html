@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>고른다 - 록시땅 시어 버터 핸드크림 가격 비교</title>
+<style>
+:root {
+  --point: #C8603C;
+  --gray: #716C63;
+  --dark: #25231F;
+  --bg: #F6F3ED;
+  --bg-white: #FFFFFF;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+  line-height: 1.5;
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  height: 88px;
+}
+
+.header-inner {
+  width: 1200px;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: serif;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.logo small {
+  font-size: 12px;
+  color: var(--gray);
+  font-weight: 400;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+nav a { margin: 0 20px; font-size: 14px; font-weight: 700; }
+
+.header-icons { font-size: 18px; color: var(--dark); cursor: pointer; }
+
+.container {
+  width: 1000px;
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 60px 0 80px;
+}
+
+.compare-header { text-align: center; margin-bottom: 40px; }
+
+.eyebrow {
+  color: var(--point);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.compare-desc { color: var(--gray); font-size: 14px; }
+
+.product-summary-card {
+  background: var(--bg-white);
+  padding: 24px 32px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.product-summary-left { display: flex; align-items: center; gap: 24px; }
+
+.product-thumb {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.product-thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+.product-info .brand {
+  color: var(--gray);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.product-info .product-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+
+.product-info .price-meta { font-size: 13px; color: var(--gray); }
+
+.btn-back-info {
+  font-size: 12px;
+  color: var(--dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.price-table-card { background: var(--bg-white); border-radius: 2px; }
+
+.table-header {
+  display: flex;
+  padding: 16px 32px;
+  font-size: 12px;
+  color: var(--gray);
+  border-bottom: 1px solid #f0ece6;
+}
+
+.col-store { flex: 3.5; }
+.col-price { flex: 2.5; }
+.col-benefit { flex: 3; }
+.col-action { flex: 2; text-align: right; }
+
+.table-row {
+  display: flex;
+  align-items: center;
+  padding: 24px 32px;
+  border-bottom: 1px solid #f0ece6;
+  background: var(--bg-white);
+}
+
+.table-row:last-child { border-bottom: none; }
+
+.table-row.highlight {
+  background: #F8EFE7;
+  border-left: 4px solid var(--point);
+  padding-left: 28px;
+}
+
+.badge-tag {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gray);
+  margin-bottom: 4px;
+}
+
+.badge-tag.highlight-tag { color: var(--point); }
+
+.store-name { font-size: 16px; font-weight: 700; color: var(--dark); }
+.price-text { font-size: 16px; font-weight: 700; color: var(--dark); }
+
+.shipping-text {
+  display: block;
+  font-size: 11px;
+  color: var(--gray);
+  margin-top: 4px;
+}
+
+.benefit-text { font-size: 13px; color: var(--dark); }
+
+.btn-buy {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--dark);
+  color: #fff;
+  padding: 14px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  width: 140px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-buy:hover { opacity: 0.85; }
+
+.notice-text { font-size: 12px; color: var(--gray); margin-top: 24px; }
+
+@media (max-width: 768px) {
+  .header-inner { padding: 0 16px; }
+  nav { display: none; }
+  .container { padding: 30px 16px; }
+
+  .product-summary-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .table-header { display: none; }
+
+  .table-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .col-store, .col-price, .col-benefit, .col-action { width: 100%; }
+
+  .col-action { text-align: left; margin-top: 8px; }
+
+  .btn-buy { width: 100%; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo">Goreuda <small>고른다</small></div>
+    <nav>
+      <a href="#">선물 추천받기</a>
+      <a href="#">상품 탐색</a>
+      <a href="#">인사이트 리포트</a>
+    </nav>
+    <div class="header-icons">🔍</div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="compare-header">
+    <p class="eyebrow">PRICE COMPARISON</p>
+    <p class="compare-desc">가격뿐 아니라 배송과 적립, 선물 포장 혜택까지 함께 비교해 보세요.</p>
+  </div>
+
+  <div class="product-summary-card">
+    <div class="product-summary-left">
+      <div class="product-thumb">
+        <img src="images/hand-cream.jpg" alt="록시땅 시어 버터 핸드크림 30ml">
+      </div>
+      <div class="product-info">
+        <p class="brand">LOCCITANE</p>
+        <h1 class="product-name">록시땅 시어 버터 핸드크림 30ml</h1>
+        <p class="price-meta">최저가 14,900원 · 3개 판매처 비교</p>
+      </div>
+    </div>
+    <a href="#" class="btn-back-info" title="상품 정보 페이지로 돌아가기">상품 정보 다시 보기</a>
+  </div>
+
+  <div class="price-table-card">
+    <div class="table-header">
+      <div class="col-store">판매처</div>
+      <div class="col-price">가격 · 배송</div>
+      <div class="col-benefit">혜택</div>
+      <div class="col-action"></div>
+    </div>
+
+    <div class="table-row highlight">
+      <div class="col-store">
+        <span class="badge-tag highlight-tag">최저가</span>
+        <strong class="store-name">네이버 브랜드스토어</strong>
+      </div>
+      <div class="col-price">
+        <span class="price-text">14,900원</span>
+        <span class="shipping-text">무료 배송</span>
+      </div>
+      <div class="col-benefit">
+        <span class="benefit-text">네이버페이 최대 3% 적립</span>
+      </div>
+      <div class="col-action">
+        <a href="https://kr.loccitane.com/%EC%8B%9C%EC%96%B4-%EB%B2%84%ED%84%B0-%ED%95%B8%EB%93%9C-%ED%81%AC%EB%A6%BC-%EC%B9%B4%EB%A6%AC%ED%85%8C-%EC%BD%A9%ED%8F%AC%EB%A5%B4-01MA030K26.html" class="btn-buy" target="_blank" rel="noopener noreferrer" title="네이버 브랜드스토어로 이동">
+          <span>판매처로 이동</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="col-store">
+        <span class="badge-tag">공식 판매처</span>
+        <strong class="store-name">LOCCITANE 공식몰</strong>
+      </div>
+      <div class="col-price">
+        <span class="price-text">16,000원</span>
+        <span class="shipping-text">무료 배송</span>
+      </div>
+      <div class="col-benefit">
+        <span class="benefit-text">공식 선물 포장 제공</span>
+      </div>
+      <div class="col-action">
+        <a href="https://kr.loccitane.com/%EC%8B%9C%EC%96%B4-%EB%B2%84%ED%84%B0-%ED%95%B8%EB%93%9C-%ED%81%AC%EB%A6%BC-%EC%B9%B4%EB%A6%AC%ED%85%8C-%EC%BD%A9%ED%8F%AC%EB%A5%B4-01MA030K26.html" class="btn-buy" target="_blank" rel="noopener noreferrer" title="LOCCITANE 공식몰로 이동">
+          <span>판매처로 이동</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="table-row">
+      <div class="col-store">
+        <span class="badge-tag">선물하기 편리</span>
+        <strong class="store-name">카카오톡 선물하기</strong>
+      </div>
+      <div class="col-price">
+        <span class="price-text">17,000원</span>
+        <span class="shipping-text">배송비 포함</span>
+      </div>
+      <div class="col-benefit">
+        <span class="benefit-text">주소 없이 모바일 선물</span>
+      </div>
+      <div class="col-action">
+        <a href="https://kr.loccitane.com/%EC%8B%9C%EC%96%B4-%EB%B2%84%ED%84%B0-%ED%95%B8%EB%93%9C-%ED%81%AC%EB%A6%BC-%EC%B9%B4%EB%A6%AC%ED%85%8C-%EC%BD%A9%ED%8F%AC%EB%A5%B4-01MA030K26.html" class="btn-buy" target="_blank" rel="noopener noreferrer" title="카카오톡 선물하기로 이동">
+          <span>판매처로 이동</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <p class="notice-text">
+    표시된 가격과 혜택은 판매처 상황에 따라 달라질 수 있습니다. 최종 가격은 판매처에서 확인해 주세요.
+  </p>
+</div>
+</body>
+</html>
