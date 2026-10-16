@@ -1,0 +1,316 @@
+15_goreuda_PDP02
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>고르다 - 아틀리에 세라믹 티 세트</title>
+
+<style>
+/* 1. 기본 설정 및 변수 */
+:root {
+  --point: #C8603C;
+  --gray: #716C63;
+  --dark: #25231F;
+  --bg: #FFFDF9;  
+  --bg-soft: #F6F3ED;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans KR", -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+  line-height: 1.5;
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+.container {
+  width: 1000px;
+  max-width: 92%;
+  margin: 0 auto;
+}
+
+/* 2. 헤더 */
+header {
+  background: var(--bg-soft);
+  border-bottom: 1px solid #e5e0d8;
+  height: 88px;
+}
+
+.header-inner {
+  width: 1200px;
+  max-width: 95%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo { font-size: 28px; font-weight: 700; font-family: serif; }
+.logo small { font-size: 11px; color: var(--gray); font-family: sans-serif; }
+nav a { margin: 0 20px; font-size: 14px; font-weight: 700; }
+.header-icons { font-size: 14px; color: var(--gray); }
+
+/* 3. 상품 상단 */
+.product {
+  display: flex;
+  gap: 60px;
+  padding: 60px 0;
+}
+
+.product-images { width: 500px; }
+.main-img img { width: 100%; display: block; }
+.thumbs { display: flex; gap: 8px; margin-top: 8px; }
+.thumbs img { width: 23.5%; aspect-ratio: 1; object-fit: cover; border: 1px solid #DCD6CB; }
+
+.product-info { flex: 1; }
+.breadcrumb { font-size: 12px; color: var(--gray); margin-bottom: 24px; }
+.brand { color: var(--point); font-size: 12px; font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+.section-title { font-size: 36px; line-height: 1.3; margin-bottom: 16px; }
+.intro-desc { color: var(--gray); font-size: 14px; margin-bottom: 16px; }
+
+.rating { font-size: 12px; margin-bottom: 24px; }
+.star { color: var(--point); }
+.badge { background: #eadfce; padding: 4px 8px; border-radius: 12px; font-size: 11px; margin-left: 6px; }
+
+.price { font-size: 26px; font-weight: 700; margin-bottom: 24px; }
+
+.price-guide {
+  background: var(--bg-soft);
+  padding: 16px;
+  font-size: 12px;
+  color: var(--gray);
+  margin-bottom: 20px;
+}
+.price-guide strong { display: block; color: var(--point); font-size: 10px; margin-bottom: 6px; }
+
+.buttons { display: flex; gap: 8px; margin-bottom: 20px; }
+.btn-compare, .btn-wish {
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  transition: opacity 0.2s;
+}
+
+/*판매처 가격 비교 및 찜하기*/
+.btn-compare { flex: 1; background: var(--dark); display: flex; justify-content: space-between; }
+.btn-wish { width: 100px; background: var(--point); text-align: center; }
+.btn-compare:hover, .btn-wish:hover { opacity: 0.85; }
+
+/* 비교 기준 가격 안내 등등 판매처 버튼 아래 */
+.info-table { width: 100%; font-size: 12px; border-collapse: collapse; }
+.info-table td { padding: 6px 0; }
+.info-table td:first-child { color: var(--gray); }
+.info-table td:last-child { text-align: right; }
+
+/* 4. 탭 메뉴(추천 메뉴 선물 인사이트 받은 선물 후기) */
+.tabs { display: flex; border-bottom: 1px solid #e5e0d8; background: var(--bg); }
+.tabs a { flex: 1; text-align: center; padding: 16px 0; font-size: 13px; font-weight: 700; }
+.tabs a.active { color: var(--point); border-bottom: 2px solid var(--point); }
+
+/* 5. 추천 이유 */
+.reason { text-align: center; padding: 70px 0; background: var(--bg-soft); }
+.eyebrow { color: var(--point); font-size: 12px; font-weight: 700; letter-spacing: 2px; margin-bottom: 16px; }
+.reason p { color: var(--gray); font-size: 13px; line-height: 1.8; max-width: 600px; margin: 0 auto 30px; }
+.reason img { width: 700px; max-width: 90%; height: auto; display: block; margin: 0 auto; }
+
+/* 6. 핵심 포인트 */
+.points { display: flex; margin: 60px auto; border-top: 1px solid #eee; padding-top: 40px; }
+.points li { flex: 1; border-left: 1px solid #ddd; padding: 0 20px; }
+.points li:first-child { border-left: none; }
+.points .num { color: var(--point); font-size: 11px; font-weight: 700; }
+.points h3 { font-size: 14px; margin: 8px 0 4px; }
+.points p { font-size: 11px; color: var(--gray); }
+
+/* 7. 후기 & 푸터 */
+.reviews { padding: 40px 0 80px; }
+.review-list { display: flex; gap: 16px; margin-top: 30px; }
+.review-card { flex: 1; background: var(--bg-soft); padding: 24px; }
+.review-card .from { color: var(--point); font-size: 11px; margin-bottom: 12px; }
+.review-card .text { font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
+.review-card .who { font-size: 11px; color: var(--gray); }
+
+footer { background: var(--dark); height: 80px; }
+
+/* 8. 모바일 반응형 */
+@media (max-width: 768px) {
+  nav { display: none; }
+  .product, .points, .review-list { flex-direction: column; gap: 24px; }
+  .product-images, .product-info { width: 100%; }
+  .section-title { font-size: 28px; }
+  .points li { border-left: none; border-top: 1px solid #ddd; padding: 16px 0 0; }
+  .points li:first-child { border-top: none; }
+}
+</style>
+</head>
+
+<body>
+
+
+  
+  <!-- ================= 헤더 (모든 페이지 공통) ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="15_goreuda_main.html" class="logo" title="고르다 홈으로">
+        <span class="logo-en">Goreuda</span><span class="logo-ko">고르다</span>
+      </a>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="15_goreuda_select.html">선물 추천받기</a></li>
+          <li><a href="15_goreuda_explore.html">상품 탐색</a></li>
+          <li><a href="15_goreuda_report.html">인사이트 리포트</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <form class="search-box" method="get" action="15_goreuda_explore.html">
+          <label for="search" class="hidden-text">상품 검색</label>
+          <input type="search" id="search" name="keyword" placeholder="선물 검색">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        </form>
+        <a href="15_goreuda_wishlist.html" class="icon-btn" title="찜한 선물 3개">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          <span class="count-badge">3</span>
+          <span class="tip">찜한 선물 3개</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+<!-- 상품 상단 -->
+<div class="container product">
+  <div class="product-images">
+    <div class="main-img">
+      <img src="images/15_gift01.jpg" alt="티 세트 메인 이미지">
+    </div>
+    <div class="thumbs">
+      <img src="images/15_gift01.jpg" alt="썸네일 1">
+      <img src="images/15_pic1.jpg" alt="썸네일 2">
+      <img src="images/15_pic2.jpg" alt="썸네일 3">
+      <img src="images/15_pic4.jpg" alt="썸네일 4">
+    </div>
+  </div>
+
+  <div class="product-info">
+    <p class="breadcrumb"><a href="#">홈</a> · <a href="#">테이블웨어</a> · <a href="#"> MORNING ARCHIVE</a></p>
+    <p class="brand">MORNING ARCHIVE</p>
+    <h1 class="section-title">아틀리에 세라믹 티 세트</h1>
+    <p class="intro-desc">차분한 식탁을 완성하는 수공예 세라믹 컬렉션</p>
+    
+    <p class="rating">
+      <span class="star">★ 4.9</span> 리뷰 1,245개
+      <span class="badge">선물 만족도 96%</span>
+    </p>
+
+    <p class="price">89,000원</p>
+
+    <div class="price-guide">
+      <strong>PRICE GUIDE</strong>
+      고르다는 상품을 직접 판매하지 않아요.<br>
+      판매처별 가격과 혜택을 비교한 뒤 원하는 곳에서 구매하세요.
+    </div>
+
+    <div class="buttons">
+      <a class="btn-compare" href="#" target="_blank" title="판매처 가격 비교 이동">
+        <span>판매처 가격 비교</span> <span>&rarr;</span>
+      </a>
+      <a class="btn-wish" href="#">♥ 찜하기</a>
+    </div>
+
+    <table class="info-table">
+      <tr><td>비교 기준</td><td>판매가 · 배송비 · 회원 혜택</td></tr>
+      <tr><td>구매 방법</td><td>선택한 판매처에서 직접 구매</td></tr>
+      <tr><td>가격 안내</td><td>판매처에 따라 실시간 변동 가능</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 탭 메뉴 -->
+<div class="tabs">
+  <a class="active" href="#reason">추천 이유</a>
+  <a href="#insight">선물 인사이트</a>
+  <a href="#reviews">받은 사람 후기</a>
+</div>
+
+<!-- 추천 이유 -->
+<section class="reason" id="reason">
+  <p class="eyebrow">WHY WE RECOMMEND IT</p>
+  <h2 class="section-title">이 선물을<br>추천하는 이유</h2>
+  <p>
+    차분한 식탁을 완성하는 수공예 세라믹 컬렉션. 매일 사용하면서 자연스럽게 소진할 수 있고, 
+    평소보다 조금 좋은 브랜드를 선물받는 만족감이 있어 가까운 친구에게 안정적으로 추천할 수 있어요.
+  </p>
+  <img src="images/15_gift01.jpg" alt="티 세트 상세 정보 이미지">
+</section>
+
+<!-- 핵심 포인트 -->
+<ul class="points container" id="insight">
+  <li>
+    <span class="num">01</span>
+    <h3>20대 여성이 많이 선택</h3>
+    <p>친구 생일 선물로 가장 많이 저장했어요.</p>
+  </li>
+  <li>
+    <span class="num">02</span>
+    <h3>실용적인 소모품</h3>
+    <p>부담 없이 매일 사용할 수 있어요.</p>
+  </li>
+  <li>
+    <span class="num">03</span>
+    <h3>96% 선물 만족도</h3>
+    <p>향과 휴대성에서 높은 평가를 받았어요.</p>
+  </li>
+</ul>
+
+<!-- 후기 -->
+<section class="container reviews" id="reviews">
+  <p class="eyebrow">RECIPIENT REVIEWS</p>
+  <h2 class="section-title">직접 받아본 사람들은 <br>이렇게 말했어요.</h2>
+
+  <div class="review-list">
+    <div class="review-card">
+      <p class="from">친구에게 받은 선물</p>
+      <p class="text">"평소에 사기엔 조금 고민되던 브랜드인데 선물로 받으니 좋았어요. 가방에 넣고 매일 사용하고 있어요."</p>
+      <p class="who">20대 여성 · 생일 선물</p>
+    </div>
+    <div class="review-card">
+      <p class="from">동료에게 받은 선물</p>
+      <p class="text">"향이 너무 강하지 않고 포장도 깔끔해서 기분 좋게 받았습니다."</p>
+      <p class="who">20대 여성 · 감사 선물</p>
+    </div>
+    <div class="review-card">
+      <p class="from">친구에게 받은 선물</p>
+      <p class="text">"이미 비슷한 제품이 있어도 금방 사용하는 제품이라 겹쳐도 괜찮았어요. 실용적인 선물이에요."</p>
+      <p class="who">30대 여성 · 가벼운 선물</p>
+    </div>
+  </div>
+</section>
+
+ <!-- ================= 푸터 (모든 페이지 공통) ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="15_goreuda_main.html" class="footer-brand">
+          <span class="logo-en">Goreuda</span><span class="logo-ko">바르고 고른 선택</span>
+        </a>
+        <p class="footer-copy">좋은 마음을 위한, 바르고 고른 선택.</p>
+        <a href="#top" class="to-top">최상단으로 가기</a>
+      </div>
+      <p class="footer-note">웹프로그래밍 15팀 고르다 | 상품 이미지 출처: 각 브랜드 공식몰 및 판매처 </p>
+    </div>
+  </footer>
+
+</body>
+</html>
