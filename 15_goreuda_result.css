@@ -268,5 +268,5 @@
 
 /* 마우스 올렸을 때 SVG 화살표 색상 변경 */
 .btn-outline:hover .arrow{
-  stroke: #FFFDF9; /* 선으로 그려진 SVG일 때 */
+  stroke: #FFFDF9; 
 }
