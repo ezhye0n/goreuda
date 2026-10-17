@@ -1,4 +1,3 @@
-15_goreuda_PDP04
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -16,11 +15,7 @@
   --bg-soft: #F6F3ED;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: "Noto Sans KR", -apple-system, sans-serif;
@@ -63,12 +58,13 @@ nav a { margin: 0 20px; font-size: 14px; font-weight: 700; }
 /* 3. 상품 상단 */
 .product {
   display: flex;
+  align-items: flex-start;
   gap: 60px;
   padding: 60px 0;
 }
 
-.product-images { width: 500px; }
-.main-img img { width: 100%; display: block; }
+.product-images { width: 440px; }
+.main-img img {width: 100%; aspect-ratio: 1; object-fit: cover; border: 1px solid #DCD6CB; display: block;}
 .thumbs { display: flex; gap: 8px; margin-top: 8px; }
 .thumbs img { width: 23.5%; aspect-ratio: 1; object-fit: cover; border: 1px solid #DCD6CB; }
 
@@ -140,7 +136,11 @@ nav a { margin: 0 20px; font-size: 14px; font-weight: 700; }
 .review-card .text { font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
 .review-card .who { font-size: 11px; color: var(--gray); }
 
-footer { background: var(--dark); height: 80px; }
+footer { 
+  background: var(--dark); 
+  color: #AAA69E;       
+  padding: 40px 0;    
+}
 
 /* 8. 모바일 반응형 */
 @media (max-width: 768px) {
@@ -223,7 +223,7 @@ footer { background: var(--dark); height: 80px; }
     </div>
 
     <div class="buttons">
-      <a class="btn-compare" href="#" target="_blank" title="판매처 가격 비교 이동">
+      <a class="btn-compare" href="15_goreuda_compare.html" title="판매처 가격 비교 이동">
         <span>판매처 가격 비교</span> <span>&rarr;</span>
       </a>
       <a class="btn-wish" href="#">♥ 찜하기</a>
@@ -311,6 +311,9 @@ footer { background: var(--dark); height: 80px; }
       <p class="footer-note">웹프로그래밍 15팀 고르다 | 상품 이미지 출처: 각 브랜드 공식몰 및 판매처 </p>
     </div>
   </footer>
+
+</body>
+</html>
 
 </body>
 </html>
