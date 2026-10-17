@@ -204,12 +204,13 @@ img { display: block; max-width: 100%; }
 /* ---------- 5. 버튼 (모서리 각진 형태) ----------
    화살표(.arrow)는 마우스를 올리면 오른쪽으로 이동 */
 .btn {
-  display: inline-block;
+  display: inline-flex;
   padding: 15px 28px;
   border: 1px solid #25231F;
   font-family: "Noto Sans KR", sans-serif;
   font-size: 14px;
   font-weight: 600;
+  align-items:center;
 }
 .btn .arrow { margin-left: 14px; }
 .btn:hover .arrow { margin-left: 26px; }
@@ -231,6 +232,9 @@ img { display: block; max-width: 100%; }
   background-color: #25231F;
   color: #FFFDF9;
 }
+.btn-outline:hover .arrow{
+  stroke: #FFFDF9;
+} 
 .btn-small { padding: 9px 16px; font-size: 13px; }
 
 /* ---------- 6. 태그, 필터 칩 (둥근 형태) ---------- */

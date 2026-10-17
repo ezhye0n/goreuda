@@ -260,13 +260,7 @@
   padding: 78px clamp(24px, 7vw, 110px) 72px;
 }
 
-.selection-more .btn {
-  display: inline-flex;
-  align-items: center;
-  
-}
-
-/* 마우스 올렸을 때 SVG 화살표 색상 변경 */
-.btn-outline:hover .arrow{
-  stroke: #FFFDF9; 
+.selection-more {
+  padding: 78px clamp(24px, 7vw, 110px) 72px;
+  padding-bottom:0;
 }
