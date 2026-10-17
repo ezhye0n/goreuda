@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!-- 15팀 고르다 - 선물 인사이트 리포트 / 작성자: 오현채
+     강의 범위: 2~3주차 HTML, 5~6주차 CSS. JavaScript 사용 없음.
+     헤더/푸터는 팀 템플릿 그대로 사용하고, 본문만 작성함. -->
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 팀원 정보 -->
+  <meta name="author" content="15팀 고르다: 이지현(팀장), 오현채, 우은민, 이예경">
+  <meta name="description" content="고르다(Goreuda): 받는 사람과 상황에 맞는 선물 인사이트와 추천 상품을 보여주고 판매처로 연결해주는 선물 고민 도우미">
+  <meta name="page-owner" content="담당자: 오현채">
+
+  <title>선물 인사이트 리포트 | 고르다, 바르고 고른 선택</title>
+  <link rel="stylesheet" href="15_goreuda_common.css">
+  <!-- 페이지 작성자: 오현채 / 공통 CSS 다음에 리포트 전용 CSS 연결 -->
+  <link rel="stylesheet" href="15_goreuda_report.css">
+</head>
+<body id="top">
+
+  <a href="#main" class="skip-link">본문 바로가기</a>
+
+  <!-- ================= 헤더 (모든 페이지 공통) ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="15_goreuda_main.html" class="logo" title="고르다 홈으로">
+        <span class="logo-en">Goreuda</span><span class="logo-ko">고르다</span>
+      </a>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="15_goreuda_select.html">선물 추천받기</a></li>
+          <li><a href="15_goreuda_explore.html">상품 탐색</a></li>
+          <li><a href="15_goreuda_report.html">인사이트 리포트</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <form class="search-box" method="get" action="15_goreuda_explore.html">
+          <label for="search" class="hidden-text">상품 검색</label>
+          <input type="search" id="search" name="keyword" placeholder="선물 검색">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        </form>
+        <a href="15_goreuda_wishlist.html" class="icon-btn" title="찜한 선물 3개">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          <span class="count-badge">3</span>
+          <span class="tip">찜한 선물 3개</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="report-page" id="main">
+  <!--5주차: 글꼴, 색상 / 6주차: flex로 제목과 설명을 가로 배치-->
+  <section class="intro">
+    <div class="container intro-layout">
+      <div class="intro-title">
+        <div class="eyebrow">GOREUDA GIFT REPORT</div>
+        <h1>선물을 고르는 사람을 위한<br>
+          <em>인사이트 매거진</em>
+        </h1>
+      </div>
+      <p class="intro-description">관계와 나이, 기념일에 따라 달라지는 선물의 기준을 읽어보세요. 많이 주는 선물보다 더 반가운 선택을 찾습니다.</p>
+    </div>
+  </section>
+  <!--3주차: 이미지와 문서 내 링크 / 6주차: position과 object-fit-->
+  <section class="cover">
+    <div class="cover-photo">
+      <img alt="친구에게 선물을 전하는 따뜻한 장면" src="15_report_cover.jpeg">
+      <div class="issue">ISSUE 01</div>
+    </div>
+    <div class="cover-copy">
+      <div class="eyebrow">COVER STORY · FRIENDSHIP</div>
+      <h2>20대 친구 생일 선물,<br>많이 주는 것과<br>
+        <span>받고 싶은 것 사이</span>
+      </h2>
+      <p>예쁜 디퓨저보다 매일 쓰는 핸드크림이 더 반가운 이유. 주는 사람의 선택과 받는 사람의 취향 사이에 생기는 작은 차이를 살펴봅니다.</p>
+      <div class="cover-report-body" id="cover-report">
+        <h3>선물의 정답은 가격보다 일상에 있어요.</h3>
+        <h4>주는 사람의 기준과 받는 사람의 기준</h4>
+        <p>선물을 고를 때 우리는 특별해 보이는 물건에 먼저 눈길이 갑니다. 하지만 받는 사람에게는 평소 자주 사용하는 물건이나 자신의 취향에 맞는 작은 선물이 더 반가울 수 있어요.</p>
+        <h4>20대 친구에게는 어떤 선물이 좋을까요?</h4>
+        <p>친구가 자주 사용하는 향, 좋아하는 간식, 평소 관심을 보였던 취미를 떠올려 보세요. 핸드크림이나 디저트처럼 부담이 적은 선물도 취향을 잘 반영하면 충분히 의미 있습니다.</p>
+        <div class="article-callout">GOREUDA TIP — 무엇을 살지 고민되면 ‘이 친구가 다음 주에도 사용할까?’를 먼저 질문해 보세요.</div>
+        <p class="article-disclaimer">※ 이 글은 선물 선택을 돕기 위한 편집형 가이드이며, 실제 설문조사 통계를 인용한 분석 결과는 아닙니다.</p>
+        <a class="text-link" href="15_goreuda_select.html">나에게 맞는 선물 추천받기 <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- 관계 카드 네 개는 결과 페이지의 같은 GIFT GAP 영역으로 이동함.
+       결과 담당자의 영역 id가 gift-gap인지 통합 시 확인할 것. -->
+  <!--6주차: flex와 width: 25%로 관계 카드 네 개를 한 줄에 배치-->
+  <section class="relationship" id="relationship">
+    <div class="container">
+      <div class="section-heading">
+        <div class="heading-title">
+          <div class="eyebrow">BY RELATIONSHIP</div>
+          <h2>관계가 달라지면<br>선물의 기준도 달라져요.</h2>
+        </div>
+        <p class="heading-description">가까운 정도와 관계의 성격에 따라 부담스럽지 않은 선물의 선이 달라집니다.</p>
+      </div>
+      <div class="relationship-grid">
+        <a class="relationship-card" href="15_goreuda_result.html#gift-gap">
+          <span class="number">01</span>
+          <h3>친구</h3>
+          <p>취향은 가볍게, 실용성은 오래</p>
+          <small>핸드 케어 · 디저트 · 작은 패션 소품</small>
+          <span class="report-arrow">→</span>
+        </a>
+        <a class="relationship-card" href="15_goreuda_result.html#gift-gap">
+          <span class="number">02</span>
+          <h3>연인</h3>
+          <p>기억에 남는 경험과 개인적인 취향</p>
+          <small>향수 · 주얼리 · 함께하는 경험</small>
+          <span class="report-arrow">→</span>
+        </a>
+        <a class="relationship-card" href="15_goreuda_result.html#gift-gap">
+          <span class="number">03</span>
+          <h3>직장 동료</h3>
+          <p>부담 없이 나눌 수 있는 센스</p>
+          <small>커피 · 데스크 소품 · 푸드</small>
+          <span class="report-arrow">→</span>
+        </a>
+        <a class="relationship-card" href="15_goreuda_result.html#gift-gap">
+          <span class="number">04</span>
+          <h3>부모님</h3>
+          <p>마음이 보이고 오래 쓰는 선택</p>
+          <small>건강 · 리빙 · 프리미엄 푸드</small>
+          <span class="report-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="generation">
+    <div class="generation-photo">
+      <img src="15_report_image.jpeg" alt="마음을 담아 준비한 선물 상자">
+    </div>
+    <div class="generation-copy">
+      <span class="eyebrow">BY GENERATION</span>
+      <h2>나이대별로 달라지는<br>‘좋은 선물’의 의미</h2>
+      <!-- 각 링크는 결과 페이지의 GIFT GAP 영역으로 이동. 연령 자동 필터링 없음. -->
+      <ul class="generation-list">
+        <li><a class="generation-link" href="15_goreuda_result.html#gift-gap"><span class="generation-age">10s</span><strong>취향을 표현하는 작은 아이템</strong><span class="generation-arrow">→</span></a></li>
+        <li><a class="generation-link" href="15_goreuda_result.html#gift-gap"><span class="generation-age">20s</span><strong>브랜드 감도와 실용성의 균형</strong><span class="generation-arrow">→</span></a></li>
+        <li><a class="generation-link" href="15_goreuda_result.html#gift-gap"><span class="generation-age">30s</span><strong>일상을 업그레이드하는 좋은 도구</strong><span class="generation-arrow">→</span></a></li>
+        <li><a class="generation-link" href="15_goreuda_result.html#gift-gap"><span class="generation-age">40s+</span><strong>품질과 오래 쓰는 가치</strong><span class="generation-arrow">→</span></a></li>
+      </ul>
+    </div>
+  </section>
+  <!--6주차: flex와 백분율 너비로 기념일 카드 네 개를 배치.
+       네 카드 모두 상품 탐색 페이지로 이동하며 자동 필터링은 하지 않음. -->
+  <section class="occasion">
+    <div class="container">
+      <div class="eyebrow">BY OCCASION</div>
+      <h2>마음을 전하는 날을 위한<br>네 가지 리포트</h2>
+      <div class="occasion-grid">
+        <a class="occasion-card" href="15_goreuda_explore.html">
+          <span class="number">01 · BIRTHDAY</span>
+          <h3>생일</h3>
+          <p>취향을 담은 작은 기쁨, 오래 기억될 하루</p>
+          <span class="report-arrow">→</span>
+        </a>
+        <a class="occasion-card" href="15_goreuda_explore.html">
+          <span class="number">02 · ANNIVERSARY</span>
+          <h3>기념일</h3>
+          <p>둘만의 이야기를 담는 특별한 선택</p>
+          <span class="report-arrow">→</span>
+        </a>
+        <a class="occasion-card" href="15_goreuda_explore.html">
+          <span class="number">03 · THANK YOU</span>
+          <h3>감사</h3>
+          <p>부담은 덜고 진심은 더하는 방법</p>
+          <span class="report-arrow">→</span>
+        </a>
+        <a class="occasion-card" href="15_goreuda_explore.html">
+          <span class="number">04 · CELEBRATION</span>
+          <h3>축하</h3>
+          <p>새로운 시작을 응원하는 실용적인 선물</p>
+          <span class="report-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!--6주차: flex로 번호와 안내 문구를 가로 배치-->
+  <section class="notes">
+    <div class="container notes-layout">
+      <div class="notes-title">
+        <div class="eyebrow">EDITOR'S NOTE</div>
+        <h2>실패를 줄이는<br>선물 고르기</h2>
+      </div>
+      <div class="notes-content">
+        <div class="note-item">
+          <span class="number">01</span>
+          <div>
+            <strong>받는 사람의 일상을 먼저 떠올리세요.</strong>
+            <p>이미 자주 사용하는 물건과 자연스럽게 연결되는 선물은 실패할 가능성이 낮아요.</p>
+          </div>
+        </div>
+        <div class="note-item">
+          <span class="number">02</span>
+          <div>
+            <strong>취향이 강한 선물은 작은 용량으로 시작하세요.</strong>
+            <p>향수나 화장품은 휴대용이나 미니 사이즈가 부담 없이 취향을 발견하기 좋아요.</p>
+          </div>
+        </div>
+        <div class="note-item">
+          <span class="number">03</span>
+          <div>
+            <strong>많이 받는 선물인지 확인하세요.</strong>
+            <p>머그컵과 대용량 디퓨저처럼 이미 여러 개 있을 수 있는 물건은 한 번 더 생각해 보세요.</p>
+          </div>
+        </div>
+        <div class="note-item">
+          <span class="number">04</span>
+          <div>
+            <strong>가격보다 교환의 편리함도 중요해요.</strong>
+            <p>받는 사람이 옵션을 바꾸기 쉬운 판매처인지 확인하면 선물의 부담을 줄일 수 있어요.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+  <!-- ================= 푸터 (모든 페이지 공통) ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="15_goreuda_main.html" class="footer-brand">
+          <span class="logo-en">Goreuda</span><span class="logo-ko">바르고 고른 선택</span>
+        </a>
+        <p class="footer-copy">좋은 마음을 위한, 바르고 고른 선택.</p>
+        <a href="#top" class="to-top">최상단으로 가기</a>
+      </div>
+      <p class="footer-note">웹프로그래밍 15팀 고르다 | 상품 이미지 출처: 각 브랜드 공식몰 및 판매처 </p>
+    </div>
+  </footer>
+
+</body>
+</html>
