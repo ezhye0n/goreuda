@@ -1,0 +1,103 @@
+/* =========================================================
+   15팀 고르다 - 선물 인사이트 리포트 전용 CSS
+   파일명: 15_goreuda_report.css
+   작성자(담당자): 오현채
+
+   - 공통 CSS는 수정하지 않고, 이 파일을 공통 CSS 다음에 연결함.
+   - .report-page 하위에만 적용하여 공통 헤더/푸터에 영향을 주지 않음.
+   - 5주차: 클래스/하위/가상클래스 선택자, 글꼴, 색상, 배경.
+   - 6주차: 박스 모델, 크기/여백, flex, position, object-fit.
+   - PC 기준 구성. 글꼴은 공통 CSS 설정을 그대로 사용함.
+   ========================================================= */
+
+/* 1. 도입: 6주차 flex와 space-between으로 제목/설명을 배치 */
+.report-page .intro { padding: 94px 0 75px; background-color: #F6F3ED; }
+.report-page .intro-layout { display: flex; align-items: flex-end; justify-content: space-between; }
+.report-page .intro-title { width: 65%; }
+.report-page .intro h1 { margin-top: 22px; font-size: 60px; font-weight: 400; line-height: 1.2; letter-spacing: -3px; }
+.report-page .intro h1 em { color: #B05434; font-weight: 400; }
+.report-page .intro-description { width: 31%; margin-bottom: 10px; padding-left: 28px; border-left: 1px solid #DCD6CB; font-size: 13px; color: #716C63; }
+
+/* 2. 커버: grid 대신 flex와 백분율 너비를 사용함.
+   이미지 부모는 relative, 이미지는 absolute로 부모 영역에 맞춤. */
+.report-page .cover { display: flex; background-color: #FFFDF9; }
+.report-page .cover-photo { position: relative; width: 57.5%; min-height: 640px; overflow: hidden; background-color: #C5AD98; }
+.report-page .cover-photo img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+.report-page .issue { position: absolute; top: 0; left: 0; padding: 17px 22px; background-color: #B05434; color: #FFFDF9; font-family: "DM Serif Display", serif; font-size: 13px; letter-spacing: 1px; }
+.report-page .cover-copy { display: flex; flex-direction: column; justify-content: center; width: 42.5%; padding: 60px 5%; }
+.report-page .cover-copy h2 { margin: 24px 0; font-size: 44px; font-weight: 400; line-height: 1.3; letter-spacing: -2px; }
+.report-page .cover-copy h2 span { color: #B05434; }
+.report-page .cover-copy p { font-size: 13px; line-height: 2; color: #716C63; }
+.report-page .text-link { display: inline-block; margin-top: 16px; padding: 12px 0; border-bottom: 1px solid #25231F; font-size: 13px; }
+.report-page .text-link span { margin-left: 25px; font-size: 23px; }
+.report-page .text-link:hover { color: #B05434; border-bottom-color: #B05434; }
+
+/* 3. 관계별 카드: flex + width: 25%로 네 칸을 구성함. */
+.report-page .relationship { padding: 125px 0 115px; background-color: #F6F3ED; }
+.report-page .section-heading { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 68px; }
+.report-page .heading-title { width: 70%; }
+.report-page .section-heading h2,
+.report-page .notes h2,
+.report-page .occasion h2 { margin-top: 28px; font-size: 52px; font-weight: 400; letter-spacing: -2px; line-height: 1.42; }
+.report-page .heading-description { width: 225px; font-size: 13px; color: #716C63; }
+/* 기존 HTML의 클래스명은 유지하고, 실제 배치는 Flex로 구현함. */
+.report-page .relationship-grid { display: flex; border-top: 1px solid #25231F; }
+.report-page .relationship-card { display: flex; flex-direction: column; width: 25%; min-height: 340px; padding: 35px 27px 25px; border-left: 1px solid #DCD6CB; }
+.report-page .relationship-card:last-child { border-right: 1px solid #DCD6CB; }
+.report-page .relationship-card:hover { background-color: #F1EDE6; }
+.report-page .number { font-family: "DM Serif Display", serif; color: #B05434; font-size: 15px; }
+.report-page .relationship-card h3 { margin: 57px 0 14px; font-size: 29px; font-weight: 400; }
+.report-page .relationship-card p { font-size: 13px; }
+.report-page .relationship-card small { margin-top: 24px; font-size: 12px; color: #716C63; }
+.report-page .report-arrow { margin-top: auto; font-size: 24px; text-align: right; }
+
+/* 커버 내부 리포트: 사진 옆 소개와 본문을 하나의 흐름으로 연결함.
+   별도 article 섹션 대신 같은 cover-copy 안에 배치함. */
+.report-page .cover-photo { width: 50%; }
+.report-page .cover-copy { width: 50%; padding: 48px 4%; }
+.report-page .cover-copy h2 { margin: 18px 0; font-size: 40px; }
+.report-page .cover-report-body { margin-top: 24px; padding-top: 24px; border-top: 1px solid #DCD6CB; }
+.report-page .cover-report-body h3 { margin-bottom: 20px; font-size: 21px; font-weight: 600; line-height: 1.5; }
+.report-page .cover-report-body h4 { margin-bottom: 8px; font-size: 15px; font-weight: 700; }
+.report-page .cover-report-body p { margin-bottom: 20px; font-size: 14px; line-height: 1.9; }
+.report-page .article-callout { padding: 18px; border-left: 3px solid #B05434; background-color: #F6F3ED; color: #716C63; font-size: 13px; }
+.report-page .cover-report-body .article-disclaimer { margin: 16px 0 0; font-size: 11px; }
+
+/* 세대별 안내: 6주차 flex와 width: 50%로 사진/텍스트를 배치함. */
+.report-page .generation { display: flex; background-color: #25231F; }
+.report-page .generation-photo { position: relative; width: 50%; min-height: 680px; overflow: hidden; background-color: #EAD8C8; }
+.report-page .generation-photo img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+.report-page .generation-copy { width: 50%; padding: 70px 7%; color: #FFFDF9; }
+.report-page .generation-copy .eyebrow { color: #DFA77D; }
+.report-page .generation-copy h2 { margin: 30px 0 58px; font-size: 44px; font-weight: 400; line-height: 1.6; letter-spacing: -2px; }
+.report-page .generation-list { border-top: 1px solid #716C63; }
+.report-page .generation-list li { border-bottom: 1px solid #716C63; }
+.report-page .generation-link { display: flex; align-items: center; min-height: 76px; padding: 20px 0; color: #FFFDF9; }
+.report-page .generation-age { width: 70px; min-width: 70px; color: #DFA77D; font-family: "DM Serif Display", serif; font-size: 18px; }
+.report-page .generation-link strong { font-size: 14px; font-weight: 600; }
+.report-page .generation-arrow { margin-left: auto; padding-left: 12px; font-size: 23px; }
+.report-page .generation-link:hover { background-color: #35322C; }
+
+/* 5. 기념일 카드: gap 대신 카드 너비와 space-between으로 간격 설정.
+   전환/변형 효과 대신 6주차 relative + top으로 hover 시 이동함. */
+.report-page .occasion { padding: 110px 0; background-color: #F1EDE6; }
+.report-page .occasion-grid { display: flex; justify-content: space-between; margin-top: 55px; }
+.report-page .occasion-card { position: relative; top: 0; display: flex; flex-direction: column; width: 24%; min-height: 235px; padding: 28px; background-color: #FFFDF9; }
+.report-page .occasion-card:hover { top: -5px; }
+.report-page .occasion-card h3 { margin: 22px 0 8px; font-size: 24px; font-weight: 500; }
+.report-page .occasion-card p { font-size: 13px; color: #716C63; }
+.report-page .occasion-card .report-arrow { color: #B05434; }
+
+/* 6. 편집자 노트: 왼쪽 제목, 오른쪽 번호/안내 문구 */
+.report-page .notes { padding: 120px 0; background-color: #FFFDF9; }
+.report-page .notes-layout { display: flex; justify-content: space-between; }
+.report-page .notes-title { width: 36%; }
+.report-page .notes-content { width: 58%; }
+.report-page .note-item { display: flex; padding: 26px 0; border-top: 1px solid #DCD6CB; }
+.report-page .note-item:first-child { border-top-color: #25231F; }
+.report-page .note-item .number { display: block; width: 45px; min-width: 45px; margin-right: 20px; }
+.report-page .note-item strong { font-size: 14px; }
+.report-page .note-item p { margin-top: 9px; font-size: 13px; color: #716C63; }
+
+/* 시안처럼 편집자 노트 마지막 항목 아래에도 구분선을 표시 */
+.report-page .note-item:last-child { border-bottom: 1px solid #DCD6CB; }

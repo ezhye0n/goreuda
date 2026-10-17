@@ -55,9 +55,6 @@
 /* 6주차 sticky: 공통 헤더 아래에 가이드를 유지함. */
 .select-page .select-side { position: sticky; top: 96px; width: 328px; min-width: 328px; margin-left: 24px; }
 .select-page .select-guide {
-  display: flex;
-  flex-direction: column;
-  min-height: 610px;
   padding: 32px 28px;
   background-color: #25231F;
   color: #FFFDF9;
@@ -70,8 +67,7 @@
 .select-page .select-guide-number { width: 34px; color: #C8603C; font-family: "DM Serif Display", serif; font-size: 13px; }
 .select-page .select-guide-list h3 { margin-bottom: 3px; font-size: 14px; }
 .select-page .select-guide-list p { color: #AAA69E; font-size: 12px; }
-.select-page .select-guide-note { margin: 24px 0 32px; color: #EAD8C8; font-size: 13px; }
-.select-page .select-guide-link { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding: 16px; font-size: 13px; }
+.select-page .select-guide-note { margin-top: 24px; color: #EAD8C8; font-size: 13px; }
 
 .select-page .select-form-bottom { padding-top: 24px; }
 .select-page .select-form-note { margin-bottom: 18px; color: #716C63; font-size: 12px; }
