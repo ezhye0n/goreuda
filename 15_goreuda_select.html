@@ -63,19 +63,23 @@
       </section>
 
       <div class="select-layout">
-        <!-- 4주차: form, fieldset, legend, label, radio, checkbox.
-             같은 name의 radio는 하나만, checkbox는 여러 개 선택 가능.
-             required는 취미를 제외한 각 radio 그룹에 적용.
-             GET으로 값을 전달하지만 결과 페이지의 추천 내용을 자동 변경하지는 않음.
-             relation의 friend / lover / coworker는 템플릿의 예시 값을 따름.
-             나머지 선택값은 결과 페이지 담당자와 함께 맞추면 됨. -->
-        <div class="select-primary">
-        <form class="select-form" method="get" action="15_goreuda_result.html">
-          <div class="select-panel-top">
-            <h2>선물 조건 선택</h2>
-            <p>취미를 제외한 항목은 하나씩 선택해주세요.</p>
-          </div>
-          <!-- 최신 공통 CSS의 choice-row / choice-body / pill 구성 사용 -->
+        <div class="select-layout">
+  <!-- 4주차: form, fieldset, legend, label, radio.
+       각 radio 그룹에서 하나씩 필수 선택.
+       GET으로 값을 전달하지만 결과 페이지의 추천 내용을
+       자동으로 변경하지는 않음. -->
+
+  <div class="select-primary">
+    <form class="select-form"
+          method="get"
+          action="15_goreuda_result.html">
+
+      <div class="select-panel-top">
+        <h2>선물 조건 선택</h2>
+        <p>각 항목을 하나씩 선택해주세요.</p>
+      </div>
+
+      <!-- 공통 CSS의 choice-row / choice-body / pill 구성 사용 -->
           <div class="choice-panel">
             <div class="choice-row">
               <div class="choice-head"><span class="choice-num">01</span>받는 사람</div>
@@ -146,19 +150,7 @@
                 </div>
               </fieldset>
             </div>
-            <div class="choice-row">
-              <div class="choice-head"><span class="choice-num">05</span>취미</div>
-              <fieldset class="choice-body">
-                <legend>평소 즐기는 취미가 있나요?</legend>
-                <p class="select-question-desc">선택 사항 · 여러 개 선택할 수 있어요. 모른다면 넘어가도 괜찮아요.</p>
-                <div class="pill-list">
-                  <label class="pill"><input type="checkbox" name="hobby" value="cafe">카페·디저트</label>
-                  <label class="pill"><input type="checkbox" name="hobby" value="exercise">운동</label>
-                  <label class="pill"><input type="checkbox" name="hobby" value="travel">여행</label>
-                  <label class="pill"><input type="checkbox" name="hobby" value="home">집에서 휴식</label>
-                </div>
-              </fieldset>
-            </div>
+            
           </div>
           <div class="select-form-bottom">
             <p class="select-form-note">선택을 마쳤다면 어울리는 선물 종류를 확인해보세요.</p>
