@@ -94,24 +94,6 @@
   word-break: keep-all; /* 창이 줄어들 때 타이틀 줄바꿈 방어 */
 }
 
-.data-note {
-  border-left: 1px solid #dcd6cb;
-  padding-left: 22px;
-}
-
-.data-note span {
-  color: #c8603c;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-}
-
-.data-note p {
-  color: #777269;
-  font-size: 10px;
-  line-height: 1.7;
-  margin: 7px 0 0;
-}
 
 /* 💡 [수정] Grid -> Flex 전환 (메인 리스트 + 우측 aside 배치) */
 .insight-layout {

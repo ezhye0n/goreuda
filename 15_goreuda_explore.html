@@ -10,8 +10,7 @@
 
   <title> 상품 탐색 | 고르다, 바르고 고른 선택 </title>
   <link rel="stylesheet" href="15_goreuda_common.css">
-  <!-- 내 페이지 전용 CSS: 파일명 바꿔서 사용 -->
-  <!-- <link rel="stylesheet" href="15_goreuda_select.css"> -->
+  <link rel="stylesheet" href="15_goreuda_explore.css">
 </head>
 <body id="top">
 
@@ -48,142 +47,191 @@
   </header>
 
   <main id="main">
-    <!-- 아래는 공통 컴포넌트 사용 예시. 내 페이지에 필요한 부분만 복사해서 쓰고 나머지는 지우기
-         완성된 예시는 15_goreuda_main.html 참고 -->
+    <section class="explore-section">
+  <div class="container">
+    
+    <!-- 1. 섹션 헤더 영역 -->
+    <header class="section-header">
+      <span class="eyebrow">EXPLORE GIFTS</span>
+      <p class="section-desc">카테고리와 예산을 기준으로 마음에 가까운 선물을 찾아보세요.</p>
+    </header>
 
-    <!-- ===== 예시 1. 상품 카드 (거의 모든 페이지) =====
-         사진에 마우스를 올리면 찜하기, 가격 비교 버튼과 말풍선이 나와요 -->
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">Product card</span>
-        <h2 class="section-title small">상품 카드</h2>
-        <ul class="product-list">
-          <li class="product-card">
-            <div class="card-thumb">
-              <img src="images/15_gift01.jpg" alt="록시땅 시어 버터 핸드크림 30ml">
-              <div class="card-actions">
-                <a href="15_goreuda_wishlist.html" class="icon-btn" title="록시땅 시어 버터 핸드크림 30ml 찜하기">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-                  <span class="tip">찜하기</span>
-                </a>
-                <a href="15_goreuda_compare.html" class="icon-btn" title="록시땅 시어 버터 핸드크림 30ml 판매처 가격 비교">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
-                  <span class="tip">판매처 가격 비교</span>
-                </a>
-              </div>
-            </div>
-            <a href="15_goreuda_detail.html" class="card-body">
-              <span class="badge">받고 싶은 선물 1위</span>
-              <p class="card-brand">L'Occitane</p>
-              <p class="card-name">록시땅 시어 버터 핸드크림 30ml</p>
-              <div class="card-info">
-                <p class="card-price">16,000원<small>최저가</small></p>
-                <span class="card-rating"><svg width="13" height="13" viewBox="0 0 24 24" fill="#C8603C"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z"/></svg>4.8</span>
-              </div>
+    <!-- 2. 필터 영역 (라디오 버튼 적용) -->
+    <div class="filter-bar">
+      
+      <!-- 카테고리 필터 그룹 -->
+      <div class="filter-group">
+        <span class="filter-title">카테고리</span>
+        <div class="filter-options">
+          <input type="radio" id="cat-all" name="category" checked>
+          <label for="cat-all" class="filter-btn">전체</label>
+
+          <input type="radio" id="cat-beauty" name="category">
+          <label for="cat-beauty" class="filter-btn">뷰티 · 바디 케어</label>
+
+          <input type="radio" id="cat-living" name="category">
+          <label for="cat-living" class="filter-btn">패션 잡화</label>
+
+          <input type="radio" id="cat-food" name="category">
+          <label for="cat-food" class="filter-btn">디저트 · 푸드</label>
+        </div>
+      </div>
+
+
+      <!-- 가격대 필터 그룹 -->
+      <div class="filter-group">
+        <span class="filter-title">가격대</span>
+        <div class="filter-options">
+          <input type="radio" id="price-all" name="price">
+          <label for="price-all" class="filter-btn">전체 가격</label>
+
+          <input type="radio" id="price-under3" name="price" checked>
+          <label for="price-under3" class="filter-btn">1만원 미만</label>
+
+          <input type="radio" id="price-3to5" name="price">
+          <label for="price-3to5" class="filter-btn">1–3만원</label>
+
+          <input type="radio" id="price-5to10" name="price">
+          <label for="price-5to10" class="filter-btn">3–5만원</label>
+
+          <input type="radio" id="price-over10" name="price">
+          <label for="price-over10" class="filter-btn">5만원 이상</label>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 3. 상품 카드 리스트 영역 -->
+    <ul class="product-grid">
+      
+      <!-- 상품 카드 1 -->
+      <li class="product-card">
+        <div class="card-thumb">
+          <img src="images/15_gift01.jpg" alt="오설록 프리미엄 티 컬렉션 10종 40입">
+          <div class="card-actions">
+            <a href="15_goreuda_wishlist.html" class="icon-btn" title="오설록 프리미엄 티 컬렉션 10종 40입 찜하기">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+              <span class="tip">찜하기</span>
             </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ===== 예시 2. 조건 선택 (오현채님) =====
-         같은 질문의 라디오 버튼은 name을 똑같이. 여러 개 고르게 하려면 type="checkbox" -->
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">Choice</span>
-        <h2 class="section-title small">선택 카드</h2>
-        <form class="choice-panel" method="get" action="15_goreuda_result.html">
-          <fieldset class="choice-group">
-            <legend>누구에게 선물하나요?</legend>
-            <div class="choice-list">
-              <label class="choice"><span><input type="radio" name="relation" value="friend" checked><br>친구<small>편하게 주고받는 사이</small></span></label>
-              <label class="choice"><span><input type="radio" name="relation" value="parents"><br>부모님<small>감사의 마음</small></span></label>
-              <label class="choice"><span><input type="radio" name="relation" value="lover"><br>연인<small>특별한 날</small></span></label>
-              <label class="choice"><span><input type="radio" name="relation" value="coworker"><br>직장 동료<small>부담 없는 선물</small></span></label>
-            </div>
-          </fieldset>
-          <button type="submit" class="btn btn-primary">추천 받기<svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFDF9" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-        </form>
-      </div>
-    </section>
-
-    <!-- ===== 예시 3. 필터 칩 (상품 탐색 우은민님, 인사이트 리포트 오현채님) =====
-         칩을 누르면 같은 페이지의 해당 섹션(id)으로 이동 (3주차 문서 내 이동 링크)
-         지금 보고 있는 칩에는 class="chip active" -->
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">Filter</span>
-        <h2 class="section-title small">필터 칩</h2>
-        <ul class="chip-list">
-          <li><a href="#birthday" class="chip active">생일</a></li>
-          <li><a href="#wedding" class="chip">결혼·집들이</a></li>
-          <li><a href="#cheer" class="chip">응원·격려</a></li>
-        </ul>
-        <section id="birthday"><h3>생일</h3><p>생일 선물 내용</p></section>
-        <section id="wedding"><h3>결혼·집들이</h3><p>결혼·집들이 선물 내용</p></section>
-        <section id="cheer"><h3>응원·격려</h3><p>응원·격려 선물 내용</p></section>
-      </div>
-    </section>
-
-    <!-- ===== 예시 4. GIFT GAP 인사이트 (추천 결과 우은민님, 인사이트 리포트 오현채님) =====
-         막대 길이는 style="width: 숫자%;"로 지정 (수치는 예시 데이터) -->
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">Gift gap</span>
-        <h2 class="section-title small">많이 주는 선물 vs 받고 싶은 선물</h2>
-        <div class="gap-compare">
-          <div class="gap-col give">
-            <h3>많이 주는 선물</h3>
-            <p class="gap-item">디퓨저</p>
-            <p class="gap-rate">58%</p>
-          </div>
-          <div class="gap-col want">
-            <h3>실제로 받고 싶은 선물</h3>
-            <p class="gap-item">핸드크림</p>
-            <p class="gap-rate">62%</p>
+            <a href="15_goreuda_compare.html" class="icon-btn" title="오설록 프리미엄 티 컬렉션 10종 40입 판매처 가격 비교">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+              <span class="tip">판매처 가격 비교</span>
+            </a>
           </div>
         </div>
-
-        <article class="insight-card">
-          <h3>20대 여자 친구, 주는 선물과 받고 싶은 선물이 달라요</h3>
-          <p class="insight-desc">막대 길이는 style="width: 숫자%;"로 지정해요.</p>
-          <p class="legend"><span class="legend-give">많이 주는 선물</span><span class="legend-want">받고 싶은 선물</span></p>
-          <div class="bar-row">
-            <span class="bar-label">핸드크림</span>
-            <div class="bar-group">
-              <div class="bar-line"><div class="bar-track"><div class="bar-fill" style="width: 35%;"></div></div><span class="bar-value">35%</span></div>
-              <div class="bar-line"><div class="bar-track"><div class="bar-fill want" style="width: 62%;"></div></div><span class="bar-value">62%</span></div>
-            </div>
+        <a href="15_goreuda_detail.html" class="card-body">
+          
+          <p class="card-brand">Osulloc</p>
+          <p class="card-name">오설록 프리미엄 티 컬렉션 10종 40입</p>
+          <div class="card-info">
+            <p class="card-price">30,000원<small>최저가</small></p>
+            <span class="card-rating"><svg width="13" height="13" viewBox="0 0 24 24" fill="#C8603C"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z"/></svg>4.9</span>
           </div>
-          <div class="bar-row">
-            <span class="bar-label">디퓨저</span>
-            <div class="bar-group">
-              <div class="bar-line"><div class="bar-track"><div class="bar-fill" style="width: 58%;"></div></div><span class="bar-value">58%</span></div>
-              <div class="bar-line"><div class="bar-track"><div class="bar-fill want" style="width: 21%;"></div></div><span class="bar-value">21%</span></div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
+        </a>
+      </li>
 
-    <!-- ===== 예시 5. 표 (판매처 가격 비교 이예경님, 선물 후보 비교 이지현) =====
-         최저가 행은 class="best-row", 최저가 칸은 class="best" -->
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">Table</span>
-        <h2 class="section-title small">판매처 가격 비교 표</h2>
-        <table class="table">
-            <caption>록시땅 시어 버터 핸드크림 30ml 판매처별 가격</caption>
-            <thead>
-              <tr><th>판매처</th><th>가격</th><th>배송비</th><th>구매</th></tr>
-            </thead>
-            <tbody>
-              <tr class="best-row"><td>올리브영</td><td class="best">16,000원 (최저가)</td><td>무료</td><td><a href="#" target="_blank" class="btn btn-primary btn-small">구매하러 가기</a></td></tr>
-              <tr><td>판매처 B</td><td>17,500원</td><td>3,000원</td><td><a href="#" target="_blank" class="btn btn-outline btn-small">구매하러 가기</a></td></tr>
-            </tbody>
-          </table>
-      </div>
-    </section>
+      <li class="product-card">
+        <div class="card-thumb">
+          <img src="images/15_gift01.jpg" alt="오설록 프리미엄 티 컬렉션 10종 40입">
+          <div class="card-actions">
+            <a href="15_goreuda_wishlist.html" class="icon-btn" title="오설록 프리미엄 티 컬렉션 10종 40입 찜하기">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+              <span class="tip">찜하기</span>
+            </a>
+            <a href="15_goreuda_compare.html" class="icon-btn" title="오설록 프리미엄 티 컬렉션 10종 40입 판매처 가격 비교">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+              <span class="tip">판매처 가격 비교</span>
+            </a>
+          </div>
+        </div>
+        <a href="15_goreuda_detail.html" class="card-body">
+          
+          <p class="card-brand">Osulloc</p>
+          <p class="card-name">오설록 프리미엄 티 컬렉션 10종 40입</p>
+          <div class="card-info">
+            <p class="card-price">30,000원<small>최저가</small></p>
+            <span class="card-rating"><svg width="13" height="13" viewBox="0 0 24 24" fill="#C8603C"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z"/></svg>4.9</span>
+          </div>
+        </a>
+      </li>
+      <li class="product-card">
+        <div class="card-thumb">
+          <img src="images/15_gift01.jpg" alt="오설록 프리미엄 티 컬렉션 10종 40입">
+          <div class="card-actions">
+            <a href="15_goreuda_wishlist.html" class="icon-btn" title="오설록 프리미엄 티 컬렉션 10종 40입 찜하기">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+              <span class="tip">찜하기</span>
+            </a>
+            <a href="15_goreuda_compare.html" class="icon-btn" title="오설록 프리미엄 티 컬렉션 10종 40입 판매처 가격 비교">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+              <span class="tip">판매처 가격 비교</span>
+            </a>
+          </div>
+        </div>
+        <a href="15_goreuda_detail.html" class="card-body">
+          
+          <p class="card-brand">Osulloc</p>
+          <p class="card-name">오설록 프리미엄 티 컬렉션 10종 40입</p>
+          <div class="card-info">
+            <p class="card-price">30,000원<small>최저가</small></p>
+            <span class="card-rating"><svg width="13" height="13" viewBox="0 0 24 24" fill="#C8603C"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z"/></svg>4.9</span>
+          </div>
+        </a>
+      </li>
+      <li class="product-card">
+        <div class="card-thumb">
+          <img src="images/15_gift01.jpg" alt="오설록 프리미엄 티 컬렉션 10종 40입">
+          <div class="card-actions">
+            <a href="15_goreuda_wishlist.html" class="icon-btn" title="오설록 프리미엄 티 컬렉션 10종 40입 찜하기">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+              <span class="tip">찜하기</span>
+            </a>
+            <a href="15_goreuda_compare.html" class="icon-btn" title="오설록 프리미엄 티 컬렉션 10종 40입 판매처 가격 비교">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+              <span class="tip">판매처 가격 비교</span>
+            </a>
+          </div>
+        </div>
+        <a href="15_goreuda_detail.html" class="card-body">
+          
+          <p class="card-brand">Osulloc</p>
+          <p class="card-name">오설록 프리미엄 티 컬렉션 10종 40입</p>
+          <div class="card-info">
+            <p class="card-price">30,000원<small>최저가</small></p>
+            <span class="card-rating"><svg width="13" height="13" viewBox="0 0 24 24" fill="#C8603C"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z"/></svg>4.9</span>
+          </div>
+        </a>
+      </li>
+      <li class="product-card">
+        <div class="card-thumb">
+          <img src="images/15_gift01.jpg" alt="오설록 프리미엄 티 컬렉션 10종 40입">
+          <div class="card-actions">
+            <a href="15_goreuda_wishlist.html" class="icon-btn" title="오설록 프리미엄 티 컬렉션 10종 40입 찜하기">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+              <span class="tip">찜하기</span>
+            </a>
+            <a href="15_goreuda_compare.html" class="icon-btn" title="오설록 프리미엄 티 컬렉션 10종 40입 판매처 가격 비교">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25231F" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+              <span class="tip">판매처 가격 비교</span>
+            </a>
+          </div>
+        </div>
+        <a href="15_goreuda_detail.html" class="card-body">
+          
+          <p class="card-brand">Osulloc</p>
+          <p class="card-name">오설록 프리미엄 티 컬렉션 10종 40입</p>
+          <div class="card-info">
+            <p class="card-price">30,000원<small>최저가</small></p>
+            <span class="card-rating"><svg width="13" height="13" viewBox="0 0 24 24" fill="#C8603C"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z"/></svg>4.9</span>
+          </div>
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+</section>
+
   </main>
 
   <!-- ================= 푸터 (모든 페이지 공통) ================= -->
