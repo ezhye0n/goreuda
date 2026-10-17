@@ -493,7 +493,6 @@ img { display: block; max-width: 100%; }
 
 /* ---------- 12. 푸터 ---------- */
 .site-footer {
-  margin-top: 80px;
   padding: 58px 0;
   background-color: #25231F;
   color: #AAA69E;

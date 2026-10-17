@@ -17,6 +17,11 @@
   width: 50%;
   padding-right: 48px;
 }
+.hero-text h1 {
+  font-weight: 500;
+  line-height: 1.17;
+}
+
 .hero-title {
   margin-bottom: 24px;
   font-size: 64px;
