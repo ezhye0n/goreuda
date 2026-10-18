@@ -36,7 +36,7 @@
 
 /* 6주차 flex: 질문 영역과 안내 영역을 가로로 배치 */
 .select-page .select-layout { display: flex; align-items: flex-start; }
-/* 왼쪽 전체를 별도 블록으로 묶어 버튼이 세 번째 열로 배치되지 않게 함. */
+/* 왼쪽 질문과 오른쪽 가이드는 같은 form 안에 두고, 내부 div를 Flex로 배치함. */
 .select-page .select-primary { width: 800px; min-width: 800px; }
 .select-page .select-form { display: block; width: 100%; }
 .select-page .select-form .select-panel-top { width: 100%; }
@@ -55,11 +55,14 @@
 /* 6주차 sticky: 공통 헤더 아래에 가이드를 유지함. */
 .select-page .select-side { position: sticky; top: 96px; width: 328px; min-width: 328px; margin-left: 24px; }
 .select-page .select-guide {
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
   padding: 32px 28px;
   background-color: #25231F;
   color: #FFFDF9;
 }
-.select-page .select-guide-label { margin-bottom: 22px; color: #EAD8C8; font-size: 11px; letter-spacing: 2px; }
+.select-page .select-guide-label { display: block; margin-bottom: 22px; color: #EAD8C8; font-size: 11px; letter-spacing: 2px; }
 .select-page .select-guide h2 { margin-bottom: 28px; font-size: 24px; line-height: 1.5; }
 .select-page .select-guide-list { padding: 24px 0; border-top: 1px solid #716C63; border-bottom: 1px solid #716C63; }
 .select-page .select-guide-list li { display: flex; align-items: center; margin-bottom: 22px; }
@@ -72,4 +75,19 @@
 .select-page .select-form-bottom { padding-top: 24px; }
 .select-page .select-form-note { margin-bottom: 18px; color: #716C63; font-size: 12px; }
 .select-page .select-button-row { display: flex; justify-content: space-between; }
-.select-page .select-button-row .btn-primary { width: 280px; }
+/* 제출 버튼은 검은 가이드 박스 하단에 배치. JavaScript 사용 없음. */
+.select-page .select-guide-submit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: auto;
+  padding: 16px;
+  text-align: left;
+}
+.select-page .select-guide-note { margin-bottom: 30px; }
+
+/* 본문과 푸터 사이에 여백 추가 */
+.select-page {
+  padding-bottom: 48px;
+}

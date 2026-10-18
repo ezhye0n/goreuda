@@ -48,120 +48,144 @@
   </header>
 
   <main id="main" class="select-page">
-    <!-- 2~3주차: HTML 문서 구조와 상대경로 링크 -->
-    <div class="container">
-      <p class="select-breadcrumb"><a href="15_goreuda_main.html">홈</a> &gt; 선물 추천받기 &gt; 조건 선택</p>
-      <section class="select-intro">
-        <span class="eyebrow">Find your gift</span>
-        <h1 class="section-title">누구를 위한 <em>선물</em>인가요?</h1>
-        <p class="select-intro-desc">받는 사람과 전하고 싶은 마음을 알려주세요.<br>어울리는 선물을 고르는 첫걸음, 고르다가 함께할게요.</p>
-        <ol class="select-flow">
-          <li class="select-current"><span class="select-flow-number">1</span>조건 선택</li>
-          <li><span class="select-flow-number">2</span>선물 종류 추천</li>
-          <li><span class="select-flow-number">3</span>관련 상품 보기</li>
-        </ol>
-      </section>
-
+  <!-- 2~3주차: HTML 문서 구조와 상대경로 링크 -->
+  <div class="container">
+    <p class="select-breadcrumb">
+      <a href="15_goreuda_main.html">홈</a> &gt; 선물 추천받기 &gt; 조건 선택</p>
+    <section class="select-intro">
+      <span class="eyebrow">Find your gift</span>
+      <h1 class="section-title">누구를 위한 <em>선물</em>인가요?</h1>
+      <p class="select-intro-desc">받는 사람과 전하고 싶은 마음을 알려주세요.<br>어울리는 선물을 고르는 첫걸음, 고르다가 함께할게요.</p>
+      <ol class="select-flow">
+        <li class="select-current">
+          <span class="select-flow-number">1</span>조건 선택</li>
+        <li>
+          <span class="select-flow-number">2</span>선물 종류 추천</li>
+        <li>
+          <span class="select-flow-number">3</span>관련 상품 보기</li>
+      </ol>
+    </section>
+    <form class="select-form" method="get" action="15_goreuda_result.html">
+      <!-- 작성자: 오현채 / 4주차 form: 왼쪽 질문과 오른쪽 제출 버튼을 같은 폼에 포함. -->
       <div class="select-layout">
-        <div class="select-layout">
-  <!-- 4주차: form, fieldset, legend, label, radio.
+        <!-- 4주차: form, fieldset, legend, label, radio.
        각 radio 그룹에서 하나씩 필수 선택.
        GET으로 값을 전달하지만 결과 페이지의 추천 내용을
        자동으로 변경하지는 않음. -->
-
-  <div class="select-primary">
-    <form class="select-form"
-          method="get"
-          action="15_goreuda_result.html">
-
-      <div class="select-panel-top">
-        <h2>선물 조건 선택</h2>
-        <p>각 항목을 하나씩 선택해주세요.</p>
-      </div>
-
-      <!-- 공통 CSS의 choice-row / choice-body / pill 구성 사용 -->
+        <div class="select-primary">
+          <div class="select-panel-top">
+            <h2>선물 조건 선택</h2>
+            <p>각 항목을 하나씩 선택해주세요.</p>
+          </div>
+          <!-- 공통 CSS의 choice-row / choice-body / pill 구성 사용 -->
           <div class="choice-panel">
             <div class="choice-row">
-              <div class="choice-head"><span class="choice-num">01</span>받는 사람</div>
+              <div class="choice-head">
+                <span class="choice-num">01</span>받는 사람</div>
               <fieldset class="choice-body">
                 <legend>받는 사람이 누구인가요?</legend>
                 <p class="select-question-desc">받는 사람의 연령/성별/관계 에 대해 알려주세요.</p>
                 <div class="pill-list">
                   <!-- 첫 번째 줄: 연령 -->
-                  <label class="pill"><input type="radio" name="age" value="teens" required>10대</label>
-                  <label class="pill"><input type="radio" name="age" value="twenties">20대</label>
-                  <label class="pill"><input type="radio" name="age" value="thirties">30대</label>
-                  <label class="pill"><input type="radio" name="age" value="forties">40대</label>
-                  <label class="pill"><input type="radio" name="age" value="fifty-plus">50대 이상</label>
+                  <label class="pill">
+                    <input type="radio" name="age" value="teens" required>10대</label>
+                  <label class="pill">
+                    <input type="radio" name="age" value="twenties">20대</label>
+                  <label class="pill">
+                    <input type="radio" name="age" value="thirties">30대</label>
+                  <label class="pill">
+                    <input type="radio" name="age" value="forties">40대</label>
+                  <label class="pill">
+                    <input type="radio" name="age" value="fifty-plus">50대 이상</label>
                 </div>
-                  <!-- 두 번째 줄: 성별 -->
+                <!-- 두 번째 줄: 성별 -->
                 <div class="pill-list">
-                  <label class="pill"><input type="radio" name="gender" value="female" required>여성</label>
-                  <label class="pill"><input type="radio" name="gender" value="male">남성</label>
-                  <label class="pill"><input type="radio" name="gender" value="any">상관없음</label>
+                  <label class="pill">
+                    <input type="radio" name="gender" value="female" required>여성</label>
+                  <label class="pill">
+                    <input type="radio" name="gender" value="male">남성</label>
+                  <label class="pill">
+                    <input type="radio" name="gender" value="any">상관없음</label>
                 </div>
-                  <!-- 세 번째 줄: 관계 -->
+                <!-- 세 번째 줄: 관계 -->
                 <div class="pill-list">
-                  <label class="pill"><input type="radio" name="relation" value="friend" required>친구</label>
-                  <label class="pill"><input type="radio" name="relation" value="lover">연인</label>
-                  <label class="pill"><input type="radio" name="relation" value="family">가족</label>
-                  <label class="pill"><input type="radio" name="relation" value="coworker">동료·지인</label>
+                  <label class="pill">
+                    <input type="radio" name="relation" value="friend" required>친구</label>
+                  <label class="pill">
+                    <input type="radio" name="relation" value="lover">연인</label>
+                  <label class="pill">
+                    <input type="radio" name="relation" value="family">가족</label>
+                  <label class="pill">
+                    <input type="radio" name="relation" value="coworker">동료·지인</label>
                 </div>
               </fieldset>
             </div>
             <div class="choice-row">
-              <div class="choice-head"><span class="choice-num">02</span>선물하는 날</div>
+              <div class="choice-head">
+                <span class="choice-num">02</span>선물하는 날</div>
               <fieldset class="choice-body">
                 <legend>어떤 마음을 전하고 싶나요?</legend>
                 <p class="select-question-desc">선물을 준비하는 상황 하나를 선택해주세요.</p>
                 <div class="pill-list">
-                  <label class="pill"><input type="radio" name="occasion" value="birthday" required>생일</label>
-                  <label class="pill"><input type="radio" name="occasion" value="anniversary">기념일</label>
-                  <label class="pill"><input type="radio" name="occasion" value="housewarming">집들이</label>
-                  <label class="pill"><input type="radio" name="occasion" value="thanks">감사·응원</label>
-                  <label class="pill"><input type="radio" name="occasion" value="token">가벼운 선물</label>
+                  <label class="pill">
+                    <input type="radio" name="occasion" value="birthday" required>생일</label>
+                  <label class="pill">
+                    <input type="radio" name="occasion" value="anniversary">기념일</label>
+                  <label class="pill">
+                    <input type="radio" name="occasion" value="housewarming">집들이</label>
+                  <label class="pill">
+                    <input type="radio" name="occasion" value="thanks">감사·응원</label>
+                  <label class="pill">
+                    <input type="radio" name="occasion" value="token">가벼운 선물</label>
                 </div>
               </fieldset>
             </div>
             <div class="choice-row">
-              <div class="choice-head"><span class="choice-num">03</span>예산</div>
+              <div class="choice-head">
+                <span class="choice-num">03</span>예산</div>
               <fieldset class="choice-body">
                 <legend>예산은 어느 정도인가요?</legend>
                 <p class="select-question-desc">상품 한 개를 기준으로 생각해주세요.</p>
                 <div class="pill-list">
-                  <label class="pill"><input type="radio" name="budget" value="under-30000" required>3만원 미만</label>
-                  <label class="pill"><input type="radio" name="budget" value="30000-50000">3~5만원</label>
-                  <label class="pill"><input type="radio" name="budget" value="50000-100000">5~10만원</label>
-                  <label class="pill"><input type="radio" name="budget" value="over-100000">10만원 이상</label>
+                  <label class="pill">
+                    <input type="radio" name="budget" value="under-30000" required>3만원 미만</label>
+                  <label class="pill">
+                    <input type="radio" name="budget" value="30000-50000">3~5만원</label>
+                  <label class="pill">
+                    <input type="radio" name="budget" value="50000-100000">5~10만원</label>
+                  <label class="pill">
+                    <input type="radio" name="budget" value="over-100000">10만원 이상</label>
                 </div>
               </fieldset>
             </div>
             <div class="choice-row">
-              <div class="choice-head"><span class="choice-num">04</span>취향</div>
+              <div class="choice-head">
+                <span class="choice-num">04</span>취향</div>
               <fieldset class="choice-body">
                 <legend>어떤 취향의 선물이 잘 어울릴까요?</legend>
                 <p class="select-question-desc">가장 잘 어울리는 성향 하나를 선택해주세요.</p>
                 <div class="pill-list">
-                  <label class="pill"><input type="radio" name="taste" value="practical" required>실용적인</label>
-                  <label class="pill"><input type="radio" name="taste" value="emotional">감성적인</label>
-                  <label class="pill"><input type="radio" name="taste" value="trendy">트렌디한</label>
-                  <label class="pill"><input type="radio" name="taste" value="elegant">격식있는</label>
-                  <label class="pill"><input type="radio" name="taste" value="any">잘 모르겠어요</label>
+                  <label class="pill">
+                    <input type="radio" name="taste" value="practical" required>실용적인</label>
+                  <label class="pill">
+                    <input type="radio" name="taste" value="emotional">감성적인</label>
+                  <label class="pill">
+                    <input type="radio" name="taste" value="trendy">트렌디한</label>
+                  <label class="pill">
+                    <input type="radio" name="taste" value="elegant">격식있는</label>
+                  <label class="pill">
+                    <input type="radio" name="taste" value="any">잘 모르겠어요</label>
                 </div>
               </fieldset>
             </div>
-            
           </div>
           <div class="select-form-bottom">
             <p class="select-form-note">선택을 마쳤다면 어울리는 선물 종류를 확인해보세요.</p>
             <div class="select-button-row">
               <button type="reset" class="btn btn-outline">다시 고르기</button>
-              <button type="submit" class="btn btn-primary">선물 추천 받기<span class="arrow">→</span></button>
             </div>
           </div>
-        </form>
         </div>
-
         <!-- 정적인 가이드: 선택값과 관계없이 추천 서비스의 기준을 설명함. -->
         <aside class="select-side">
           <section class="select-guide">
@@ -170,23 +194,35 @@
             <ol class="select-guide-list">
               <li>
                 <span class="select-guide-number">01</span>
-                <div><h3>많이 선택하는 종류</h3><p>비슷한 상황의 선물 순위</p></div>
+                <div>
+                  <h3>많이 선택하는 종류</h3>
+                  <p>비슷한 상황의 선물 순위</p>
+                </div>
               </li>
               <li>
                 <span class="select-guide-number">02</span>
-                <div><h3>주는 마음과 받는 취향</h3><p>선물 선택의 실제 차이</p></div>
+                <div>
+                  <h3>주는 마음과 받는 취향</h3>
+                  <p>선물 선택의 실제 차이</p>
+                </div>
               </li>
               <li>
                 <span class="select-guide-number">03</span>
-                <div><h3>피하면 좋은 선물</h3><p>이미 많이 받은 품목</p></div>
+                <div>
+                  <h3>피하면 좋은 선물</h3>
+                  <p>이미 많이 받은 품목</p>
+                </div>
               </li>
             </ol>
             <p class="select-guide-note">조건을 선택하고 ‘선물 추천 받기’를 눌러 어울리는 선물 종류를 확인해보세요.</p>
+            <button type="submit" class="btn btn-primary select-guide-submit">선물 추천 받기<span class="arrow">→</span>
+            </button>
           </section>
         </aside>
       </div>
-    </div>
-  </main>
+    </form>
+  </div>
+</main>
 
   <!-- ================= 푸터 (모든 페이지 공통) ================= -->
   <footer class="site-footer">
