@@ -6,7 +6,7 @@
 <title>록시땅 시어 버터 핸드크림 | 고르다, 바르고 고른 선택</title>
 
 <!-- 팀원 정보 -->
-<meta name="author" content="담당자: 15팀 이예경, 이지현">
+<meta name="author" content="담당자: 15팀 이지현, 이예경,">
 <meta name="description" content="고르다(Goreuda): 받는 사람과 상황에 맞는 선물 인사이트와 추천 상품을 보여주고 판매처로 연결해주는 선물 고민 도우미">
 <link rel="stylesheet" href="15_goreuda_common.css">
 <style>
@@ -82,12 +82,6 @@ ul { list-style: none; }
 /*판매처 가격 비교 및 찜하기*/
 .btn-compare { flex: 1; background: #25231F; display: flex; justify-content: space-between; }
 .btn-wish { width: 120px; border: none; background: #C8603C; text-align: center; font-family: "Noto Sans KR", sans-serif; }
-
-/* 찜하기 버튼: 누르면(:focus) "찜 완료"로 바뀌고 배경이 진해짐 (카드 하트와 같은 방식) */
-.btn-wish .wish-on { display: none; }
-.btn-wish:focus { background: #25231F; }
-.btn-wish:focus .wish-on { display: inline; }
-.btn-wish:focus .wish-off { display: none; }
 .btn-compare:hover, .btn-wish:hover { opacity: 0.85; }
 
 /* 비교 기준 가격 안내 등등 판매처 버튼 아래 */
@@ -130,6 +124,12 @@ ul { list-style: none; }
 
 /* 헤더, 푸터와 본문 사이 여백 */
 .page-body { padding: 40px 0 40px; }
+
+/* 찜하기 버튼: 체크박스를 누르면(:checked) "찜 완료"로 바뀌고, 다시 누르면 취소 */
+.btn-wish .wish-on { display: none; }
+.wish-check:checked + .btn-wish { background: #25231F; }
+.wish-check:checked + .btn-wish .wish-on { display: inline; }
+.wish-check:checked + .btn-wish .wish-off { display: none; }
 </style>
 </head>
 
@@ -207,7 +207,7 @@ ul { list-style: none; }
       <a class="btn-compare" href="15_goreuda_compare.html" title="판매처 가격 비교 이동">
         <span>판매처 가격 비교</span> <span>&rarr;</span>
       </a>
-      <button type="button" class="btn-wish" title="록시땅 시어 버터 핸드크림 찜하기"><span class="wish-off">♡ 찜하기</span><span class="wish-on">♥ 찜 완료</span></button>
+      <input type="checkbox" id="wish-detail" class="wish-check"><label for="wish-detail" class="btn-wish" title="록시땅 시어 버터 핸드크림 찜하기"><span class="wish-off">♡ 찜하기</span><span class="wish-on">♥ 찜 완료</span></label>
     </div>
 
     <table class="info-table">

@@ -5,12 +5,6 @@
    6주차: 박스 모델, flex, position.
    선택 표시와 알약형 버튼은 최신 공통 CSS의 기본 동작을 사용함. */
 
-.select-page .select-breadcrumb {
-  padding-top: 26px;
-  color: #716C63;
-  font-size: 12px;
-}
-.select-page .select-breadcrumb a { color: #716C63; }
 .select-page .select-intro { padding: 44px 0 36px; }
 .select-page .section-title { font-size: 40px; line-height: 1.35; }
 .select-page .section-title em { color: #B05434; font-style: normal; }

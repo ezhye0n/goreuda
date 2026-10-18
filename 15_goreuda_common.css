@@ -1,5 +1,6 @@
 /* =========================================================
-   15팀 고르다 공통 CSS (15_goreuda_common.css) - 담당: 이지현
+   15팀 고르다 공통 CSS (15_goreuda_common.css) 
+   - 담당: 이지현
    - 수업에서 배운 범위(5~6주차)의 CSS만 사용
    - 모든 HTML의 <head>에 외부 스타일시트로 연결
      <link rel="stylesheet" href="15_goreuda_common.css">
@@ -373,13 +374,20 @@ img { display: block; max-width: 100%; }
 .card-rating svg { vertical-align: middle; margin-right: 2px; }
 .card-price small { margin-left: 4px; font-size: 12px; font-weight: 400; color: #716C63; }
 
-/* 카드 찜 버튼: 누르면(:focus) 빈 하트 대신 색칠된 하트가 보임
-   - JavaScript 없이 :focus로 구현해서, 다른 곳을 누르면 원래대로 돌아감
-   - 찜한 상태가 계속 유지되는 화면은 찜 페이지(wishlist)에서 보여줌 */
+/* 카드 찜 버튼 (체크박스 + label)
+   - 숨긴 체크박스를 label(하트)로 누르면 :checked 상태가 되어 색칠된 하트가 보임
+   - 다시 누르면 취소, 다른 곳을 눌러도 찜한 상태가 유지됨 (새로고침하면 초기화)
+   - 하트는 항상 오른쪽에 보이고, 가격 비교 버튼은 마우스를 올렸을 때 왼쪽에 보임 */
+.wish-check { position: absolute; left: -9999px; }
+.card-actions { display: flex; flex-direction: row-reverse; }
+.card-actions a.icon-btn { display: none; }
+.product-card:hover .card-actions a.icon-btn,
+.card-actions.wish-on a.icon-btn { display: inline-block; }   /* 찜 페이지는 항상 보이게 */
 .wish-btn { border: none; }
 .wish-btn .heart-on { display: none; }
-.wish-btn:focus .heart-on { display: block; }
-.wish-btn:focus .heart-off { display: none; }
+.wish-check:checked + .wish-btn .heart-on { display: block; }
+.wish-check:checked + .wish-btn .heart-off { display: none; }
+.wish-check:focus + .wish-btn { border-color: #25231F; }  /* 키보드(Tab)로 이동했을 때 위치 표시 */
 
 /* ---------- 9. 조건 선택 (알약형 선택 버튼) ----------
    - 질문 한 줄: 왼쪽 번호+제목 / 오른쪽 질문+선택지 (flex)
