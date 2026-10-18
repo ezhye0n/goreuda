@@ -1,3 +1,9 @@
+/* =========================================================
+   15팀 고르다 - 상품 탐색 전용 CSS (15_goreuda_explore.css)
+   팀원: 이지현(팀장), 오현채, 우은민, 이예경
+   담당자: 우은민
+   ========================================================= */
+
 .explore-section {
   background-color: #F8F6F0; /* 디자인상의 크림색 배경 */
   padding: 60px 0;
@@ -66,7 +72,6 @@
   border: 1px solid transparent;
   font-size: 11px;
   color: #25231F;
-  cursor: pointer;
 }
 
 /* 마우스 올렸을 때 외곽선 표시 */

@@ -43,7 +43,7 @@ images/                    이미지 (15_파일명.jpg, 30개 이하)
 
 1. `15_goreuda_template.html`을 복사해서 내 페이지 파일명으로 저장
 2. 헤더, 푸터는 그대로 두고 `<main>` 안만 내 내용으로 바꾸기
-3. `<meta name="page-owner">`에 내 이름 쓰기
+3. `<meta name="author" content="담당자: 15팀 내 이름">`으로 바꾸기
 4. 템플릿 안 예시(상품 카드, 선택 카드, 탭, GIFT GAP, 표) 중 필요한 것만 복사
 5. 내 페이지 전용 CSS는 `15_goreuda_페이지명.css`로 따로 만들어서 연결
 

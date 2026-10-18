@@ -1,11 +1,11 @@
 /* =========================================================
-   15팀 고르다 공통 CSS (15_goreuda_common.css)
+   15팀 고르다 공통 CSS (15_goreuda_common.css) - 담당: 이지현
    - 수업에서 배운 범위(5~6주차)의 CSS만 사용
    - 모든 HTML의 <head>에 외부 스타일시트로 연결
      <link rel="stylesheet" href="15_goreuda_common.css">
    - 수정이 필요하면 팀장(이지현)에게 요청
 
-   [색상표] 우은민님 디자인 가이드 기준
+   [색상표] 
    #C8603C  메인 포인트 (아이콘 hover, 강조 글자, 장식)
    #B05434  메인 버튼 배경 (흰 글자 대비를 위해 한 단계 진하게)
    #EAD8C8  연한 포인트 배경 (태그)
@@ -372,6 +372,14 @@ img { display: block; max-width: 100%; }
 .card-rating { font-size: 13px; color: #716C63; }
 .card-rating svg { vertical-align: middle; margin-right: 2px; }
 .card-price small { margin-left: 4px; font-size: 12px; font-weight: 400; color: #716C63; }
+
+/* 카드 찜 버튼: 누르면(:focus) 빈 하트 대신 색칠된 하트가 보임
+   - JavaScript 없이 :focus로 구현해서, 다른 곳을 누르면 원래대로 돌아감
+   - 찜한 상태가 계속 유지되는 화면은 찜 페이지(wishlist)에서 보여줌 */
+.wish-btn { border: none; }
+.wish-btn .heart-on { display: none; }
+.wish-btn:focus .heart-on { display: block; }
+.wish-btn:focus .heart-off { display: none; }
 
 /* ---------- 9. 조건 선택 (알약형 선택 버튼) ----------
    - 질문 한 줄: 왼쪽 번호+제목 / 오른쪽 질문+선택지 (flex)
