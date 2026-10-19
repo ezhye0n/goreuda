@@ -76,7 +76,7 @@
 }
 
 
-/* 💡 [수정] Grid -> Flex 전환 (메인 리스트 + 우측 aside 배치) */
+
 .insight-layout {
   display: flex;
   justify-content: space-between;
@@ -84,17 +84,17 @@
   margin: 0 auto;
   max-width: 1240px;
   width: 100%;
-  flex-wrap: wrap; /* 창 폭이 극단적으로 좁아질 때 모바일 세로 배치 허용 */
+  flex-wrap: wrap; 
 }
 
-/* 💡 [수정] 메인 리스트 영역이 남은 가로 폭을 다 채우도록 지정 */
+
 .insight-list {
   border-top: 1px solid #25231f;
   flex: 1 1 300px; /* 최소 500px 확보 후 남은 공간 꽉 채우기 */
   min-width: 0; /* 내부 텍스트 때문에 레이아웃이 멈추는 것 방지 */
 }
 
-/* 💡 [수정] Grid -> Flex 전환 (순위 숫자 + 오른쪽 내용 배치) */
+
 .insight-row {
   border-bottom: 1px solid #dcd6cb;
   display: flex;
@@ -107,7 +107,7 @@
   width: 100%;               /* article 영역 전체 채우기 */
 }
 
-/* 💡 [수정] 순위 숫자의 고정 너비 지정 */
+/*  순위 숫자의 고정 너비 지정 */
 .insight-rank {
   color: #c8603c;
   font-family: "DM Serif Display", serif;
@@ -116,7 +116,7 @@
   flex-shrink: 0; /* 숫자가 찌그러지지 않도록 고정 */
 }
 
-/* 💡 [수정] 오른쪽 카피 내용 영역이 남은 공간 꽉 채우기 */
+/*  오른쪽 카피 내용 영역이 남은 공간 꽉 채우기 */
 .insight-copy {
   flex: 1;
   min-width: 0;
@@ -163,14 +163,14 @@
 
 .explore-link .arrow {
   opacity: 0;
-  transform: translateY(10px);  /* 💡 아래로 10px 내려두기 (양수 값) */
+  transform: translateY(10px);  
   transition: all 0.3s ease;
 }
 
-/* 2. 호버 상태: 제자리(0)로 올라오면서 보이기 */
+
 .insight-row:hover .explore-link .arrow {
   opacity: 1;
-  transform: translateY(0);     /* 💡 제자리로 뿅 올라옴 */
+  transform: translateY(0);     
 }
 
 .insight-row:hover .explore-link small {
@@ -192,14 +192,14 @@
   font-size: 12px;
 }
 
-/* 💡 [수정] 우측 aside 박스 너비 고정 및 flex 대응 */
+/* 우측 aside 박스 너비 고정 및 flex 대응 */
 .insight-tip {
   align-self: flex-start;
   background: #fffdf9;
   padding: 28px 26px 25px;
   position: relative;
   
-  /* 💡 핵심: 280px 이상 공간이 있으면 옆에 붙고, 자리가 없으면 아래로 떨어지며 늘어남 */
+  /* 280px 이상 공간이 있으면 옆에 붙고 자리가 없으면 아래로 떨어지며 늘어남 */
   flex: 1 1 280px; 
   min-width: 280px;
 }
