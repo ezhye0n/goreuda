@@ -5,54 +5,6 @@
    ========================================================= */
 
 /* 좌우 여백 max(24px, calc((100% - 1152px) / 2)): 화면 너비와 상관없이 헤더, 제목(.container)과 같은 왼쪽 선에 맞춤 */
-.results-summary {
-  display: flex;
-  flex-direction: column;   /* 조건 칩 위, 조건 다시 보기 아래로 세로 배치 */
-  align-items: flex-end;    /* 둘 다 오른쪽 끝에 정렬 */
-  gap: 12px;
-  padding: 0 max(24px, calc((100% - 1152px) / 2)) 8px;
-  background-color: transparent;   /* 검은 띠를 없애고 페이지 배경 그대로 */
-  color: #25231F;
-}
-
-/* 고른 조건 배지: 연한 살구색 배경 + 진한 테라코타 글자로 부드럽게 강조 */
-.results-summary .chip-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;   /* 줄바꿈돼도 오른쪽 정렬 유지 */
-  gap: 8px;
-}
-
-.results-summary .badge {
-  background-color: #F1DCD0;   /* 연한 살구색 배경 */
-  border: 1px solid #E8C4B0;
-  color: #96462B;              /* 글자는 진한 테라코타로 읽기 쉽게 */
-  padding: 6px 14px;
-  font-weight: 500;
-}
-
-/* 칩 아래 오른쪽 링크 및 화살표 모션 */
-.results-summary a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  color: #B05434;
-  text-decoration: none;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.results-summary a .arrow {
-  stroke: #B05434;   /* 흰 화살표를 테라코타로 */
-  transition: transform 0.2s ease;
-}
-.results-summary a:hover { color: #96462B; }
-
-.results-summary a:hover .arrow {
-  transform: translateX(4px); /* left 속성 대신 GPU 가속을 활용하는 transform 사용 */
-}
 .insight-intro {
   margin-bottom: 42px;
 }
@@ -78,7 +30,7 @@
 
 .insight-section {
   background: #f6f3ed;
-  padding: 94px max(24px, calc((100% - 1152px) / 2)) 72px;
+  padding: 56px max(24px, calc((100% - 1152px) / 2)) 72px;   /* 제목 영역과 자연스럽게 이어지도록 위 여백을 줄임 */
 }
 
 .report-label {

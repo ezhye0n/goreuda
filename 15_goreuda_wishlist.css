@@ -39,3 +39,21 @@
 .compare-table tbody tr:hover td.pick { background-color: #EAD8C8; }
 
 .wish-more { margin-top: 48px; text-align: center; }
+
+/* 추천 조건: 연한 살구색 작은 알약 (추천 결과 페이지의 조건 색과 통일) */
+.cond-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: -26px 0 36px;   /* 설명 문장 바로 아래에 붙이고, 상품 카드와는 띄움 */
+}
+.cond-list li {
+  padding: 3px 11px;
+  border: 1px solid #E8C4B0;
+  border-radius: 999px;        /* 알약 모양 */
+  background-color: #F1DCD0;   /* 연한 살구색 */
+  color: #96462B;              /* 진한 테라코타 글자 */
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.6;
+}
