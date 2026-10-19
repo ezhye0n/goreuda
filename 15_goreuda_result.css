@@ -251,6 +251,7 @@
   max-width: 1240px;
 }
 
+
 .selection-section {
   background:  #fffdf9;
   padding: 65px max(24px, calc((100% - 1152px) / 2)) 72px;
