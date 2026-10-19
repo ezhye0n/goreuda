@@ -53,18 +53,20 @@
   flex-direction: column;
   min-height: 600px;
   padding: 32px 28px;
-  background-color: #25231F;
-  color: #FFFDF9;
+  /* 밝은 아이보리에서 아래로 갈수록 연한 살구색이 되는 그라데이션: 왼쪽 선택 상자와 같은 밝은 톤으로 통일 */
+  background: linear-gradient(180deg, #FFFDF9 0%, #F6E9E0 100%);
+  border: 1px solid #DCD6CB;
+  color: #25231F;
 }
-.select-page .select-guide-label { display: block; margin-bottom: 22px; color: #EAD8C8; font-size: 11px; letter-spacing: 2px; }
+.select-page .select-guide-label { display: block; margin-bottom: 22px; color: #B05434; font-size: 12px; font-weight: 700; letter-spacing: 2px; }
 .select-page .select-guide h2 { margin-bottom: 28px; font-size: 24px; line-height: 1.5; }
-.select-page .select-guide-list { padding: 24px 0; border-top: 1px solid #716C63; border-bottom: 1px solid #716C63; }
+.select-page .select-guide-list { padding: 24px 0; border-top: 1px solid #DCD6CB; border-bottom: 1px solid #DCD6CB; }
 .select-page .select-guide-list li { display: flex; align-items: center; margin-bottom: 22px; }
 .select-page .select-guide-list li:last-child { margin-bottom: 0; }
 .select-page .select-guide-number { width: 34px; color: #C8603C; font-family: "DM Serif Display", serif; font-size: 13px; }
 .select-page .select-guide-list h3 { margin-bottom: 3px; font-size: 14px; }
-.select-page .select-guide-list p { color: #AAA69E; font-size: 12px; }
-.select-page .select-guide-note { margin-top: 24px; color: #EAD8C8; font-size: 13px; }
+.select-page .select-guide-list p { color: #716C63; font-size: 12px; }
+.select-page .select-guide-note { margin-top: 24px; color: #716C63; font-size: 13px; }
 
 .select-page .select-form-bottom { padding-top: 24px; }
 .select-page .select-form-note { margin-bottom: 18px; color: #716C63; font-size: 12px; }
@@ -76,9 +78,12 @@
   justify-content: space-between;
   width: 100%;
   margin-top: auto;
-  padding: 16px;
+  padding: 16px 22px;
   text-align: left;
 }
+/* 추천 받기 버튼: 평소 메인 색, 마우스를 올리면 짙은 갈색 (밝은 패널과 대비되어 hover가 잘 보임) */
+.select-page .select-guide-submit.btn-primary { background-color: #B05434; border-color: #B05434; color: #FFFDF9; }
+.select-page .select-guide-submit.btn-primary:hover { background-color: #25231F; border-color: #25231F; }
 .select-page .select-guide-note { margin-bottom: 30px; }
 
 /* 본문과 푸터 사이에 여백 추가 */

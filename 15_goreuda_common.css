@@ -609,3 +609,43 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 /* 라디오, 체크박스의 기본 파란색을 사이트 메인 색으로 바꿈 (accent-color) */
 input[type="radio"], input[type="checkbox"] { accent-color: #C8603C; }
+
+/* ---------- 14. 모서리 통일 + 선택 버튼 정리 ----------
+   모서리 규칙: 버튼, 칩, 배지, 선택 버튼은 알약 모양(999px)
+               카드, 사진, 안내 상자는 16px / 말풍선은 8px
+   상세, 가격 비교 페이지는 페이지 안 <style>이 나중에 적용되므로
+   앞에 body를 붙여 우선순위(구체성)를 높임 */
+
+/* 알약 모양: 버튼, 칩, 배지, 선택 버튼 */
+.btn, .chip, .badge, .pill, .filter-btn,
+body .btn-compare, body .btn-wish, body .btn-buy, body .badge-tag {
+  border-radius: 999px;
+}
+
+/* 16px: 카드, 사진, 상자 */
+.card-thumb, .choice-panel, .gap-compare, .insight-card, .pick-box,
+.select-guide, .insight-tip, .avoid-box,
+.report-page .occasion-card, .report-page .article-callout,
+body .main-img img, body .review-card, body .price-guide,
+body .product-summary-card, body .price-table-card {
+  border-radius: 16px;
+  overflow: hidden;
+}
+body .thumbs img, .compare-table, .table { border-radius: 12px; }
+.tip { border-radius: 8px; }
+.search-box input { border-radius: 0; }
+
+/* 선택 버튼(조건 선택): 라디오 동그라미는 숨기고, 버튼 색으로만 선택 상태 표시
+   opacity: 0과 position: absolute로 화면에서만 숨겨서 키보드(Tab, 방향키) 선택은 그대로 가능 */
+.pill { position: relative; padding: 8px 18px; }
+.pill input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+}
+.pill:has(input:focus-visible) {
+  outline: 2px solid #B05434;
+  outline-offset: 3px;
+}
