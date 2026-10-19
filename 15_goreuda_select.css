@@ -62,7 +62,8 @@
   background: linear-gradient(145deg, #332B26 0%, #25231F 100%);
   backdrop-filter: none;
   border: 1px solid #3E352E;
-  box-shadow: none;
+  /* 그림자 두 겹: 넓고 옅은 그림자(떠 있는 느낌) + 가깝고 진한 그림자(바닥과의 경계) */
+  box-shadow: 0 24px 56px rgba(37, 35, 31, 0.22), 0 6px 16px rgba(37, 35, 31, 0.12);
   color: #FFFDF9;
 }
 .select-page .select-guide-label { display: block; margin-bottom: 22px; color: #DCA58A; font-size: 12px; font-weight: 700; letter-spacing: 2px; }
