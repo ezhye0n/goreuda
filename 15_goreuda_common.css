@@ -179,8 +179,8 @@ img { display: block; max-width: 100%; }
   padding: 5px 0;
   background-color: #25231F;
   color: #FFFDF9;
-  font-size: 10px;
-  font-weight: 300;
+  font-size: 12px;
+  font-weight: 400;
   text-align: center;
 }
 .icon-btn:hover .tip,
@@ -545,3 +545,67 @@ img { display: block; max-width: 100%; }
 }
 .to-top:hover { color: #C8603C; border-bottom-color: #C8603C; }
 .footer-note { margin-top: 28px; font-size: 12px; color: #AAA69E; }
+
+/* ---------- 13. 디테일 보강 (애플식 미니멀 + 세심한 디테일) ----------
+   수업 범위 밖 개념을 쓴 부분은 주석에 동작 원리를 함께 적음 */
+
+/* 고정 헤더: 반투명 배경 + 뒤 내용 흐림
+   rgba(): 마지막 값 0.85가 불투명도 / backdrop-filter: 헤더 뒤에 지나가는 내용을 흐리게 함 */
+.site-header {
+  background-color: rgba(246, 243, 237, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+/* transition: 색, 위치, 그림자가 바뀔 때 0.25초 동안 부드럽게 변하게 함 */
+a, .btn, .chip, .pill, .icon-btn, .category-icon, .filter-btn,
+.card-thumb, .card-thumb img, .card-name, .main-nav a {
+  transition: all 0.25s ease;
+}
+
+/* 메인 배너: 위는 밝은 아이보리, 아래로 갈수록 페이지 배경색이 되는 세로 그라데이션
+   linear-gradient(방향, 시작색, 끝색) */
+.hero { background: linear-gradient(180deg, #FFFDF9 0%, #F6F3ED 100%); }
+
+/* GIFT GAP: 많이 주는 선물(베이지)에서 받고 싶은 선물(연한 주황)로 이어지는 가로 그라데이션
+   두 칸이 하나로 이어져 "주는 것 → 받고 싶은 것"의 흐름을 색으로 표현 */
+.gap-compare { background: linear-gradient(90deg, #F1EDE6 0%, #F1DCD0 100%); }
+.gap-col.give, .gap-col.want { background-color: transparent; }
+
+/* 푸터: 짙은 갈색이 아래로 갈수록 조금 더 어두워지는 그라데이션 */
+.site-footer { background: linear-gradient(180deg, #2B2824 0%, #1E1C19 100%); }
+
+/* 상품 카드: 마우스를 올리면 사진 영역이 은은한 그림자와 함께 살짝 떠오름
+   box-shadow: 가로 0, 세로 14px, 흐림 32px의 아주 옅은 그림자 / transform: translateY로 위로 4px 이동 */
+.product-card:hover .card-thumb {
+  box-shadow: 0 14px 32px rgba(37, 35, 31, 0.10);
+  transform: translateY(-4px);
+}
+
+/* 버튼: 마우스를 올리면 1px 떠오르며 옅은 그림자 */
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 35, 31, 0.12);
+}
+
+/* 조건 선택 버튼: 고른 항목은 버튼 전체가 채워져 선택 상태가 바로 보이게 함
+   :has(input:checked): 안에 체크된 라디오를 가진 label을 고름 */
+.pill:has(input:checked) {
+  background-color: #25231F;
+  border-color: #25231F;
+  color: #FFFDF9;
+}
+
+/* 키보드 접근성: Tab으로 이동했을 때만 현재 위치를 메인 색 테두리로 표시
+   :focus-visible은 마우스 클릭 때는 나타나지 않고 키보드 이동 때만 나타남 */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid #B05434;
+  outline-offset: 3px;
+}
+.wish-check:focus-visible + .wish-btn,
+.wish-check:focus-visible + .btn-wish {
+  outline: 2px solid #B05434;
+  outline-offset: 3px;
+}
+
+/* 라디오, 체크박스의 기본 파란색을 사이트 메인 색으로 바꿈 (accent-color) */
+input[type="radio"], input[type="checkbox"] { accent-color: #C8603C; }

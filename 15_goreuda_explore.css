@@ -5,7 +5,7 @@
    ========================================================= */
 
 .explore-section {
-  background-color: #F8F6F0; /* 디자인상의 크림색 배경 */
+  background-color: transparent; /* 페이지 배경(#F6F3ED)으로 통일 */
   padding: 60px 0;
   color: #25231F;
 }
@@ -70,7 +70,7 @@
   padding: 6px 16px;
   border-radius: 20px;
   border: 1px solid transparent;
-  font-size: 11px;
+  font-size: 12px;
   color: #25231F;
 }
 
