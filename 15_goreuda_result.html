@@ -46,6 +46,20 @@
   </header>
 
   <main id="main">
+
+  <!-- 조건 선택 페이지와 같은 위치, 같은 모양의 제목과 단계 표시 (2단계 진행 중) -->
+  <div class="container">
+    <section class="select-intro flow-intro">
+      <span class="eyebrow">Your gift insight</span>
+      <h1 class="section-title">20대 여성 친구에게 <em>어울리는 선물</em>을 찾았어요</h1>
+      <p class="select-intro-desc">고른 조건을 바탕으로 사람들이 많이 고른 선물 종류와 실제로 받고 싶은 선물을 먼저 보여드릴게요.<br>마음에 드는 종류를 정했다면 아래에서 관련 상품까지 이어서 확인해 보세요.</p>
+      <ol class="select-flow">
+        <li class="select-done"><a href="15_goreuda_select.html" title="조건 다시 선택하기"><span class="select-flow-number">1</span>조건 선택</a></li>
+        <li class="select-current"><span class="select-flow-number">2</span>선물 종류 추천</li>
+        <li><a href="#products" title="관련 상품으로 이동"><span class="select-flow-number">3</span>관련 상품 보기</a></li>
+      </ol>
+    </section>
+  </div>
   
   <!--추천 조건 요약-->
   <div class="results-summary">
@@ -74,16 +88,6 @@
         </div>
         <h2>20대 여성 친구의 생일에는<br><em>뷰티 · 바디 케어</em>를 가장 많이 원해요.</h2>
       </div>
-    </div>
-    <div class="insight-intro">
-      <ol class="select-flow">
-        <li>
-          <span class="select-flow-number">1</span>조건 선택</li>
-        <li class="select-current">
-          <span class="select-flow-number">2</span>선물 종류 추천</li>
-        <li>
-          <span class="select-flow-number">3</span>관련 상품 보기</li>
-      </ol>
     </div>
 
   <!-- 하위 메인 + 사이드 레이아웃 -->
@@ -215,7 +219,7 @@
         </article>
     </section>
 
-    <section class="selection-section">
+    <section class="selection-section" id="products">
       <div class="container">
         <span class="eyebrow">REFERENCE ITEMS</span>
         <h2 class="section-title small">추천 상품</h2>

@@ -667,3 +667,41 @@ html { scroll-behavior: smooth; }
   to   { opacity: 1; transform: none; }
 }
 main, .site-footer { animation: page-in 0.5s ease both; }
+
+/* ---------- 16. 선물 추천 단계 표시 (조건 선택 → 추천 결과 공통) ----------
+   두 페이지의 제목과 1·2·3 단계 표시를 같은 위치, 같은 모양으로 맞춰
+   페이지가 바뀌어도 한 흐름이 이어지는 것처럼 보이게 함 */
+.flow-intro { padding: 44px 0 36px; }
+.flow-intro .section-title { font-size: 40px; line-height: 1.35; }
+.flow-intro .section-title em { color: #B05434; font-style: normal; }
+.flow-intro .select-intro-desc { color: #716C63; }
+.flow-intro .select-flow { display: flex; align-items: center; margin-top: 28px; }
+.flow-intro .select-flow li { display: flex; align-items: center; margin-right: 0; color: #716C63; font-size: 13px; }
+.flow-intro .select-flow a { color: inherit; }
+.flow-intro .select-flow-number {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  margin-right: 7px;
+  border: 1px solid #DCD6CB;
+  border-radius: 50%;
+  line-height: 26px;
+  text-align: center;
+}
+/* 단계 사이 연결선: ::after로 선을 그려 1 → 2 → 3이 이어져 보이게 함 */
+.flow-intro .select-flow li:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  margin: 0 14px;
+  background-color: #DCD6CB;
+}
+/* 지나온 단계: 연한 테라코타 + 연결선도 테라코타 */
+.flow-intro .select-done { color: #B05434; }
+.flow-intro .select-done .select-flow-number { border-color: #B05434; background-color: #F1DCD0; color: #B05434; }
+.flow-intro .select-flow li.select-done::after { background-color: #B05434; }
+/* 현재 단계: 테라코타로 채움 */
+.flow-intro .select-current { color: #B05434; font-weight: 700; }
+.flow-intro .select-current .select-flow-number { border-color: #B05434; background-color: #B05434; color: #FFFDF9; }
+.flow-intro .select-flow a:hover { color: #96462B; }

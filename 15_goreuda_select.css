@@ -10,7 +10,7 @@
 .select-page .section-title em { color: #B05434; font-style: normal; }
 .select-page .select-intro-desc { color: #716C63; }
 .select-page .select-flow { display: flex; margin-top: 28px; }
-.select-page .select-flow li { margin-right: 28px; color: #716C63; font-size: 13px; }
+.select-page .select-flow li { color: #716C63; font-size: 13px; }
 .select-page .select-flow .select-current { color: #B05434; font-weight: 700; }
 .select-page .select-flow-number {
   display: inline-block;
