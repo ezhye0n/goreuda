@@ -590,8 +590,8 @@ a, .btn, .chip, .pill, .icon-btn, .category-icon, .filter-btn,
 /* 조건 선택 버튼: 고른 항목은 버튼 전체가 채워져 선택 상태가 바로 보이게 함
    :has(input:checked): 안에 체크된 라디오를 가진 label을 고름 */
 .pill:has(input:checked) {
-  background-color: #25231F;
-  border-color: #25231F;
+  background-color: #B05434;   /* 검정 대신 메인 버튼 색: FINDER GUIDE의 따뜻한 톤과 어울리게 */
+  border-color: #B05434;
   color: #FFFDF9;
 }
 
@@ -649,3 +649,20 @@ body .thumbs img, .compare-table, .table { border-radius: 12px; }
   outline: 2px solid #B05434;
   outline-offset: 3px;
 }
+
+/* ---------- 15. 부드러운 이동 ----------
+   1) 같은 페이지 안 이동(#reason, #top 등): scroll-behavior: smooth로 천천히 스크롤
+      scroll-margin-top: 고정 헤더(72px)에 제목이 가려지지 않도록 도착 위치를 위로 여유를 둠
+   2) 페이지 사이 이동: @view-transition으로 이전 화면이 서서히 사라지고 새 화면이 나타남
+      (지원하지 않는 브라우저에서도 아래 페이드인 애니메이션으로 부드럽게 보임)
+   3) @keyframes: 새 페이지 본문이 투명(opacity 0)하고 살짝 아래에 있다가 0.5초 동안 제자리로 나타남 */
+html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 96px; }
+
+@view-transition { navigation: auto; }
+
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+main, .site-footer { animation: page-in 0.5s ease both; }
