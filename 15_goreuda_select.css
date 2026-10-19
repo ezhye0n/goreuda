@@ -48,36 +48,56 @@
 
 /* 6주차 sticky: 공통 헤더 아래에 가이드를 유지함. */
 .select-page .select-side { position: sticky; top: 96px; width: 328px; min-width: 328px; margin-left: 24px; }
+
+/* 유리 패널 뒤에 비치는 색 번짐: 테라코타와 녹색 원 두 개를 흐리게(blur) 깔아 둠
+   ::before는 HTML을 추가하지 않고 CSS로 만드는 장식용 요소 */
+.select-page .select-side::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: -20px;
+  height: 75%;
+  background:
+    radial-gradient(circle at 25% 25%, rgba(200, 96, 60, 0.55) 0%, rgba(200, 96, 60, 0) 55%),
+    radial-gradient(circle at 80% 75%, rgba(77, 98, 86, 0.40) 0%, rgba(77, 98, 86, 0) 55%);
+  filter: blur(28px);
+  z-index: 0;
+}
+
+/* 유리(글래스) 패널
+   - rgba 반투명 흰색 배경 + backdrop-filter: blur로 뒤의 색 번짐이 뿌옇게 비침
+   - 흰 테두리와 위쪽 안쪽 하이라이트(inset 그림자)로 유리 가장자리의 반사광 표현
+   - 아래로 떨어지는 부드러운 그림자로 떠 있는 입체감 */
 .select-page .select-guide {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   min-height: 600px;
   padding: 32px 28px;
-  /* 따뜻한 짙은 갈색에서 오른쪽 아래로 갈수록 더 깊은 검정이 되는 대각선 그라데이션
-     순수 검정(#000) 대신 갈색이 섞인 검정을 써서 사이트의 아이보리, 테라코타와 어울리게 함 */
-  /* 두 겹의 그라데이션을 겹쳐 씀 (쉼표로 구분, 앞에 쓴 것이 위에 깔림)
-     1) radial-gradient: 오른쪽 위에서 테라코타 빛이 퍼지다가 투명해짐
-     2) linear-gradient: 왼쪽 위 밝은 갈색에서 오른쪽 아래 깊은 검정으로 */
-  background:
-    radial-gradient(circle at 90% 0%, rgba(200, 96, 60, 0.55) 0%, rgba(200, 96, 60, 0) 60%),
-    linear-gradient(165deg, #4E433A 0%, #25231F 50%, #110F0E 100%);
-  border: none;
-  color: #FFFDF9;
+  background: linear-gradient(160deg, rgba(255, 253, 249, 0.78) 0%, rgba(255, 253, 249, 0.45) 100%);
+  backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow:
+    0 24px 60px rgba(37, 35, 31, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  color: #25231F;
 }
-.select-page .select-guide-label { display: block; margin-bottom: 22px; color: #E3A486; font-size: 12px; font-weight: 700; letter-spacing: 2px; }
+.select-page .select-guide-label { display: block; margin-bottom: 22px; color: #B05434; font-size: 12px; font-weight: 700; letter-spacing: 2px; }
 .select-page .select-guide h2 { margin-bottom: 28px; font-size: 24px; line-height: 1.5; }
-.select-page .select-guide-list { padding: 24px 0; border-top: 1px solid rgba(255, 253, 249, 0.14); border-bottom: 1px solid rgba(255, 253, 249, 0.14); }
+.select-page .select-guide-list { padding: 24px 0; border-top: 1px solid rgba(37, 35, 31, 0.10); border-bottom: 1px solid rgba(37, 35, 31, 0.10); }
 .select-page .select-guide-list li { display: flex; align-items: center; margin-bottom: 22px; }
 .select-page .select-guide-list li:last-child { margin-bottom: 0; }
-.select-page .select-guide-number { width: 34px; color: #E3A486; font-family: "DM Serif Display", serif; font-size: 13px; }
+.select-page .select-guide-number { width: 34px; color: #B05434; font-family: "DM Serif Display", serif; font-size: 13px; }
 .select-page .select-guide-list h3 { margin-bottom: 3px; font-size: 14px; }
-.select-page .select-guide-list p { color: #B9B2A7; font-size: 12px; }
-.select-page .select-guide-note { margin-top: 24px; color: #CFC8BD; font-size: 13px; }
+.select-page .select-guide-list p { color: #716C63; font-size: 12px; }
+.select-page .select-guide-note { margin-top: 24px; color: #716C63; font-size: 13px; }
 
 .select-page .select-form-bottom { padding-top: 24px; }
 .select-page .select-form-note { margin-bottom: 18px; color: #716C63; font-size: 12px; }
 .select-page .select-button-row { display: flex; justify-content: space-between; }
-/* 제출 버튼은 검은 가이드 박스 하단에 배치. JavaScript 사용 없음. */
+/* 제출 버튼은 가이드 패널 하단에 배치. JavaScript 사용 없음. */
 .select-page .select-guide-submit {
   display: flex;
   align-items: center;
@@ -87,9 +107,9 @@
   padding: 16px 22px;
   text-align: left;
 }
-/* 추천 받기 버튼: 평소 메인 색, 마우스를 올리면 한 단계 밝은 테라코타 + 은은한 빛 번짐(같은 색 그림자). 어두운 패널 위에서 hover가 잘 보임 */
+/* 추천 받기 버튼: 평소 메인 색, 마우스를 올리면 한 단계 진한 테라코타 + 같은 색 그림자로 살짝 떠오름 */
 .select-page .select-guide-submit.btn-primary { background-color: #B05434; border-color: #B05434; color: #FFFDF9; }
-.select-page .select-guide-submit.btn-primary:hover { background-color: #C8603C; border-color: #C8603C; box-shadow: 0 8px 24px rgba(200, 96, 60, 0.45); }
+.select-page .select-guide-submit.btn-primary:hover { background-color: #96462B; border-color: #96462B; box-shadow: 0 10px 24px rgba(176, 84, 52, 0.35); }
 .select-page .select-guide-note { margin-bottom: 30px; }
 
 /* 본문과 푸터 사이에 여백 추가 */
