@@ -49,14 +49,14 @@
   
   <!--추천 조건 요약-->
   <div class="results-summary">
-    <p>
-      <span>20대</span>
-      <span>여성</span>
-      <span>친구</span>
-      <span>생일</span>
-      <span>3만원대</span>
-      <span>실용적인</span>
-    </p>
+    <div class="chip-list">
+      <span class="badge">20대</span>
+      <span class="badge">여성</span>
+      <span class="badge">친구</span>
+      <span class="badge">생일</span>
+      <span class="badge">3만원대</span>
+      <span class="badge">실용적인</span>
+    </div>
     <a href="15_goreuda_select.html">
       조건 다시 보기
       <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFDF9" stroke-width="1.8">
@@ -64,8 +64,18 @@
       </svg>
     </a>
   </div>
-
+    
   <section class="insight-section">
+    <div class="insight-intro">
+      <ol class="select-flow">
+        <li>
+          <span class="select-flow-number">1</span>조건 선택</li>
+        <li class="select-current">
+          <span class="select-flow-number">2</span>선물 종류 추천</li>
+        <li>
+          <span class="select-flow-number">3</span>관련 상품 보기</li>
+      </ol>
+    </div>
     <div class="insight-heading">
       <div class="section-heading">
         <div class="report-label">
@@ -82,42 +92,64 @@
      <div class="insight-list">
 
         <article class="insight-row">
-          <span class="insight-rank">01</span>
-          <div class="insight-copy">
-            <div>
-              <h3>뷰티 · 바디 케어</h3>
-              <strong>86%</strong>
+          <a href="15_goreuda_explore.html" class="insight-link">
+            <span class="insight-rank">01</span>
+            <div class="insight-copy">
+              <div>
+                <h3>뷰티 · 바디 케어</h3>
+                <strong>86%</strong>
+              </div>
+              <div class="insight-bar"><i style="width: 86%;"></i></div>
+              <p>매일 쓰고 소진할 수 있어 부담 없이 만족도가 높아요.</p>
+              <div class="explore-link">
+                <small>핸드크림 · 립 케어 · 바디 미스트</small> 
+                <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8603c" stroke-width="1.8">
+                  <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+              </div>
             </div>
-            <div class="insight-bar"><i style="width: 86%;"></i></div>
-            <p>매일 쓰고 소진할 수 있어 부담 없이 만족도가 높아요.</p>
-            <small>핸드크림 · 립 케어 · 바디 미스트</small>
-          </div>
+          </a>
         </article>
+        
     
         <article class="insight-row">
-          <span class="insight-rank">02</span>
-          <div class="insight-copy">
-            <div>
-              <h3>디저트 · 푸드</h3>
-              <strong>58%</strong>
+          <a href="15_goreuda_explore.html" class="insight-link">
+            <span class="insight-rank">02</span>
+            <div class="insight-copy">
+              <div>
+                <h3>디저트 · 푸드</h3>
+                <strong>58%</strong>
+              </div>
+              <div class="insight-bar"><i style="width: 58%;"></i></div>
+              <p>취향을 덜 타고 친구와 함께 즐기기 좋아요.</p>
+              <div class="explore-link">
+                <small>케이크 · 초콜릿 · 티 컬렉션</small> 
+                <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8603c" stroke-width="1.8">
+                  <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+              </div>
             </div>
-            <div class="insight-bar"><i style="width: 58%;"></i></div>
-            <p>취향을 덜 타고 친구와 함께 즐기기 좋아요.</p>
-            <small>케이크 · 초콜릿 · 티 컬렉션</small>
-          </div>
+          </a>
         </article>
         
         <article class="insight-row">
-          <span class="insight-rank">03</span>
-          <div class="insight-copy">
-            <div>
-              <h3>패션 잡화</h3>
-              <strong>42%</strong>
+          <a href="15_goreuda_explore.html" class="insight-link">
+            <span class="insight-rank">03</span>
+            <div class="insight-copy">
+              <div>
+                <h3>패션 잡화</h3>
+                <strong>42%</strong>
+              </div>
+              <div class="insight-bar"><i style="width: 42%;"></i></div>
+              <p>사이즈 부담이 적은 작은 소품이 안전해요.</p>
+              <div class="explore-link">
+                <small>파우치 · 키링 · 양말</small> 
+                <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8603c" stroke-width="1.8">
+                  <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+              </div>
             </div>
-            <div class="insight-bar"><i style="width: 42%;"></i></div>
-            <p>사이즈 부담이 적은 작은 소품이 안전해요.</p>
-            <small>파우치 · 키링 · 양말</small>
-          </div>
+          </a>
         </article>
     </div>
 
@@ -185,6 +217,16 @@
 
     <section class="selection-section">
       <div class="container">
+        <div class="insight-intro">
+          <ol class="select-flow">
+            <li>
+              <span class="select-flow-number">1</span>조건 선택</li>
+            <li>
+              <span class="select-flow-number">2</span>선물 종류 추천</li>
+            <li class="select-current">
+              <span class="select-flow-number">3</span>관련 상품 보기</li>
+          </ol>
+        </div>
         <span class="eyebrow">REFERENCE ITEMS</span>
         <h2 class="section-title small">추천 상품</h2>
         <p class="section-desc">종류를 정했다면, 이런 상품을 참고해 보세요.</p>

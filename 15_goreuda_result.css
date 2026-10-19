@@ -5,56 +5,76 @@
    ========================================================= */
 
 .results-summary {
-  align-items: center;
-  background: #25231f;
-  color: #fffdf9;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 20px 101px;
   gap: 20px;
+  padding: 20px 101px;
+  background-color: #25231f;
+  color: #fffdf9;
 }
 
-.results-summary p {
+/* 어두운 배경(.results-summary) 안에서 공통 badge/chip 색상 톤 맞춤 */
+.results-summary .chip-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
-  margin: 0;
-  flex: 0 1 auto;   
-  min-width: 0;
+  gap: 8px;
 }
 
-.results-summary p span {
+.results-summary .badge {
+  background-color: transparent;
   border: 1px solid #5c5851;
-  border-radius: 99px;
   color: #e7e3dc;
-  font-size: 12px;
-  padding: 7px 11px;
+  padding: 6px 12px;
+  font-weight: 300;
 }
 
+/* 우측 링크 및 화살표 모션 */
 .results-summary a {
-  align-items: center;
   display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 12px;
-  gap: 10px;
   color: #e7e3dc;
-  margin-left: auto;
+  text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .results-summary a .arrow {
-  position: relative;
-  left: 0;
+  transition: transform 0.2s ease;
 }
 
 .results-summary a:hover .arrow {
-  left: 6px;
+  transform: translateX(4px); /* left 속성 대신 GPU 가속을 활용하는 transform 사용 */
+}
+.insight-intro {
+  margin-bottom: 46px;
+}
+
+.select-flow { display: flex; margin-top: 28px; }
+.select-flow li { margin-right: 28px; color: #716C63; font-size: 13px; }
+.select-flow .select-current { color: #B05434; font-weight: 700; }
+.select-flow-number {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  margin-right: 7px;
+  border: 1px solid #DCD6CB;
+  border-radius: 50%;
+  line-height: 26px;
+  text-align: center;
+}
+.select-current .select-flow-number {
+  border-color: #B05434;
+  background-color: #B05434;
+  color: #FFFDF9;
 }
 
 .insight-section {
   background: #f6f3ed;
-  padding: 78px 101px 72px;
+  padding: 10px 101px 72px;
 }
 
 .report-label {
@@ -126,6 +146,11 @@
   padding: 20px 0;
 }
 
+.insight-link {
+  display: flex;             /* 기존 레이아웃 정렬 유지 */
+  width: 100%;               /* article 영역 전체 채우기 */
+}
+
 /* 💡 [수정] 순위 숫자의 고정 너비 지정 */
 .insight-rank {
   color: #c8603c;
@@ -149,6 +174,7 @@
 
 .insight-copy h3 {
   font-size: 18px;
+  font-weight: 500;
   margin: 0;
 }
 
@@ -170,6 +196,35 @@
   display: block;
   height: 100%;
 }
+
+.explore-link {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin-top: 7px;
+  justify-content: space-between;
+}
+
+.explore-link .arrow {
+  opacity: 0;
+  transform: translateY(10px);  /* 💡 아래로 10px 내려두기 (양수 값) */
+  transition: all 0.3s ease;
+}
+
+/* 2. 호버 상태: 제자리(0)로 올라오면서 보이기 */
+.insight-row:hover .explore-link .arrow {
+  opacity: 1;
+  transform: translateY(0);     /* 💡 제자리로 뿅 올라옴 */
+}
+
+.insight-row:hover .explore-link small {
+  color: #c8603c;
+}
+
+.insight-row:hover {
+  border-color: #25231f;
+}
+
 
 .insight-copy p {
   font-size: 12px;
@@ -243,7 +298,7 @@
 
 .selection-section {
   background:  #fffdf9;
-  padding: 78px 101px 72px;
+  padding: 65px 101px 72px;
 }
 
 .selection-more {
