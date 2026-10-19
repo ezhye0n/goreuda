@@ -122,11 +122,11 @@
 }
 
 /* ---------- 메인 버튼: 유리 효과 (선물 추천받기 안내 패널과 같은 방식) ----------
-   - 반투명 테라코타 그라데이션(rgba) + backdrop-filter로 뒤 배경이 살짝 비침
+   - 반투명 테라코타 단색(rgba) + backdrop-filter로 뒤 배경이 살짝 비침
    - 흰 테두리와 위쪽 안쪽 하이라이트(inset 그림자)로 유리 가장자리 반사광
    - 같은 색 그림자로 버튼이 떠 있는 입체감, hover 때 더 밝아지며 살짝 떠오름 */
 .hero .btn-glass {
-  background: linear-gradient(135deg, rgba(214, 120, 84, 0.92) 0%, rgba(176, 84, 52, 0.95) 100%);
+  background-color: rgba(190, 92, 58, 0.94);
   backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid rgba(255, 255, 255, 0.45);
   box-shadow:
@@ -135,7 +135,7 @@
   color: #FFFDF9;
 }
 .hero .btn-glass:hover {
-  background: linear-gradient(135deg, rgba(224, 136, 100, 0.95) 0%, rgba(190, 92, 58, 0.97) 100%);
+  background-color: rgba(206, 108, 72, 0.96);
   border-color: rgba(255, 255, 255, 0.6);
   box-shadow:
     0 14px 34px rgba(176, 84, 52, 0.38),
