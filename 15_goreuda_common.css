@@ -114,8 +114,9 @@ img { display: block; max-width: 100%; }
 }
 .logo-ko {
   margin-left: 6px;
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 500;
+  color: #716C63;
 }
 
 /* 메뉴: 마우스를 올리면 글자 색 + 밑줄 변화 (오설록 벤치마킹) */
@@ -464,7 +465,7 @@ img { display: block; max-width: 100%; }
 }
 .gap-col.give { background-color: #F1EDE6; }
 .gap-col.want { background-color: #F1DCD0; }
-.gap-col h3 { margin-bottom: 8px; font-size: 13px; color: #716C63; }
+.gap-col h3 { margin-bottom: 8px; margin-top: 3px; font-size: 13px; font-weight: 300; color: #716C63; }
 .gap-item { font-size: 32px; font-weight: 700; line-height: 1.3; }
 .gap-rate { font-family: "DM Serif Display", serif; font-size: 22px; }
 
@@ -473,7 +474,7 @@ img { display: block; max-width: 100%; }
   border: 1px solid #DCD6CB;
   background-color: #FFFDF9;
 }
-.insight-card h3 { margin-bottom: 4px; font-size: 20px; }
+.insight-card h3 { margin-bottom: 4px; font-size: 20px; font-weight: 500; }
 .insight-desc { margin-bottom: 20px; font-size: 14px; color: #716C63; }
 
 /* 막대그래프: 막대 길이는 HTML에서 style="width: 62%;"처럼 인라인 스타일로 지정
@@ -624,7 +625,7 @@ body .btn-compare, body .btn-wish, body .btn-buy, body .badge-tag {
 
 /* 16px: 카드, 사진, 상자 */
 .card-thumb, .choice-panel, .gap-compare, .insight-card, .pick-box,
-.select-guide, .insight-tip, .avoid-box,
+.select-guide, .insight-tip,
 .report-page .occasion-card, .report-page .article-callout,
 body .main-img img, body .review-card, body .price-guide,
 body .product-summary-card, body .price-table-card {
