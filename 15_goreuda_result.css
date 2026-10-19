@@ -50,7 +50,7 @@
   transform: translateX(4px); /* left 속성 대신 GPU 가속을 활용하는 transform 사용 */
 }
 .insight-intro {
-  margin-bottom: 46px;
+  margin-bottom: 42px;
 }
 
 .select-flow { display: flex; margin-top: 28px; }
@@ -74,7 +74,7 @@
 
 .insight-section {
   background: #f6f3ed;
-  padding: 10px 101px 72px;
+  padding: 94px 101px 72px;
 }
 
 .report-label {
@@ -105,7 +105,7 @@
   align-items: flex-end;
   display: flex;
   justify-content: space-between;
-  margin: 0 auto 42px;
+  margin: 0 auto 35px;
   max-width: 1240px;
 }
 
