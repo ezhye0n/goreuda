@@ -4,11 +4,8 @@
    담당자: 우은민, 이지현
    ========================================================= */
 
-/* ---------- 메인 배너 ---------- */
-.hero {
-  padding: 72px 0 96px;
-  border-bottom: 1px solid #DCD6CB;
-}
+/* 메인 배너: 왼쪽 글, 오른쪽 사진 3장 */
+.hero { padding: 64px 0 80px; }
 .hero-inner {
   display: flex;
   align-items: center;
@@ -17,87 +14,45 @@
   width: 50%;
   padding-right: 48px;
 }
-.hero-text h1 {
-  font-weight: 500;
-  line-height: 1.17;
-}
-
 .hero-title {
-  margin-bottom: 24px;
-  font-size: 64px;
+  margin-bottom: 16px;
+  font-size: 36px;
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.4;
 }
-.hero-accent { color: #C8603C; }
 .hero-desc {
-  margin-bottom: 36px;
-  color: #716C63;
-}
-.hero-points {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 28px;
-  font-size: 13px;
-  color: #716C63;
-}
-.hero-points li {
-  margin-right: 20px;
-  padding-left: 12px;
-  border-left: 2px solid #C8603C;
+  margin-bottom: 32px;
+  color: #666666;
 }
 
-/* 사진 3장: 왼쪽 큰 사진 1 + 오른쪽 작은 사진 2 */
 .hero-images {
   display: flex;
   width: 50%;
-  height: 520px;
-  overflow: hidden
+  height: 480px;
 }
-
+.hero-frame {
+  overflow: hidden;
+  border-radius: 8px;
+}
+.hero-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .hero-img-main {
   width: 58%;
   height: 100%;
-  margin-right: 14px;
-  object-fit: cover;
+  margin-right: 16px;
 }
-
 .hero-img-side {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 42%;
 }
+.hero-img-side .hero-frame { height: 232px; }
 
-.hero-img-side .hero-frame { height: 253px; }
-
-/* 사진 틀(.hero-frame)은 고정하고 안쪽 사진만 확대: 틀 밖으로 사진이 넘치지 않음
-   transition 0.8초 + cubic-bezier(천천히 시작해 부드럽게 멈추는 속도 곡선)로 자연스럽게 줌인 */
-.hero-frame {
-  overflow: hidden;
-  border-radius: 16px;
-}
-.hero-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-.hero-frame:hover img { transform: scale(1.05); }
-
-/* ---------- 상품 카드 ---------- */
-
-.card-content {
-  padding-left: 5px;
-}
-
-
-
-
-
-/* ---------- 상황별 카테고리 ---------- */
-.quick-tags { margin-top: 32px; }
-
-/* ---------- GIFT GAP 미리보기 ---------- */
+/* 많이 주는 선물 / 받고 싶은 선물 */
 .gap-preview-inner {
   display: flex;
   align-items: center;
@@ -106,39 +61,6 @@
   width: 45%;
   padding-right: 48px;
 }
-.gap-preview .gap-compare { width: 55%; }
-.gap-preview .gap-col { padding: 48px 32px; }
-
-/* ---------- 이번 주 셀렉션 ---------- */
-.selection { background-color: #FFFDF9; }
-.selection .card-thumb { background-color: #F6F3ED; }
-.selection-more {
-  margin-top: 24px;
-  text-align: center;
-}
-
-.section selection{
-  padding: 0;
-}
-
-/* ---------- 메인 버튼: 유리 효과 (선물 추천받기 안내 패널과 같은 방식) ----------
-   - 반투명 테라코타 단색(rgba) + backdrop-filter로 뒤 배경이 살짝 비침
-   - 흰 테두리와 위쪽 안쪽 하이라이트(inset 그림자)로 유리 가장자리 반사광
-   - 같은 색 그림자로 버튼이 떠 있는 입체감, hover 때 더 밝아지며 살짝 떠오름 */
-.hero .btn-glass {
-  background-color: rgba(190, 92, 58, 0.94);
-  backdrop-filter: blur(12px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  box-shadow:
-    0 10px 28px rgba(176, 84, 52, 0.30),
-    inset 0 1px 0 rgba(255, 255, 255, 0.45);
-  color: #FFFDF9;
-}
-.hero .btn-glass:hover {
-  background-color: rgba(206, 108, 72, 0.96);
-  border-color: rgba(255, 255, 255, 0.6);
-  box-shadow:
-    0 14px 34px rgba(176, 84, 52, 0.38),
-    inset 0 1px 0 rgba(255, 255, 255, 0.55);
-  transform: translateY(-2px);
-}
+.gap-preview-inner .gap-compare { width: 55%; }
+.gap-preview-inner .gap-col { background-color: #FFFFFF; }
+.gap-preview-inner .gap-col.want { background-color: #F8EEE9; }

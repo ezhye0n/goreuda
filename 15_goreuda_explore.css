@@ -4,102 +4,26 @@
    담당자: 우은민
    ========================================================= */
 
-.explore-section {
-  background-color: transparent; /* 페이지 배경(#F6F3ED)으로 통일 */
-  padding: 60px 0;
-  color: #25231F;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.section-desc {
-  font-size: 13px;
-  color: #716C63;
-  margin-bottom: 30px;
-}
-
+/* 필터 줄: 카테고리, 가격대를 가로로 배치 */
 .filter-bar {
   display: flex;
   align-items: center;
-  gap: 40px;
-  padding: 25px 0;
-  padding-right: 50px;
-  border-top: 1px solid #25231F;
-  border-bottom: 1px solid #E2DEC8;
   margin-bottom: 40px;
-  
-  flex-wrap: wrap;
-  width: 100%;
+  padding: 16px 0;
+  border-top: 1px solid #222222;
+  border-bottom: 1px solid #E5E5E5;
 }
-
 .filter-group {
   display: flex;
   align-items: center;
-  gap: 19px;
+  margin-right: 48px;
+  border: none;
 }
-
-.filter-group:last-child {
-  margin-left: auto; 
-}
-
 .filter-title {
-  font-weight: 700;
+  float: left;
+  margin-right: 16px;
   font-size: 14px;
-  white-space: nowrap;
+  font-weight: 700;
 }
-
-.filter-options {
-  display: flex;
-  gap: 4px;
-}
-
-/* 라디오 원형 본체 숨기기 */
-.filter-options input[type="radio"] {
-  display: none;
-}
-
-/* 알약 모양 라디오 버튼 스타일 */
-.filter-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px 16px;
-  border-radius: 20px;
-  border: 1px solid transparent;
-  font-size: 12px;
-  color: #25231F;
-}
-
-/* 마우스 올렸을 때 외곽선 표시 */
-.filter-btn:hover {
-  border-color: #AAA69E;
-
-}
-
-/* 체크된 라디오 버튼 스타일 (검은 알약) */
-.filter-options input[type="radio"]:checked + .filter-btn {
-  background-color: #25231F;
-  color: #FFFDF9;
-  border-color: #25231F;
-}
-
-/* 3. 상품 카드 그리드 */
-.product-grid {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-}
-
-.product-card {
-  width: calc(25% - 18px); /* 4열 배치 */
-}
-
-
-
+.filter-options { display: flex; }
 
