@@ -1,59 +1,27 @@
 /* =========================================================
-   선물 후보 비교 (찜) 전용 CSS (15_goreuda_wishlist.css) - 담당: 이지현
+   15팀 고르다 - 찜한 선물 비교 전용 CSS (15_goreuda_wishlist.css)
+   담당자: 이지현
    ========================================================= */
 
-/* 찜한 상품 3개: 한 줄에 3개 */
+/* 추천받을 때 고른 조건 */
+.cond-list { display: flex; margin: -24px 0 40px; }
+.cond-list li { margin-right: 8px; }
+
+/* 찜한 상품: 한 줄에 3개, 정사각형 사진 */
 .wish-list .product-card { width: 33.33%; }
-/* 정사각형 사진 칸: aspect-ratio 1 / 1은 가로와 세로 비율을 1:1로 고정 (너비에 맞춰 높이가 자동으로 같아짐) */
-.wish-list .card-thumb { height: auto; aspect-ratio: 1 / 1; }
+.wish-list .card-thumb { height: 360px; }
 
-/* 찜한 상품은 하트 버튼이 항상 보이게 */
-.wish-list .card-actions.wish-on { display: flex; }
-
-.pick-badge { background-color: #C8603C; color: #FFFDF9; }
-
-/* 비교표 영역 */
-.compare-section { padding-top: 0; }
-
+/* 고르다의 추천 안내 */
 .pick-box {
   margin-bottom: 32px;
-  padding: 24px 28px;
-  border-left: 4px solid #C8603C;
-  background-color: #F1DCD0;
+  padding: 24px;
+  border-radius: 8px;
+  background-color: #FFFFFF;
 }
-.pick-label {
-  margin-bottom: 4px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #B05434;
-}
-.pick-text { font-size: 16px; }
+.pick-box strong { color: #B4613F; }
 
-/* 비교표: 첫 칸(비교 항목)은 회색 글자, 추천 열(.pick)은 연한 메인 색 배경 */
-.compare-table { table-layout: fixed; }
-.compare-table th { width: 160px; }
-.compare-table thead th { font-size: 15px; color: #25231F; }
-.compare-table .pick { background-color: #F1DCD0; font-weight: 600; }
-.compare-table tbody tr:hover td { background-color: #F6F3ED; }
-.compare-table tbody tr:hover td.pick { background-color: #EAD8C8; }
-
-.wish-more { margin-top: 48px; text-align: center; }
-
-/* 추천 조건: 연한 살구색 작은 알약 (추천 결과 페이지의 조건 색과 통일) */
-.cond-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin: -26px 0 36px;   /* 설명 문장 바로 아래에 붙이고, 상품 카드와는 띄움 */
-}
-.cond-list li {
-  padding: 3px 11px;
-  border: 1px solid #E8C4B0;
-  border-radius: 999px;        /* 알약 모양 */
-  background-color: #F1DCD0;   /* 연한 살구색 */
-  color: #96462B;              /* 진한 테라코타 글자 */
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.6;
-}
+/* 비교표: 추천 열만 연한 포인트 배경 */
+.compare-table { table-layout: fixed; background-color: #FFFFFF; }
+.compare-table .col-head { width: 160px; }
+.compare-table tbody th { font-size: 14px; font-weight: 400; color: #666666; }
+.compare-table .pick { background-color: #F8EEE9; }
