@@ -1,0 +1,50 @@
+/* =========================================================
+   15팀 고르다 - 선물 찾기 전용 CSS (15_goreuda_finder.css)
+   담당자: 오현채
+   ========================================================= */
+
+.finder-intro { margin: -16px 0 40px; color: #666666; text-align: center; }
+
+/* 질문 상자 */
+.finder-box {
+  width: 720px;
+  margin: 0 auto;
+  padding: 48px 40px 32px;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  text-align: center;
+}
+.finder-step { margin-bottom: 8px; font-size: 14px; font-weight: 700; color: #6B3FA0; }
+.finder-question { margin-bottom: 32px; font-size: 28px; }
+
+/* 선택지: 크게 누를 수 있는 버튼 */
+.finder-options { display: flex; flex-wrap: wrap; justify-content: center; }
+.finder-option {
+  width: 192px;
+  height: 64px;
+  margin: 0 8px 16px;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  font-size: 16px;
+}
+.finder-option:hover { border-color: #6B3FA0; color: #6B3FA0; }
+.finder-option.on {
+  border-color: #6B3FA0;
+  background-color: #F4EFFA;
+  color: #6B3FA0;
+  font-weight: 700;
+}
+
+.finder-nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+.finder-nav .btn { margin: 0 4px; }
+
+/* 결과 */
+.finder-result { padding-top: 16px; }
+.result-head { margin-bottom: 32px; text-align: center; }
+.result-conditions { margin: 16px 0; }
+.result-conditions li { display: inline-block; margin: 0 4px; }

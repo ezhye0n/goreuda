@@ -1,147 +1,162 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>록시땅 시어 버터 핸드크림 | 고르다, 바르고 고른 선택</title>
-
-<!-- 팀원 정보 -->
-<meta name="author" content="담당자: 15팀 이지현, 이예경">
-<meta name="description" content="고르다(Goreuda): 받는 사람과 상황에 맞는 선물 인사이트와 추천 상품을 보여주고 판매처로 연결해주는 선물 고민 도우미">
-<link rel="stylesheet" href="15_goreuda_common.css">
-<link rel="stylesheet" href="15_goreuda_detail.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 팀원 정보 -->
+  <meta name="author" content="15팀 고르다: 이지현(팀장), 오현채, 우은민, 이예경 / 담당: 이예경, 이지현">
+  <meta name="description" content="고르다: 받는 사람과 상황에 맞는 선물을 고르고 보내는 선물하기 서비스">
+  <title>상품 상세 | 고르다</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+KR:wght@400;700&display=swap">
+  <link rel="stylesheet" href="15_goreuda_common.css">
+  <link rel="stylesheet" href="15_goreuda_detail.css">
 </head>
-
 <body id="top">
+
   <a href="#main" class="skip-link">본문 바로가기</a>
 
-
-  
   <!-- 헤더 (모든 페이지 공통) -->
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="15_goreuda_main.html" class="logo" title="고르다 홈으로">
-        <span class="logo-en">Goreuda</span><span class="logo-ko">고르다</span>
-      </a>
-
-      <nav class="main-nav">
+    <div class="container">
+      <div class="header-top">
+        <a href="15_goreuda_main.html" class="logo" title="고르다 홈으로">
+          <span class="logo-en">Goreuda</span><span class="logo-ko">고르다</span>
+        </a>
+        <form class="search-box" id="search-form">
+          <label for="search" class="hidden-text">상품 검색</label>
+          <input type="search" id="search" name="keyword" placeholder="선물할 상품을 검색해 보세요">
+          <button type="submit" aria-label="검색"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6B3FA0" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+        </form>
+        <div class="header-icons">
+          <a href="15_goreuda_wishlist.html" class="header-icon" title="위시">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+            <span class="count-badge" id="wish-count" style="display: none;">0</span>
+            <span class="hidden-text">위시</span>
+          </a>
+          <a href="15_goreuda_cart.html" class="header-icon" title="장바구니">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6"><path d="M3 4h2l2.4 11h11.2L21 8H7"/><circle cx="9" cy="19" r="1.5"/><circle cx="18" cy="19" r="1.5"/></svg>
+            <span class="count-badge" id="cart-count" style="display: none;">0</span>
+            <span class="hidden-text">장바구니</span>
+          </a>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="주요 메뉴">
         <ul>
-          <li><a href="15_goreuda_select.html">선물 추천받기</a></li>
-          <li><a href="15_goreuda_explore.html">상품 탐색</a></li>
-          <li><a href="15_goreuda_report.html">인사이트 리포트</a></li>
+          <li><a href="15_goreuda_finder.html" data-nav="finder">선물 찾기</a></li>
+          <li><a href="15_goreuda_explore.html" data-nav="explore">전체 상품</a></li>
+          <li><a href="15_goreuda_explore.html?sort=rank" data-nav="rank">랭킹</a></li>
+          <li><a href="15_goreuda_explore.html?sort=new" data-nav="new">신상품</a></li>
+          <li><a href="15_goreuda_friends.html" data-nav="friends">친구 기념일</a></li>
+          <li><a href="15_goreuda_giftbox.html" data-nav="giftbox">선물함</a></li>
         </ul>
       </nav>
-
-      <div class="header-actions">
-        <form class="search-box" method="get" action="15_goreuda_explore.html">
-          <label for="search" class="hidden-text">상품 검색</label>
-          <input type="search" id="search" name="keyword" placeholder="선물 검색">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
-        </form>
-        <a href="15_goreuda_wishlist.html" class="icon-btn" title="찜한 선물 3개">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-          <span class="count-badge">3</span>
-          <span class="tip">찜한 선물 3개</span>
-        </a>
-      </div>
     </div>
   </header>
 
-  <main id="main" class="detail-page">
-    <!-- 상품 정보: 왼쪽 사진, 오른쪽 정보 -->
-    <div class="container product">
+  <main id="main" class="container detail-page">
+    <!-- 상품 정보: JS가 주소의 id로 상품을 찾아 채움 -->
+    <div class="product" id="product">
       <div class="product-image">
-        <img src="images/15_gift01.jpg" alt="록시땅 시어 버터 핸드크림 30ml">
+        <img id="detail-img" src="" alt="">
       </div>
 
       <div class="product-info">
-        <p class="breadcrumb"><a href="15_goreuda_main.html">홈</a> › <a href="15_goreuda_explore.html">뷰티</a> › L'Occitane</p>
-        <p class="brand">L'Occitane</p>
-        <h1 class="page-title">록시땅 시어 버터<br>핸드크림 30ml</h1>
-        <p class="intro-desc">부담 없이 건네기 좋고 매일 사용할 수 있는 시어 버터 핸드크림</p>
-        <p class="rating"><span class="star">★</span> 4.8</p>
-        <p class="price">16,000원<small>최저가</small></p>
-
-        <p class="price-guide">고르다는 상품을 직접 판매하지 않아요. 판매처별 가격과 혜택을 비교한 뒤 원하는 곳에서 구매하세요.</p>
-
-        <div class="buttons">
-          <a class="btn btn-primary btn-compare" href="15_goreuda_compare.html">판매처 가격 비교</a>
-          <input type="checkbox" id="wish-detail" class="wish-check">
-          <label for="wish-detail" class="btn btn-outline btn-wish" title="록시땅 시어 버터 핸드크림 찜하기"><span class="wish-off">♡ 찜하기</span><span class="wish-on">♥ 찜 완료</span></label>
-        </div>
+        <p class="breadcrumb"><a href="15_goreuda_main.html">홈</a> &rsaquo; <a href="#" id="detail-category"></a></p>
+        <p class="detail-brand" id="detail-brand"></p>
+        <h1 class="detail-name" id="detail-name"></h1>
+        <p class="detail-desc" id="detail-desc"></p>
+        <p class="detail-price" id="detail-price"></p>
 
         <table class="info-table">
-          <tr><th>비교 기준</th><td>판매가 · 배송비 · 회원 혜택</td></tr>
-          <tr><th>구매 방법</th><td>선택한 판매처에서 직접 구매</td></tr>
-          <tr><th>가격 안내</th><td>판매처에 따라 달라질 수 있음</td></tr>
+          <caption class="hidden-text">상품 정보</caption>
+          <tr><th>배송</th><td>3만원 이상 무료배송</td></tr>
+          <tr><th>추천 대상</th><td id="detail-recipients"></td></tr>
+          <tr><th>추천 상황</th><td id="detail-occasions"></td></tr>
+          <tr>
+            <th><label for="detail-option">옵션</label></th>
+            <td><select id="detail-option" class="select-box"></select></td>
+          </tr>
+          <tr>
+            <th>수량</th>
+            <td>
+              <div class="qty">
+                <button type="button" id="detail-minus" aria-label="수량 빼기">-</button>
+                <span id="detail-qty">1</span>
+                <button type="button" id="detail-plus" aria-label="수량 더하기">+</button>
+              </div>
+            </td>
+          </tr>
         </table>
+
+        <p class="detail-total">총 상품 금액 <strong id="detail-total"></strong></p>
+
+        <div class="detail-buttons">
+          <button type="button" class="wish-big" id="detail-wish" aria-pressed="false" aria-label="찜하기"></button>
+          <button type="button" class="btn btn-point-line" id="detail-cart">장바구니 담기</button>
+          <button type="button" class="btn btn-primary" id="detail-gift">선물하기</button>
+        </div>
       </div>
     </div>
 
-    <!-- 페이지 안 이동 메뉴 -->
-    <nav class="tabs" aria-label="상품 정보 메뉴">
-      <div class="container tabs-inner">
-        <a href="#reason">추천 이유</a>
-        <a href="#reviews">받은 사람 후기</a>
-      </div>
-    </nav>
+    <div class="empty-box" id="detail-empty" style="display: none;">
+      <p>상품을 찾을 수 없어요.</p>
+      <a href="15_goreuda_explore.html" class="btn btn-outline">전체 상품 보기</a>
+    </div>
 
-    <!-- 추천 이유 -->
-    <section class="section" id="reason">
-      <div class="container">
-        <h2 class="section-title">이 선물을 추천하는 이유</h2>
-        <p class="section-desc">자연스럽게 다 쓸 수 있고, 평소보다 조금 좋은 브랜드를 선물받는 만족감이 있어 가까운 친구에게 추천하기 좋아요.</p>
-        <ul class="points">
-          <li>
-            <h3>20대 여성이 많이 선택</h3>
-            <p>친구 생일 선물로 많이 저장했어요.</p>
-          </li>
-          <li>
-            <h3>실용적인 소모품</h3>
-            <p>부담 없이 매일 사용할 수 있어요.</p>
-          </li>
-          <li>
-            <h3>높은 선물 만족도</h3>
-            <p>향과 휴대성에서 좋은 평가를 받았어요.</p>
-          </li>
-        </ul>
-      </div>
+    <!-- 상품 설명, 후기 -->
+    <section class="detail-section" id="detail-more">
+      <h2 class="detail-section-title">받아본 사람의 후기</h2>
+      <p class="review" id="detail-review"></p>
     </section>
 
-    <!-- 후기 -->
-    <section class="section section-gray" id="reviews">
-      <div class="container">
-        <h2 class="section-title">직접 받아본 사람들의 후기</h2>
-        <ul class="review-list">
-          <li class="review-card">
-            <p class="text">“평소에 사기엔 조금 고민되던 브랜드인데 선물로 받으니 좋았어요. 가방에 넣고 매일 쓰고 있어요.”</p>
-            <p class="who">20대 여성 · 친구에게 받은 생일 선물</p>
-          </li>
-          <li class="review-card">
-            <p class="text">“향이 강하지 않고 크기도 적당해서 부담이 없었어요. 포장도 깔끔해서 기분 좋게 받았어요.”</p>
-            <p class="who">20대 여성 · 동료에게 받은 감사 선물</p>
-          </li>
-          <li class="review-card">
-            <p class="text">“비슷한 제품이 있어도 금방 쓰는 제품이라 겹쳐도 괜찮았어요. 실용적인 선물이에요.”</p>
-            <p class="who">30대 여성 · 친구에게 받은 가벼운 선물</p>
-          </li>
-        </ul>
-      </div>
+    <!-- 비슷한 상품 -->
+    <section class="detail-section">
+      <h2 class="detail-section-title">이 상품과 비슷한 선물</h2>
+      <ul class="product-list" id="similar-list"></ul>
     </section>
   </main>
 
- <!-- 푸터 (모든 페이지 공통) -->
+  <!-- 푸터 (모든 페이지 공통) -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-inner">
-        <a href="15_goreuda_main.html" class="footer-brand">
-          <span class="logo-en">Goreuda</span><span class="logo-ko">바르고 고른 선택</span>
-        </a>
-        <a href="#top" class="to-top">맨 위로</a>
+        <div class="footer-brand-box">
+          <a href="15_goreuda_main.html" class="footer-brand">
+            <span class="logo-en">Goreuda</span><span class="logo-ko">고르다</span>
+          </a>
+          <p class="footer-desc">생일, 기념일, 건강, 응원, 축하 선물이 필요한 모든 순간<br>고르다를 통해 손쉽게 따뜻한 메시지와 정성이 담긴 선물하기</p>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-title">쇼핑</h2>
+          <ul>
+            <li><a href="15_goreuda_explore.html">전체 상품</a></li>
+            <li><a href="15_goreuda_explore.html?sort=rank">랭킹</a></li>
+            <li><a href="15_goreuda_explore.html?sort=new">신상품</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-title">선물</h2>
+          <ul>
+            <li><a href="15_goreuda_finder.html">선물 찾기</a></li>
+            <li><a href="15_goreuda_friends.html">친구 기념일</a></li>
+            <li><a href="15_goreuda_giftbox.html">선물함</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-title">마이</h2>
+          <ul>
+            <li><a href="15_goreuda_wishlist.html">위시</a></li>
+            <li><a href="15_goreuda_cart.html">장바구니</a></li>
+          </ul>
+        </div>
       </div>
-      <p class="footer-note">웹프로그래밍 15팀 고르다 | 상품 이미지 출처: 각 브랜드 공식몰 및 판매처</p>
     </div>
   </footer>
 
+  <!-- 맨 위로 버튼: 화면 오른쪽 아래에 고정 -->
+  <a href="#top" class="top-btn" aria-label="맨 위로"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
+
+  <script src="15_goreuda_common.js"></script>
+  <script src="15_goreuda_detail.js"></script>
 </body>
 </html>
