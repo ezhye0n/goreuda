@@ -439,8 +439,7 @@ button, input, select, textarea { font-family: "Noto Sans KR", sans-serif; font-
 .footer-inner { display: flex; }
 .footer-brand-box { flex-grow: 1; }
 .footer-brand .logo-en { font-size: 24px; }
-.footer-slogan { display: block; margin-top: 4px; font-size: 14px; color: #222222; }
-.footer-desc { margin-top: 16px; line-height: 1.8; }
+.footer-desc { margin-top: 16px; font-size: 12px; line-height: 1.8; }
 .footer-col { width: 160px; }
 .footer-title {
   margin-bottom: 16px;
