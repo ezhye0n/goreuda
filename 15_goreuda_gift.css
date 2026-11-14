@@ -1,0 +1,70 @@
+/* =========================================================
+   15팀 고르다 - 선물하기 전용 CSS (15_goreuda_gift.css)
+   담당자: 오현채
+   ========================================================= */
+
+.gift-form { display: flex; align-items: flex-start; }
+.gift-left { flex-grow: 1; margin-right: 40px; }
+
+.gift-block { padding-bottom: 40px; }
+.gift-block-title {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #222222;
+  font-size: 20px;
+}
+
+/* 선물할 상품 */
+.order-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #E5E5E5;
+}
+.order-item img { width: 64px; height: 80px; margin-right: 16px; border-radius: 4px; object-fit: cover; }
+.order-item-info { flex-grow: 1; font-size: 14px; color: #666666; }
+.order-item-info strong { display: block; font-size: 16px; font-weight: 400; color: #222222; }
+.order-item-price { font-weight: 700; }
+
+/* 입력칸 너비 */
+.gift-block .input-box,
+.gift-block .select-box { width: 360px; }
+
+/* 카드 디자인 고르기: 색 칩 */
+.card-choice { margin-bottom: 16px; }
+.card-chip {
+  margin: 0 8px 8px 0;
+  padding: 8px 16px;
+  border: 1px solid #E5E5E5;
+  border-radius: 20px;
+  font-size: 14px;
+}
+.card-chip.on { border-color: #6B3FA0; color: #6B3FA0; font-weight: 700; }
+
+/* 메시지 카드 미리보기: 고른 카드 색이 배경이 됨 */
+.message-card {
+  width: 480px;
+  padding: 24px;
+  border-radius: 8px;
+}
+.message-card textarea {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  line-height: 1.6;
+}
+.message-count { margin-top: 8px; font-size: 12px; color: #666666; text-align: right; }
+
+/* 결제 금액 */
+.gift-summary {
+  position: sticky;
+  top: 160px;
+  width: 320px;
+  min-width: 320px;
+  padding: 24px;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+}
+.gift-summary .btn { width: 100%; }

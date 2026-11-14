@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- 팀원 정보 -->
-  <meta name="author" content="담당자: 15팀 이지현">
-  <meta name="description" content="고르다(Goreuda): 받는 사람과 상황에 맞는 선물 인사이트와 추천 상품을 보여주고 판매처로 연결해주는 선물 고민 도우미">
-
-  <title>고르다, 바르고 고른 선택</title>
+  <meta name="author" content="15팀 고르다: 이지현(팀장), 오현채, 우은민, 이예경 / 담당: 이지현, 우은민">
+  <meta name="description" content="고르다: 받는 사람과 상황에 맞는 선물을 고르고 보내는 선물하기 서비스">
+  <title>바르고 고른 선택, 고르다</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+KR:wght@400;700&display=swap">
   <link rel="stylesheet" href="15_goreuda_common.css">
   <link rel="stylesheet" href="15_goreuda_main.css">
 </head>
@@ -17,253 +17,93 @@
 
   <!-- 헤더 (모든 페이지 공통) -->
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="15_goreuda_main.html" class="logo" title="고르다 홈으로">
-        <span class="logo-en">Goreuda</span><span class="logo-ko">고르다</span>
-      </a>
-
-      <nav class="main-nav">
+    <div class="container">
+      <div class="header-top">
+        <a href="15_goreuda_main.html" class="logo" title="고르다 홈으로">
+          <span class="logo-en">Goreuda</span><span class="logo-ko">고르다</span>
+        </a>
+        <form class="search-box" id="search-form">
+          <label for="search" class="hidden-text">상품 검색</label>
+          <input type="search" id="search" name="keyword" placeholder="선물할 상품을 검색해 보세요">
+          <button type="submit" aria-label="검색"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6B3FA0" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+        </form>
+        <div class="header-icons">
+          <a href="15_goreuda_wishlist.html" class="header-icon" title="위시">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+            <span class="count-badge" id="wish-count" style="display: none;">0</span>
+            <span class="hidden-text">위시</span>
+          </a>
+          <a href="15_goreuda_cart.html" class="header-icon" title="장바구니">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6"><path d="M3 4h2l2.4 11h11.2L21 8H7"/><circle cx="9" cy="19" r="1.5"/><circle cx="18" cy="19" r="1.5"/></svg>
+            <span class="count-badge" id="cart-count" style="display: none;">0</span>
+            <span class="hidden-text">장바구니</span>
+          </a>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="주요 메뉴">
         <ul>
-          <li><a href="15_goreuda_select.html">선물 추천받기</a></li>
-          <li><a href="15_goreuda_explore.html">상품 탐색</a></li>
-          <li><a href="15_goreuda_report.html">인사이트 리포트</a></li>
+          <li><a href="15_goreuda_finder.html" data-nav="finder">선물 찾기</a></li>
+          <li><a href="15_goreuda_explore.html" data-nav="explore">전체 상품</a></li>
+          <li><a href="15_goreuda_explore.html?sort=rank" data-nav="rank">랭킹</a></li>
+          <li><a href="15_goreuda_explore.html?sort=new" data-nav="new">신상품</a></li>
+          <li><a href="15_goreuda_friends.html" data-nav="friends">친구 기념일</a></li>
+          <li><a href="15_goreuda_giftbox.html" data-nav="giftbox">선물함</a></li>
         </ul>
       </nav>
-
-      <div class="header-actions">
-        <form class="search-box" method="get" action="15_goreuda_explore.html">
-          <label for="search" class="hidden-text">상품 검색</label>
-          <input type="search" id="search" name="keyword" placeholder="선물 검색">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
-        </form>
-        <a href="15_goreuda_wishlist.html" class="icon-btn" title="찜한 선물 3개">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-          <span class="count-badge">3</span>
-          <span class="tip">찜한 선물 3개</span>
-        </a>
-      </div>
     </div>
   </header>
 
   <main id="main">
-
-    <!-- 메인 배너 -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <h1 class="hero-title">선물을 고르다,<br><span class="point-text">마음을 고르다.</span></h1>
-          <p class="hero-desc">받는 사람과 상황에 맞게,<br>실제로 받고 싶어 하는 선물 종류부터 알려드릴게요.</p>
-          <a href="15_goreuda_select.html" class="btn btn-primary">나에게 맞는 선물 고르기</a>
-        </div>
-
-        <div class="hero-images">
-          <div class="hero-frame hero-img-main"><img src="images/15_hero-main.jpg" alt="포장된 선물 상자와 꽃이 놓인 테이블"></div>
-          <div class="hero-img-side">
-            <div class="hero-frame"><img src="images/15_hero-vase.jpg" alt="세라믹 화병에 꽂힌 마른 꽃"></div>
-            <div class="hero-frame"><img src="images/15_hero-coffee.jpg" alt="커피 잔과 원두가 놓인 홈카페 풍경"></div>
-          </div>
-        </div>
-      </div>
+    <h1 class="hidden-text">바르고 고른 선택, 고르다</h1>
+    <!-- 다가오는 기념일: 등록한 친구가 30일 안에 기념일이 있을 때만 맨 위에 보임 -->
+    <section class="anniversary" id="anniversary" style="display: none;">
+      <h2 class="hidden-text">다가오는 기념일</h2>
+      <a href="15_goreuda_friends.html" class="container anniversary-bar" id="anniversary-bar"></a>
     </section>
 
-    <!-- 상황별 카테고리 -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">어떤 마음을 전하고 싶나요?</h2>
-        <p class="section-desc">상황을 선택해 선물 종류 탐색을 시작해 보세요.</p>
-
-        <ul class="category-list">
-          <li>
-            <a href="15_goreuda_select.html" class="category-item">
-              <span class="category-icon"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.4"><rect x="4" y="11" width="16" height="9"/><path d="M4 15c2 0 2-1.5 4-1.5s2 1.5 4 1.5 2-1.5 4-1.5 2 1.5 4 1.5M12 11V7M12 3.5c.8 1 .8 1.8 0 2.5-.8-.7-.8-1.5 0-2.5z"/></svg></span>
-              <strong class="category-name">생일</strong>
-              <small class="category-hint">가장 특별한 하루</small>
-            </a>
-          </li>
-          <li>
-            <a href="15_goreuda_select.html" class="category-item">
-              <span class="category-icon"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.4"><circle cx="9" cy="14" r="5"/><circle cx="15" cy="14" r="5"/><path d="M10 5l2-2 2 2-2 2z"/></svg></span>
-              <strong class="category-name">결혼·집들이</strong>
-              <small class="category-hint">새로운 시작</small>
-            </a>
-          </li>
-          <li>
-            <a href="15_goreuda_select.html" class="category-item">
-              <span class="category-icon"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.4"><circle cx="12" cy="9" r="5"/><path d="M10 9h.01M14 9h.01M10.5 11.5c.8.6 2.2.6 3 0M7 21c0-3 2.2-5 5-5s5 2 5 5"/></svg></span>
-              <strong class="category-name">출산·돌</strong>
-              <small class="category-hint">작은 기쁨</small>
-            </a>
-          </li>
-          <li>
-            <a href="15_goreuda_select.html" class="category-item">
-              <span class="category-icon"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.4"><path d="M3 10v4l11 5V5L3 10zM14 9a3 3 0 0 1 0 6M7 15.5l1.5 4"/></svg></span>
-              <strong class="category-name">응원·격려</strong>
-              <small class="category-hint">마음을 전해요</small>
-            </a>
-          </li>
-          <li>
-            <a href="15_goreuda_select.html" class="category-item">
-              <span class="category-icon"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.4"><rect x="3" y="8" width="18" height="4"/><rect x="5" y="12" width="14" height="9"/><path d="M12 8v13M12 8c-1.5-3-5.5-3.5-5-1 .3 1.3 2.5 1 5 1zM12 8c1.5-3 5.5-3.5 5-1-.3 1.3-2.5 1-5 1z"/></svg></span>
-              <strong class="category-name">가벼운 선물</strong>
-              <small class="category-hint">부담 없이 센스 있게</small>
-            </a>
-          </li>
-          <li>
-            <a href="15_goreuda_select.html" class="category-item">
-              <span class="category-icon"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.4"><circle cx="12" cy="8" r="2.2"/><circle cx="12" cy="4.2" r="2"/><circle cx="12" cy="11.8" r="2"/><circle cx="8.2" cy="8" r="2"/><circle cx="15.8" cy="8" r="2"/><path d="M12 14v7M12 18c-2-2.5-4-2.5-5-2M12 18c2-2.5 4-2.5 5-2"/></svg></span>
-              <strong class="category-name">어른·기념일</strong>
-              <small class="category-hint">오래 남을 마음</small>
-            </a>
-          </li>
-        </ul>
-
-        <ul class="chip-list">
-          <li><a href="15_goreuda_result.html" class="chip">30대 남자</a></li>
-          <li><a href="15_goreuda_result.html" class="chip">20대 여자</a></li>
-          <li><a href="15_goreuda_result.html" class="chip">센스 있는 집들이</a></li>
-          <li><a href="15_goreuda_result.html" class="chip">5만원 이하</a></li>
-        </ul>
-      </div>
+    <!-- 메인 배너: 화면 너비 전체를 채우는 광고 이미지, 좌우 버튼으로 넘김 -->
+    <section class="banner" id="banner">
+      <h2 class="hidden-text">기획전</h2>
+      <a href="#" id="banner-link"><img src="" alt="" id="banner-img"></a>
+      <button type="button" class="banner-arrow prev" id="banner-prev" aria-label="이전 배너">&lsaquo;</button>
+      <button type="button" class="banner-arrow next" id="banner-next" aria-label="다음 배너">&rsaquo;</button>
+      <p class="banner-page" id="banner-page"></p>
     </section>
 
-    <!-- 많이 주는 선물과 받고 싶은 선물 비교 -->
-    <section class="section section-gray">
-      <div class="container gap-preview-inner">
-        <div class="gap-preview-text">
-          <h2 class="section-title">주는 선물과<br>받고 싶은 선물은 달라요</h2>
-          <p class="section-desc">20대 여자 친구에게는 디퓨저를 많이 주지만,<br>받는 사람은 핸드크림을 더 받고 싶어 해요.</p>
-          <a href="15_goreuda_report.html" class="btn btn-outline">인사이트 리포트 보기</a>
-        </div>
-        <div class="gap-compare">
-          <div class="gap-col give">
-            <h3>많이 주는 선물</h3>
-            <p class="gap-item">디퓨저</p>
-          </div>
-          <div class="gap-col want">
-            <h3>실제로 받고 싶은 선물</h3>
-            <p class="gap-item">핸드크림</p>
-          </div>
-        </div>
-      </div>
+    <!-- 상황별 테마 -->
+    <section class="container theme-section">
+      <h2 class="hidden-text">상황별 선물</h2>
+      <ul class="theme-list" id="theme-list"></ul>
     </section>
 
-    <!-- 이번 주 셀렉션 -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">요즘 많이 찾는 선물</h2>
-        <p class="section-desc">이번 주 많이 찾은 선물이에요.</p>
-
-        <ul class="product-list">
-          <!-- 상품 카드: li 하나가 카드 하나 -->
-          <li class="product-card">
-            <div class="card-thumb">
-              <img src="images/15_gift01.jpg" alt="록시땅 시어 버터 핸드크림 30ml">
-              <div class="card-actions">
-                <input type="checkbox" id="wish-1" class="wish-check">
-                <label for="wish-1" class="icon-btn wish-btn" title="록시땅 시어 버터 핸드크림 30ml 찜하기">
-                  <svg class="heart-off" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-                  <svg class="heart-on" width="20" height="20" viewBox="0 0 24 24" fill="#B4613F" stroke="#B4613F" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-                  <span class="tip">찜하기</span>
-                </label>
-                <a href="15_goreuda_compare.html" class="icon-btn" title="록시땅 시어 버터 핸드크림 30ml 판매처 가격 비교">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
-                  <span class="tip">판매처 가격 비교</span>
-                </a>
-              </div>
-            </div>
-            <a href="15_goreuda_detail.html" class="card-body">
-                <p class="card-brand">L'Occitane</p>
-                <p class="card-name">록시땅 시어 버터 핸드크림 30ml</p>
-                <div class="card-info">
-                  <p class="card-price">16,000원<small>최저가</small></p>
-                  <span class="card-rating"><svg width="13" height="13" viewBox="0 0 24 24" fill="#B4613F"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z"/></svg>4.8</span>
-                </div>
-            </a>
-          </li>
-
-          <li class="product-card">
-            <div class="card-thumb">
-              <img src="images/15_gift07.jpg" alt="오설록 프리미엄 티 컬렉션 10종 40입">
-              <div class="card-actions">
-                <input type="checkbox" id="wish-2" class="wish-check">
-                <label for="wish-2" class="icon-btn wish-btn" title="오설록 프리미엄 티 컬렉션 10종 40입 찜하기">
-                  <svg class="heart-off" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-                  <svg class="heart-on" width="20" height="20" viewBox="0 0 24 24" fill="#B4613F" stroke="#B4613F" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-                  <span class="tip">찜하기</span>
-                </label>
-                <a href="15_goreuda_compare.html" class="icon-btn" title="오설록 프리미엄 티 컬렉션 10종 40입 판매처 가격 비교">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
-                  <span class="tip">판매처 가격 비교</span>
-                </a>
-              </div>
-            </div>
-            <a href="15_goreuda_detail.html" class="card-body">
-                <p class="card-brand">Osulloc</p>
-                <p class="card-name">오설록 프리미엄 티 컬렉션 10종 40입</p>
-                <div class="card-info">
-                  <p class="card-price">30,000원<small>최저가</small></p>
-                  <span class="card-rating"><svg width="13" height="13" viewBox="0 0 24 24" fill="#B4613F"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z"/></svg>4.9</span>
-                </div>
-            </a>
-          </li>
-
-          <li class="product-card">
-            <div class="card-thumb">
-              <img src="images/15_gift11.jpg" alt="코코도르 디퓨저 200ml 숲속새벽공기">
-              <div class="card-actions">
-                <input type="checkbox" id="wish-3" class="wish-check">
-                <label for="wish-3" class="icon-btn wish-btn" title="코코도르 디퓨저 200ml 숲속새벽공기 찜하기">
-                  <svg class="heart-off" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-                  <svg class="heart-on" width="20" height="20" viewBox="0 0 24 24" fill="#B4613F" stroke="#B4613F" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-                  <span class="tip">찜하기</span>
-                </label>
-                <a href="15_goreuda_compare.html" class="icon-btn" title="코코도르 디퓨저 200ml 숲속새벽공기 판매처 가격 비교">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
-                  <span class="tip">판매처 가격 비교</span>
-                </a>
-              </div>
-            </div>
-            <a href="15_goreuda_detail.html" class="card-body">
-                <p class="card-brand">Cocod'or</p>
-                <p class="card-name">코코도르 디퓨저 200ml 숲속새벽공기</p>
-                <div class="card-info">
-                  <p class="card-price">19,900원<small>최저가</small></p>
-                  <span class="card-rating"><svg width="13" height="13" viewBox="0 0 24 24" fill="#B4613F"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z"/></svg>4.7</span>
-                </div>
-            </a>
-          </li>
-
-          <li class="product-card">
-            <div class="card-thumb">
-              <img src="images/15_gift20.jpg" alt="레고 벚꽃 40725">
-              <div class="card-actions">
-                <input type="checkbox" id="wish-4" class="wish-check">
-                <label for="wish-4" class="icon-btn wish-btn" title="레고 벚꽃 40725 찜하기">
-                  <svg class="heart-off" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-                  <svg class="heart-on" width="20" height="20" viewBox="0 0 24 24" fill="#B4613F" stroke="#B4613F" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-                  <span class="tip">찜하기</span>
-                </label>
-                <a href="15_goreuda_compare.html" class="icon-btn" title="레고 벚꽃 40725 판매처 가격 비교">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
-                  <span class="tip">판매처 가격 비교</span>
-                </a>
-              </div>
-            </div>
-            <a href="15_goreuda_detail.html" class="card-body">
-                <p class="card-brand">LEGO</p>
-                <p class="card-name">레고 벚꽃 40725</p>
-                <div class="card-info">
-                  <p class="card-price">19,900원<small>최저가</small></p>
-                  <span class="card-rating"><svg width="13" height="13" viewBox="0 0 24 24" fill="#B4613F"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z"/></svg>4.9</span>
-                </div>
-            </a>
-          </li>
-        </ul>
-
-        <p class="more-row">
-          <a href="15_goreuda_select.html" class="btn btn-outline">내 조건으로 다시 찾아보기</a>
-        </p>
+    <!-- 이 상품 어때요? -->
+    <section class="section container">
+      <div class="section-head">
+        <h2 class="section-title">이 상품 어때요?</h2>
+        <p class="section-desc" id="recommend-desc">요즘 많이 선물하는 상품이에요</p>
       </div>
+      <ul class="product-list" id="recommend-list"></ul>
+    </section>
+
+    <!-- 지금 많이 선물하는 상품: 카테고리 탭 -->
+    <section class="section container">
+      <div class="section-head">
+        <h2 class="section-title">지금 많이 선물하는 상품</h2>
+        <p class="section-desc">카테고리별 인기 선물을 모았어요</p>
+      </div>
+      <div class="rank-tabs" id="rank-tabs" aria-label="카테고리 선택"></div>
+      <ul class="product-list" id="rank-list"></ul>
+      <p class="list-more"><a href="15_goreuda_explore.html?sort=rank" class="btn btn-outline">랭킹 전체보기</a></p>
+    </section>
+
+    <!-- 새로 들어온 선물 -->
+    <section class="section container">
+      <div class="section-head">
+        <h2 class="section-title">새로 들어온 선물</h2>
+        <p class="section-desc">이번 달에 새로 들어온 상품이에요</p>
+      </div>
+      <ul class="product-list" id="new-list"></ul>
+      <p class="list-more"><a href="15_goreuda_explore.html?sort=new" class="btn btn-outline">신상품 전체보기</a></p>
     </section>
   </main>
 
@@ -271,14 +111,44 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-inner">
-        <a href="15_goreuda_main.html" class="footer-brand">
-          <span class="logo-en">Goreuda</span><span class="logo-ko">바르고 고른 선택</span>
-        </a>
-        <a href="#top" class="to-top">맨 위로</a>
+        <div class="footer-brand-box">
+          <a href="15_goreuda_main.html" class="footer-brand">
+            <span class="logo-en">Goreuda</span><span class="logo-ko">고르다</span>
+            <span class="footer-slogan">생일, 기념일, 건강, 응원, 축하 선물이 필요한 모든 순간</span>
+          </a>
+          <p class="footer-desc">고르다를 통해 손쉽게 따뜻한 메시지와<br>정성이 담긴 선물하기</p>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-title">쇼핑</h2>
+          <ul>
+            <li><a href="15_goreuda_explore.html">전체 상품</a></li>
+            <li><a href="15_goreuda_explore.html?sort=rank">랭킹</a></li>
+            <li><a href="15_goreuda_explore.html?sort=new">신상품</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-title">선물</h2>
+          <ul>
+            <li><a href="15_goreuda_finder.html">선물 찾기</a></li>
+            <li><a href="15_goreuda_friends.html">친구 기념일</a></li>
+            <li><a href="15_goreuda_giftbox.html">선물함</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-title">마이</h2>
+          <ul>
+            <li><a href="15_goreuda_wishlist.html">위시</a></li>
+            <li><a href="15_goreuda_cart.html">장바구니</a></li>
+          </ul>
+        </div>
       </div>
-      <p class="footer-note">웹프로그래밍 15팀 고르다 | 상품 이미지 출처: 각 브랜드 공식몰 및 판매처</p>
     </div>
   </footer>
 
+  <!-- 맨 위로 버튼: 화면 오른쪽 아래에 고정 -->
+  <a href="#top" class="top-btn" aria-label="맨 위로"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
+
+  <script src="15_goreuda_common.js"></script>
+  <script src="15_goreuda_main.js"></script>
 </body>
 </html>

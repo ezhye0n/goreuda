@@ -1,90 +1,61 @@
 /* =========================================================
    15팀 고르다 - 상품 상세 전용 CSS (15_goreuda_detail.css)
    담당자: 이예경, 이지현
-   .detail-page 안에서만 적용
    ========================================================= */
 
 /* 상품 정보: 왼쪽 사진, 오른쪽 정보 */
-.detail-page .product { display: flex; padding: 48px 24px 80px; }
+.detail-page .product { display: flex; padding: 40px 0 64px; }
 .detail-page .product-image {
-  width: 520px;
-  min-width: 520px;
-  height: 520px;
-  margin-right: 64px;
-  border-radius: 8px;
+  width: 480px;
+  min-width: 480px;
+  height: 480px;
+  margin-right: 56px;
+  border-radius: 4px;
   overflow: hidden;
   background-color: #F7F7F7;
 }
-.detail-page .product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+.detail-page .product-image img { width: 100%; height: 100%; object-fit: cover; }
 .detail-page .product-info { flex-grow: 1; }
-.detail-page .breadcrumb { margin-bottom: 24px; font-size: 14px; color: #666666; }
+
+.detail-page .breadcrumb { margin-bottom: 16px; font-size: 14px; color: #666666; }
 .detail-page .breadcrumb a { color: #666666; }
-.detail-page .breadcrumb a:hover { color: #222222; }
-.detail-page .brand { font-size: 14px; color: #666666; }
-.detail-page .intro-desc { margin-bottom: 8px; color: #666666; }
-.detail-page .rating { margin-bottom: 16px; font-size: 14px; }
-.detail-page .star { color: #B4613F; }
-.detail-page .price { margin-bottom: 24px; font-size: 28px; font-weight: 700; }
-.detail-page .price small { margin-left: 8px; font-size: 14px; font-weight: 400; color: #666666; }
-.detail-page .price-guide {
-  margin-bottom: 24px;
-  padding: 16px;
-  border-radius: 8px;
-  background-color: #F7F7F7;
-  font-size: 14px;
-  color: #666666;
-}
+.detail-page .breadcrumb a:hover { color: #6B3FA0; }
+.detail-brand { font-size: 14px; color: #666666; }
+.detail-name { margin-bottom: 8px; font-size: 28px; line-height: 1.4; }
+.detail-desc { margin-bottom: 16px; font-size: 14px; color: #666666; }
+.detail-price { margin-bottom: 24px; font-size: 28px; font-weight: 700; }
 
-/* 가격 비교(주 버튼) + 찜하기(보조 버튼) */
-.detail-page .buttons { display: flex; margin-bottom: 24px; }
-.detail-page .btn-compare { flex-grow: 1; margin-right: 8px; }
-.detail-page .btn-wish { width: 144px; }
-.detail-page .btn-wish .wish-on { display: none; }
-.detail-page .wish-check:checked + .btn-wish {
-  border-color: #B4613F;
-  background-color: #F8EEE9;
-  color: #B4613F;
-}
-.detail-page .wish-check:checked + .btn-wish .wish-on { display: inline; }
-.detail-page .wish-check:checked + .btn-wish .wish-off { display: none; }
+.info-table { width: 100%; border-collapse: collapse; border-top: 1px solid #E5E5E5; }
+.info-table th,
+.info-table td { padding: 16px 0; border-bottom: 1px solid #E5E5E5; font-size: 14px; text-align: left; }
+.info-table th { width: 120px; font-weight: 400; color: #666666; }
 
-.detail-page .info-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-.detail-page .info-table th,
-.detail-page .info-table td { padding: 8px 0; border-top: 1px solid #E5E5E5; }
-.detail-page .info-table th { width: 96px; font-weight: 400; color: #666666; text-align: left; }
+.detail-total { margin: 24px 0; text-align: right; font-size: 14px; }
+.detail-total strong { margin-left: 8px; font-size: 28px; }
 
-/* 페이지 안 이동 메뉴 */
-.detail-page .tabs { border-top: 1px solid #E5E5E5; border-bottom: 1px solid #E5E5E5; }
-.detail-page .tabs-inner { display: flex; }
-.detail-page .tabs a {
-  padding: 16px 0;
-  margin-right: 40px;
-  font-size: 16px;
-  font-weight: 700;
-}
-.detail-page .tabs a:hover { color: #B4613F; }
-
-/* 추천 이유: 세 칸 */
-.detail-page .points { display: flex; border-top: 1px solid #222222; }
-.detail-page .points li {
-  width: 33.33%;
-  padding: 24px 24px 0 0;
-}
-.detail-page .points h3 { margin-bottom: 4px; font-size: 20px; }
-.detail-page .points p { font-size: 14px; color: #666666; }
-
-/* 후기 */
-.detail-page .review-list { display: flex; margin: 0 -8px; }
-.detail-page .review-card {
-  width: 33.33%;
-  margin: 0 8px;
-  padding: 24px;
-  border-radius: 8px;
+/* 찜(정사각형), 장바구니, 선물하기 버튼 한 줄 */
+.detail-buttons { display: flex; }
+.detail-buttons .btn { flex-grow: 1; margin-left: 8px; }
+.wish-big {
+  width: 56px;
+  min-width: 56px;
+  height: 56px;
+  padding: 14px;
+  border: 1px solid #E5E5E5;
+  border-radius: 4px;
   background-color: #FFFFFF;
 }
-.detail-page .review-card .text { margin-bottom: 16px; font-size: 16px; }
-.detail-page .review-card .who { font-size: 14px; color: #666666; }
+.wish-big svg { display: block; width: 26px; height: 26px; }
+.wish-big .heart-on { display: none; }
+.wish-big.on .heart-on { display: block; }
+.wish-big.on .heart-off { display: none; }
+.wish-big:hover { border-color: #222222; }
+
+/* 아래쪽 구역 */
+.detail-section { padding: 48px 0; border-top: 1px solid #E5E5E5; }
+.detail-section-title { margin-bottom: 24px; font-size: 20px; }
+.review {
+  padding: 24px;
+  border-radius: 8px;
+  background-color: #F7F7F7;
+}

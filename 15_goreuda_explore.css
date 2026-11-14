@@ -1,29 +1,69 @@
 /* =========================================================
-   15팀 고르다 - 상품 탐색 전용 CSS (15_goreuda_explore.css)
-   팀원: 이지현(팀장), 오현채, 우은민, 이예경
+   15팀 고르다 - 전체 상품, 랭킹 전용 CSS (15_goreuda_explore.css)
    담당자: 우은민
    ========================================================= */
 
-/* 필터 줄: 카테고리, 가격대를 가로로 배치 */
-.filter-bar {
+/* 왼쪽 필터, 오른쪽 상품 목록 */
+.explore-layout { display: flex; align-items: flex-start; }
+
+.filter-side {
+  position: sticky;
+  top: 160px;
+  width: 220px;
+  min-width: 220px;
+  margin-right: 40px;
+}
+.filter-head {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #222222;
+}
+.filter-head h2 { font-size: 16px; }
+.filter-reset {
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  color: #666666;
+}
+.filter-reset:hover { color: #6B3FA0; }
+
+.filter-group {
   padding: 16px 0;
-  border-top: 1px solid #222222;
+  border: none;
   border-bottom: 1px solid #E5E5E5;
 }
-.filter-group {
-  display: flex;
-  align-items: center;
-  margin-right: 48px;
-  border: none;
-}
-.filter-title {
-  float: left;
-  margin-right: 16px;
+.filter-group legend {
+  margin-bottom: 8px;
   font-size: 14px;
   font-weight: 700;
 }
-.filter-options { display: flex; }
+.filter-option {
+  display: block;
+  padding: 4px 0;
+  font-size: 14px;
+}
+.filter-option input { margin-right: 4px; }
 
+.explore-result { flex-grow: 1; }
+.result-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: #666666;
+}
+.sort-select {
+  border: none;
+  font-size: 14px;
+  color: #222222;
+}
+.keyword-info { margin-bottom: 24px; font-size: 16px; }
+.keyword-info strong { color: #6B3FA0; }
+
+/* 오른쪽 공간이 좁아서 한 줄에 3개 */
+.explore-result .product-card { width: 33.33%; }
+.explore-result .card-thumb { height: 293px; }   /* 3개일 때 카드 너비에 맞춘 정사각형 */
+.explore-result .wish-btn { top: 245px; }
