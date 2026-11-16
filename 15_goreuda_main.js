@@ -55,7 +55,7 @@ document.querySelector("#banner-next").addEventListener("click", function () {
 /* ---------- 상황별 테마 ----------
    맨 앞에 선물 찾기, 그 뒤에 테마 JSON의 상황 목록 */
 function showThemes(occasions) {
-  let html = '<li><a href="15_goreuda_finder.html" class="theme-item">';
+  let html = '<li><a href="15_goreuda_finder.html" class="theme-item finder-item">';
   html += '<span class="theme-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span>';
   html += '선물 찾기</a></li>';
   for (let i = 0; i < occasions.length; i++) {

@@ -64,6 +64,9 @@
 .theme-item:hover { color: #6B3FA0; }
 .theme-item:hover .theme-icon { background-color: #F4EFFA; }
 
+/* 선물 찾기는 글자만 보라색으로 강조 */
+.finder-item { font-weight: 700; color: #6B3FA0; }
+
 /* 카테고리 탭 */
 .rank-tabs { margin-bottom: 24px; text-align: center; }
 

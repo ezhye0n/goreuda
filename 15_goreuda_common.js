@@ -176,10 +176,12 @@ function updateHeaderCount() {
 }
 
 /* 헤더 검색: 검색어를 sessionStorage에 저장하고 상품 목록 페이지로 이동
-   (주소에 한글을 넣지 않기 위해 저장소를 사용) */
+   (주소에 한글을 넣지 않기 위해 저장소를 사용)
+   새로 검색할 때는 예전 검색에서 저장한 필터를 지워서 새 검색어가 적용되게 함 */
 document.querySelector("#search-form").addEventListener("submit", function (event) {
   event.preventDefault();
   sessionStorage.setItem("goreuda_keyword", document.querySelector("#search").value);
+  sessionStorage.removeItem("goreuda_filter");
   location.href = "15_goreuda_explore.html?view=search";
 });
 
