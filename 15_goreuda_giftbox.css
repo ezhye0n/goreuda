@@ -1,0 +1,33 @@
+/* =========================================================
+   15팀 고르다 - 선물함 전용 CSS (15_goreuda_giftbox.css)
+   담당자: 오현채
+   ========================================================= */
+
+.sent-notice {
+  margin-bottom: 24px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #F4EFFA;
+  color: #6B3FA0;
+  text-align: center;
+}
+
+.giftbox-list { border-top: 1px solid #222222; }
+.giftbox-item { padding: 24px 0; border-bottom: 1px solid #E5E5E5; }
+.giftbox-head { display: flex; align-items: center; margin-bottom: 16px; }
+.giftbox-date { margin-right: 16px; font-size: 14px; color: #666666; }
+.giftbox-name { font-size: 16px; font-weight: 700; }
+.giftbox-buttons { margin-left: auto; }
+.giftbox-buttons .btn { margin-left: 8px; }
+
+.giftbox-products { display: flex; flex-wrap: wrap; }
+.giftbox-product { display: flex; align-items: center; width: 50%; margin-bottom: 8px; font-size: 14px; }
+.giftbox-product img { width: 56px; height: 64px; margin-right: 16px; border-radius: 4px; object-fit: cover; }
+
+/* 메시지 카드 다시 보기 (처음에는 숨김) */
+.giftbox-card {
+  margin-top: 16px;
+  padding: 24px;
+  border-radius: 8px;
+  white-space: pre-line;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 팀원 정보 -->
+  <meta name="author" content="15팀 고르다: 이지현(팀장), 오현채, 우은민, 이예경 / 담당: 오현채">
+  <meta name="description" content="고르다: 받는 사람과 상황에 맞는 선물을 고르고 보내는 선물하기 서비스">
+  <title>선물 찾기 | 고르다</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+KR:wght@400;700&display=swap">
+  <link rel="stylesheet" href="15_goreuda_common.css">
+  <link rel="stylesheet" href="15_goreuda_finder.css">
+</head>
+<body id="top">
+
+  <a href="#main" class="skip-link">본문 바로가기</a>
+
+  <!-- 헤더 (모든 페이지 공통) -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <a href="15_goreuda_main.html" class="logo" title="고르다 홈으로">
+          <span class="logo-en">Goreuda</span><span class="logo-ko">고르다</span>
+        </a>
+        <form class="search-box" id="search-form">
+          <label for="search" class="hidden-text">상품 검색</label>
+          <input type="search" id="search" name="keyword" placeholder="선물할 상품을 검색해 보세요">
+          <button type="submit" aria-label="검색"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6B3FA0" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+        </form>
+        <div class="header-icons">
+          <a href="15_goreuda_wishlist.html" class="header-icon" title="위시">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+            <span class="count-badge" id="wish-count" style="display: none;">0</span>
+            <span class="hidden-text">위시</span>
+          </a>
+          <a href="15_goreuda_cart.html" class="header-icon" title="장바구니">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6"><path d="M3 4h2l2.4 11h11.2L21 8H7"/><circle cx="9" cy="19" r="1.5"/><circle cx="18" cy="19" r="1.5"/></svg>
+            <span class="count-badge" id="cart-count" style="display: none;">0</span>
+            <span class="hidden-text">장바구니</span>
+          </a>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="주요 메뉴">
+        <ul>
+          <li><a href="15_goreuda_finder.html" data-nav="finder" class="active">선물 찾기</a></li>
+          <li><a href="15_goreuda_explore.html" data-nav="explore">전체 상품</a></li>
+          <li><a href="15_goreuda_explore.html?sort=rank" data-nav="rank">랭킹</a></li>
+          <li><a href="15_goreuda_explore.html?sort=new" data-nav="new">신상품</a></li>
+          <li><a href="15_goreuda_friends.html" data-nav="friends">친구 기념일</a></li>
+          <li><a href="15_goreuda_giftbox.html" data-nav="giftbox">선물함</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container finder-page">
+    <h1 class="page-title">선물 찾기</h1>
+    <p class="finder-intro">몇 가지만 고르면 어울리는 선물을 골라 드려요.</p>
+
+    <!-- 질문 단계 -->
+    <section class="finder-box" id="finder-box">
+      <p class="finder-step" id="finder-step"></p>
+      <h2 class="finder-question" id="finder-question"></h2>
+      <div class="finder-options" id="finder-options"></div>
+      <div class="finder-nav">
+        <button type="button" class="btn btn-outline btn-small" id="finder-prev">이전</button>
+        <button type="button" class="btn btn-outline btn-small" id="finder-last" style="display: none;">지난번 조건으로 찾기</button>
+      </div>
+    </section>
+
+    <!-- 결과 -->
+    <section class="finder-result" id="finder-result" style="display: none;">
+      <div class="result-head">
+        <h2 class="section-title" id="result-title">이런 선물은 어때요?</h2>
+        <ul class="result-conditions" id="result-conditions"></ul>
+        <button type="button" class="btn btn-outline btn-small" id="finder-restart">다시 고르기</button>
+      </div>
+      <ul class="product-list" id="finder-list"></ul>
+      <div class="empty-box" id="finder-empty" style="display: none;">
+        <p>조건에 딱 맞는 선물을 찾지 못했어요.<br>예산이나 취향을 바꿔 보세요.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 푸터 (모든 페이지 공통) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand-box">
+          <a href="15_goreuda_main.html" class="footer-brand">
+            <span class="logo-en">Goreuda</span><span class="logo-ko">고르다</span>
+          </a>
+          <p class="footer-desc">생일, 기념일, 건강, 응원, 축하 선물이 필요한 모든 순간<br>고르다를 통해 손쉽게 따뜻한 메시지와 정성이 담긴 선물하기</p>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-title">쇼핑</h2>
+          <ul>
+            <li><a href="15_goreuda_explore.html">전체 상품</a></li>
+            <li><a href="15_goreuda_explore.html?sort=rank">랭킹</a></li>
+            <li><a href="15_goreuda_explore.html?sort=new">신상품</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-title">선물</h2>
+          <ul>
+            <li><a href="15_goreuda_finder.html">선물 찾기</a></li>
+            <li><a href="15_goreuda_friends.html">친구 기념일</a></li>
+            <li><a href="15_goreuda_giftbox.html">선물함</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-title">마이</h2>
+          <ul>
+            <li><a href="15_goreuda_wishlist.html">위시</a></li>
+            <li><a href="15_goreuda_cart.html">장바구니</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 맨 위로 버튼: 화면 오른쪽 아래에 고정 -->
+  <a href="#top" class="top-btn" aria-label="맨 위로"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.8"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
+
+  <script src="15_goreuda_common.js"></script>
+  <script src="15_goreuda_finder.js"></script>
+</body>
+</html>

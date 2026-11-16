@@ -1,27 +1,26 @@
 /* =========================================================
    15팀 고르다 공통 CSS (15_goreuda_common.css)
-   - 담당: 이지현
-   - 모든 HTML에서 페이지 CSS보다 먼저 연결
-   - 버튼, 카드, 칩 같은 공통 요소는 이 파일에서만 정의하고
-     페이지 CSS에서는 배치와 여백만 정함
+   팀원: 이지현(팀장), 오현채, 우은민, 이예경
+   - 모든 페이지에서 페이지 CSS보다 먼저 연결
+   - 처음에 숨겨야 하는 요소는 HTML에 style="display: none;"을 쓰고 JS에서 보이게 함
+   - 헤더, 버튼, 상품 카드, 담기 창처럼 여러 페이지에서 쓰는 요소는
+     이 파일에서만 정의하고, 페이지 CSS에서는 배치만 정함
 
-   색상 (8개)
+   색상
    #222222  기본 글자
    #666666  보조 글자
+   #999999  흐린 글자 (안내, 빈 상태)
    #E5E5E5  테두리, 구분선
-   #F7F7F7  연한 배경 (구역 구분, 푸터)
-   #FFFFFF  기본 배경, 카드
-   #B4613F  포인트 (주 버튼, 선택 상태, 찜)
-   #9C523A  포인트 버튼 hover
-   #F8EEE9  연한 포인트 배경 (선택된 칩, 추천 표시)
+   #F7F7F7  연한 배경
+   #FFFFFF  기본 배경
+   #6B3FA0  포인트 (대표 버튼, 선택 상태)
+   #5A3388  포인트 버튼 hover
+   #F4EFFA  연한 포인트 (선택 배경, 배지)
+   #E0524A  찜 하트
 
-   글자 크기 (6단계)
-   12px 캡션 / 14px 보조 / 16px 본문 / 20px 소제목 / 28px 섹션 제목 / 36px 페이지 제목
-
-   간격은 8px 단위, 모서리는 카드·버튼 8px, 칩·배지 999px
+   글자 크기: 12 / 14 / 16 / 20 / 28 / 36px
+   간격은 8px 단위, 모서리는 4px(버튼, 입력칸), 8px(카드, 상자)
    ========================================================= */
-
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+KR:wght@400;700&display=swap");
 
 /* ---------- 기본 설정 ---------- */
 * {
@@ -43,12 +42,11 @@ body {
 a { color: #222222; text-decoration: none; }
 ul, ol { list-style: none; }
 img { display: block; max-width: 100%; }
-button, input { font-family: "Noto Sans KR", sans-serif; }
+button, input, select, textarea { font-family: "Noto Sans KR", sans-serif; font-size: 16px; color: #222222; }
 
 .container {
-  max-width: 1200px;
+  width: 1100px;
   margin: 0 auto;
-  padding: 0 24px;
 }
 
 /* 본문 바로가기: Tab을 누르면 화면에 나타남 */
@@ -69,32 +67,9 @@ button, input { font-family: "Noto Sans KR", sans-serif; }
   left: -9999px;
 }
 
-/* 키보드로 이동했을 때 현재 위치 표시 */
-a:focus, button:focus, input:focus { outline: 2px solid #B4613F; outline-offset: 2px; }
-
-/* ---------- 섹션 제목 ---------- */
-.section { padding: 80px 0; }
-.section-gray { background-color: #F7F7F7; }
-.page-title {
-  margin-bottom: 8px;
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 1.3;
-}
-.section-title {
-  margin-bottom: 8px;
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1.4;
-}
-.section-desc {
-  margin-bottom: 40px;
-  font-size: 16px;
-  color: #666666;
-}
-.point-text { color: #B4613F; font-style: normal; }
-
-/* ---------- 헤더 ---------- */
+/* ---------- 헤더 ----------
+   윗줄: 로고, 검색창, 위시와 장바구니 아이콘
+   아랫줄: 메뉴 */
 .site-header {
   position: sticky;
   top: 0;
@@ -102,204 +77,148 @@ a:focus, button:focus, input:focus { outline: 2px solid #B4613F; outline-offset:
   background-color: #FFFFFF;
   border-bottom: 1px solid #E5E5E5;
 }
-.header-inner {
+.header-top {
   display: flex;
   align-items: center;
-  height: 72px;
+  height: 88px;
 }
+.logo { width: 220px; }
+.logo-en { font-family: "DM Serif Display", serif; font-size: 28px; }
+.logo-ko { margin-left: 8px; font-size: 12px; color: #666666; }
 
-.logo { margin-right: 40px; }
-.logo-en {
-  font-family: "DM Serif Display", serif;
-  font-size: 28px;
-}
-.logo-ko {
-  margin-left: 8px;
-  font-size: 12px;
-  color: #666666;
-}
-
-.main-nav ul { display: flex; }
-.main-nav li { margin-right: 32px; }
-.main-nav a {
-  padding: 8px 0;
-  font-size: 16px;
-  font-weight: 700;
-}
-.main-nav a:hover { color: #B4613F; }
-
-.header-actions {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-}
 .search-box {
   display: flex;
   align-items: center;
-  margin-right: 8px;
-  padding: 0 8px;
-  border-bottom: 1px solid #222222;
+  width: 400px;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #6B3FA0;
+  border-radius: 4px;
 }
 .search-box input {
-  width: 168px;
-  padding: 8px 0;
+  flex-grow: 1;
+  border: none;
+  font-size: 16px;
+}
+.search-box button {
+  width: 24px;
+  height: 24px;
   border: none;
   background-color: transparent;
-  font-size: 14px;
 }
 
-/* ---------- 아이콘 버튼 + 안내 말풍선 ----------
-   글자 없는 아이콘에 마우스를 올리거나 Tab으로 이동하면 기능 이름이 보임 */
-.icon-btn {
+.header-icons {
+  display: flex;
+  margin-left: auto;
+}
+.header-icon {
   position: relative;
-  display: inline-block;
+  display: block;
   width: 40px;
   height: 40px;
-  padding: 10px;
-  border-radius: 999px;
-  background-color: transparent;
-  cursor: pointer;
+  margin-left: 16px;
+  padding: 6px;
 }
-.icon-btn svg { display: block; width: 20px; height: 20px; }
-.icon-btn:hover { background-color: #F7F7F7; }
-
-.tip {
-  display: none;
-  position: absolute;
-  top: 44px;
-  left: 50%;
-  z-index: 60;
-  width: 112px;
-  margin-left: -56px;
-  padding: 4px 0;
-  border: 1px solid #E5E5E5;
-  border-radius: 8px;
-  background-color: #FFFFFF;
-  color: #222222;
-  font-size: 12px;
-  text-align: center;
-}
-.icon-btn:hover .tip,
-.icon-btn:focus .tip { display: block; }
-
-/* 헤더 찜 개수 */
+.header-icon svg { display: block; width: 28px; height: 28px; }
 .count-badge {
   position: absolute;
   top: 0;
-  right: 0;
-  width: 20px;
+  right: -4px;
+  min-width: 20px;
   height: 20px;
-  border-radius: 999px;
-  background-color: #B4613F;
+  padding: 0 4px;
+  border-radius: 10px;
+  background-color: #6B3FA0;
   color: #FFFFFF;
   font-size: 12px;
   line-height: 20px;
   text-align: center;
 }
 
-/* ---------- 버튼 (3종류) ----------
-   주 버튼(.btn-primary): 포인트 색 채움, 한 화면에 한 개
+.main-nav ul { display: flex; }
+.main-nav a {
+  display: block;
+  margin-right: 40px;
+  padding: 16px 0;
+  font-size: 16px;
+  font-weight: 700;
+  border-bottom: 2px solid transparent;
+}
+.main-nav a:hover { color: #6B3FA0; }
+.main-nav a.active { color: #6B3FA0; border-bottom-color: #6B3FA0; }
+
+/* ---------- 제목 ---------- */
+.section { padding: 64px 0; }
+.page-title {
+  padding: 48px 0 32px;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+}
+.section-head { margin-bottom: 32px; text-align: center; }
+.section-title { font-size: 28px; font-weight: 700; }
+.section-desc { font-size: 16px; color: #666666; }
+.section-more { display: inline-block; margin-top: 8px; font-size: 14px; color: #666666; }
+.section-more:hover { color: #6B3FA0; }
+
+/* ---------- 버튼 3종 ----------
+   주 버튼(.btn-primary): 보라색, 한 화면의 대표 행동에만
    보조 버튼(.btn-outline): 회색 테두리
-   텍스트 링크(.text-link): 밑줄 */
+   작은 버튼(.btn-small): 표나 목록 안에서 쓰는 크기 */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 48px;
+  height: 56px;
   padding: 0 24px;
   border: 1px solid #E5E5E5;
-  border-radius: 8px;
+  border-radius: 4px;
   background-color: #FFFFFF;
-  color: #222222;
   font-size: 16px;
   font-weight: 700;
-  cursor: pointer;
 }
-.btn .arrow { margin-left: 8px; }
-
 .btn-primary {
-  border-color: #B4613F;
-  background-color: #B4613F;
+  border-color: #6B3FA0;
+  background-color: #6B3FA0;
   color: #FFFFFF;
 }
-.btn-primary:hover {
-  border-color: #9C523A;
-  background-color: #9C523A;
-}
+.btn-primary:hover { border-color: #5A3388; background-color: #5A3388; }
 .btn-outline:hover { border-color: #222222; }
+.btn-point-line { border-color: #6B3FA0; color: #6B3FA0; }
+.btn-point-line:hover { background-color: #F4EFFA; }
 .btn-small { height: 40px; padding: 0 16px; font-size: 14px; }
 
-.text-link {
-  font-size: 14px;
-  border-bottom: 1px solid #222222;
-}
-.text-link:hover { color: #B4613F; border-bottom-color: #B4613F; }
-
-/* ---------- 배지, 칩 ----------
-   배지: 클릭 안 되는 정보 표시 (테두리 없음)
-   칩: 클릭 가능한 선택지 (테두리 있음) */
+/* 배지: 클릭할 수 없는 정보 표시 */
 .badge {
   display: inline-block;
   padding: 0 8px;
-  border-radius: 999px;
-  background-color: #F8EEE9;
-  color: #B4613F;
+  border-radius: 4px;
+  background-color: #F4EFFA;
+  color: #6B3FA0;
   font-size: 12px;
   font-weight: 700;
   line-height: 24px;
 }
-.chip-list { display: flex; flex-wrap: wrap; }
-.chip-list li { margin: 0 8px 8px 0; }
-.chip {
-  display: inline-block;
-  padding: 8px 16px;
-  border: 1px solid #E5E5E5;
-  border-radius: 999px;
-  background-color: #FFFFFF;
-  font-size: 14px;
-}
-.chip:hover { border-color: #222222; }
-
-/* ---------- 상황별 카테고리 ---------- */
-.category-list { display: flex; margin-bottom: 32px; }
-.category-list li { width: 16.66%; }
-.category-item {
-  display: block;
-  padding: 24px 8px;
-  border-radius: 8px;
-  text-align: center;
-}
-.category-icon {
-  display: block;
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 16px;
-  padding: 23px;
-  border-radius: 999px;
-  background-color: #F7F7F7;
-}
-.category-icon svg { display: block; width: 34px; height: 34px; }
-.category-name { display: block; font-size: 16px; font-weight: 700; }
-.category-hint { display: block; font-size: 14px; color: #666666; }
-.category-item:hover { background-color: #F7F7F7; }
-.category-item:hover .category-icon { background-color: #F8EEE9; }
 
 /* ---------- 상품 카드 ----------
-   사진 오른쪽 아래에 찜, 가격 비교 버튼이 항상 보임 */
+   사진, 담기 버튼, 브랜드, 이름, 가격 순서 */
 .product-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -12px;
+  margin: 0 -10px;
 }
 .product-card {
+  position: relative;
   width: 25%;
-  padding: 0 12px;
+  padding: 0 10px;
   margin-bottom: 40px;
 }
+/* 상품 사진이 대부분 정사각형이라 칸도 정사각형(카드 너비 255px)으로 맞춰 잘리지 않게 함 */
 .card-thumb {
   position: relative;
-  height: 264px;
-  border-radius: 8px;
+  display: block;
+  height: 255px;
+  border-radius: 4px;
   overflow: hidden;
   background-color: #F7F7F7;
 }
@@ -309,196 +228,225 @@ a:focus, button:focus, input:focus { outline: 2px solid #B4613F; outline-offset:
   object-fit: cover;
 }
 
-.card-actions {
+/* 베스트셀러 배지: 사진 왼쪽 위 */
+.best-badge {
   position: absolute;
-  right: 8px;
-  bottom: 8px;
-  display: flex;
+  top: 0;
+  left: 0;
+  padding: 4px 8px;
+  background-color: #6B3FA0;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
 }
-.card-actions .icon-btn {
-  margin-left: 8px;
-  border: 1px solid #E5E5E5;
+
+/* 찜 하트: 사진 오른쪽 아래에 겹쳐서 배치
+   기본은 흰 배경의 빈 하트, 찜하면(.on) 빨간 하트 */
+.wish-btn {
+  position: absolute;
+  top: 207px;              /* 사진 높이 255px - 버튼 40px - 여백 8px */
+  right: 18px;             /* 카드 좌우 여백 10px + 8px */
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border: none;
+  border-radius: 20px;
   background-color: #FFFFFF;
 }
-.card-actions .icon-btn:hover { border-color: #222222; }
-.card-actions .tip {
-  top: -32px;
-  left: auto;
-  right: 0;
-  margin-left: 0;
-}
-
-.card-body { display: block; padding-top: 16px; }
-.card-body .badge { margin-bottom: 8px; }
-.card-brand { font-size: 14px; color: #666666; }
-.card-name { margin-bottom: 8px; font-size: 16px; }
-.card-body:hover .card-name { text-decoration: underline; }
-.card-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.card-price { font-size: 16px; font-weight: 700; }
-.card-price small { margin-left: 4px; font-size: 12px; font-weight: 400; color: #666666; }
-.card-rating { font-size: 14px; color: #666666; }
-.card-rating svg { display: inline-block; margin-right: 4px; vertical-align: -1px; }
-
-/* 찜 버튼: 숨긴 체크박스 + label
-   기본은 회색 빈 하트, 체크되면 포인트 색으로 채운 하트 */
-.wish-check { position: absolute; left: -9999px; }
+.wish-btn svg { display: block; width: 24px; height: 24px; }
 .wish-btn .heart-on { display: none; }
-.wish-check:checked + .wish-btn .heart-on { display: block; }
-.wish-check:checked + .wish-btn .heart-off { display: none; }
-.wish-check:checked + .wish-btn { border-color: #B4613F; }
-.wish-check:focus + .wish-btn { outline: 2px solid #B4613F; outline-offset: 2px; }
+.wish-btn.on .heart-on { display: block; }
+.wish-btn.on .heart-off { display: none; }
 
-/* ---------- 선물 추천 단계 표시 (조건 선택, 추천 결과) ---------- */
-.flow-intro { padding: 48px 0 40px; }
-.select-flow { display: flex; margin-top: 24px; }
-.select-flow li { margin-right: 32px; color: #666666; font-size: 14px; }
-.select-flow a { color: #666666; }
-.select-flow a:hover { color: #222222; }
-.select-flow-number {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
-  border: 1px solid #E5E5E5;
-  border-radius: 999px;
-  font-size: 12px;
-  line-height: 22px;
-  text-align: center;
-}
-.select-current { color: #222222; font-weight: 700; }
-.select-current .select-flow-number {
-  border-color: #B4613F;
-  background-color: #B4613F;
-  color: #FFFFFF;
-}
-
-/* ---------- 조건 선택 ----------
-   label 안에 라디오와 글자(span)를 넣어서 글자를 눌러도 선택됨
-   선택되면 바로 뒤 span(:checked + span)의 색이 바뀜 */
-.choice-panel {
-  padding: 0 40px;
-  border: 1px solid #E5E5E5;
-  border-radius: 8px;
-}
-.choice-row {
+.cart-btn {
   display: flex;
-  padding: 32px 0;
-  border-bottom: 1px solid #E5E5E5;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  margin: 8px 0 8px;
+  border: 1px solid #E5E5E5;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  font-size: 14px;
 }
-.choice-row.last { border-bottom: none; }
-.choice-head {
-  width: 136px;
-  min-width: 136px;
+.cart-btn svg { margin-right: 4px; }
+.cart-btn:hover { border-color: #6B3FA0; color: #6B3FA0; }
+
+.card-info { display: block; }
+.card-brand { height: 22px; font-size: 14px; color: #666666; }   /* 브랜드가 없는 상품도 줄 높이를 맞춤 */
+.card-name {
+  height: 48px;
+  overflow: hidden;
   font-size: 16px;
-  font-weight: 700;
+  line-height: 1.5;
 }
-.choice-body {
-  flex-grow: 1;
-  border: none;
+.card-info:hover .card-name { text-decoration: underline; }
+.card-price { margin-top: 4px; font-size: 16px; font-weight: 700; }
+.card-note { margin-top: 8px; font-size: 14px; color: #6B3FA0; }
+
+/* 목록이 비었을 때 안내 */
+.empty-box {
+  padding: 80px 0;
+  text-align: center;
+  color: #999999;
 }
-.choice-body legend {
-  margin-bottom: 4px;
-  font-size: 16px;
-}
-.choice-desc { margin-bottom: 16px; font-size: 14px; color: #666666; }
-.pill-list { display: flex; flex-wrap: wrap; }
-.pill { position: relative; margin: 0 8px 8px 0; }
-.pill input {
-  position: absolute;
-  left: -9999px;
-}
-.pill span {
+.empty-box .btn { margin-top: 24px; }
+
+/* ---------- 칩 (필터, 탭에서 선택하는 버튼) ---------- */
+.chip {
   display: inline-block;
+  margin: 0 8px 8px 0;
   padding: 8px 16px;
   border: 1px solid #E5E5E5;
-  border-radius: 999px;
+  border-radius: 20px;
+  background-color: #FFFFFF;
   font-size: 14px;
-  cursor: pointer;
 }
-.pill span:hover { border-color: #222222; }
-.pill input:checked + span {
-  border-color: #B4613F;
-  background-color: #F8EEE9;
-  color: #B4613F;
+.chip:hover { border-color: #222222; }
+.chip.on {
+  border-color: #6B3FA0;
+  background-color: #F4EFFA;
+  color: #6B3FA0;
   font-weight: 700;
 }
-.pill input:focus + span { outline: 2px solid #B4613F; outline-offset: 2px; }
 
-/* 상품 탐색 필터: 라디오 + label (조건 선택 버튼과 같은 모양) */
-.filter-options input {
+/* ---------- 바로 담기 창 ----------
+   상품 카드의 담기 버튼을 누르면 화면 가운데에 나타남 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-box {
   position: absolute;
-  left: -9999px;
-}
-.filter-btn {
-  margin-right: 8px;
-  padding: 8px 16px;
-  border: 1px solid #E5E5E5;
-  border-radius: 999px;
-  font-size: 14px;
-  cursor: pointer;
-}
-.filter-btn:hover { border-color: #222222; }
-.filter-options input:checked + .filter-btn {
-  border-color: #B4613F;
-  background-color: #F8EEE9;
-  color: #B4613F;
-  font-weight: 700;
-}
-.filter-options input:focus + .filter-btn { outline: 2px solid #B4613F; outline-offset: 2px; }
-
-/* ---------- 많이 주는 선물 / 받고 싶은 선물 비교 ---------- */
-.gap-compare { display: flex; }
-.gap-col {
-  width: 50%;
+  top: 50%;
+  left: 50%;
+  width: 440px;
+  margin: -200px 0 0 -220px;
   padding: 32px;
   border-radius: 8px;
-  background-color: #F7F7F7;
+  background-color: #FFFFFF;
 }
-.gap-col.give { margin-right: 16px; }
-.gap-col.want { background-color: #F8EEE9; }
-.gap-col h3 { font-size: 14px; font-weight: 400; color: #666666; }
-.gap-item { margin-bottom: 8px; font-size: 28px; font-weight: 700; }
-.gap-reason { font-size: 14px; color: #666666; }
+.modal-product { display: flex; align-items: center; margin-bottom: 24px; }
+.modal-product img { width: 72px; height: 72px; margin-right: 16px; border-radius: 4px; object-fit: cover; }
+.modal-name { font-size: 16px; font-weight: 700; }
+.modal-price { font-size: 14px; color: #666666; }
+.modal-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.modal-row label { font-size: 14px; color: #666666; }
+.modal-total { padding-top: 16px; border-top: 1px solid #E5E5E5; font-weight: 700; }
+.modal-buttons { display: flex; margin-top: 24px; }
+.modal-buttons .btn { width: 50%; }
+.modal-buttons .btn-outline { margin-right: 8px; }
 
-/* ---------- 표 (판매처 가격 비교, 찜한 선물 비교) ---------- */
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  border-top: 1px solid #222222;
+/* 옵션 선택칸, 입력칸 */
+.select-box,
+.input-box {
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #E5E5E5;
+  border-radius: 4px;
+  background-color: #FFFFFF;
 }
-.table th,
-.table td {
-  height: 72px;
-  padding: 16px;
-  border-bottom: 1px solid #E5E5E5;
+.select-box { width: 240px; }
+
+/* 입력 폼 한 줄: 위에 이름, 아래에 입력칸 */
+.form-row { margin-bottom: 16px; }
+.form-row label { display: block; margin-bottom: 8px; font-size: 14px; color: #666666; }
+.input-box.error { border-color: #E0524A; }
+.error-text { margin-top: 4px; font-size: 14px; color: #E0524A; }
+
+/* 결제 금액 한 줄 (장바구니, 선물하기) */
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+.summary-row.total {
+  padding-top: 16px;
+  border-top: 1px solid #E5E5E5;
   font-size: 16px;
-  text-align: left;
+  font-weight: 700;
 }
-.table thead th { height: 48px; font-size: 14px; font-weight: 400; color: #666666; }
-.table .best-row td { background-color: #F8EEE9; }
-.table .btn { white-space: nowrap; }
+
+/* 목록 위 개수 안내 */
+.list-count { margin-bottom: 24px; font-size: 14px; color: #666666; }
+
+/* 수량 조절: - 숫자 + */
+.qty {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #E5E5E5;
+  border-radius: 4px;
+}
+.qty button {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+}
+.qty span { width: 32px; font-size: 14px; text-align: center; }
+
+/* 담기, 찜 결과를 잠깐 보여주는 알림 */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 40px;
+  z-index: 300;
+  width: 320px;
+  margin-left: -160px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #222222;
+  color: #FFFFFF;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ---------- 맨 위로 버튼 ----------
+   position: fixed로 스크롤해도 화면 오른쪽 아래에 머무름 */
+.top-btn {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 40;
+  width: 48px;
+  height: 48px;
+  padding: 11px;
+  border: 1px solid #E5E5E5;
+  border-radius: 24px;
+  background-color: #FFFFFF;
+}
+.top-btn svg { display: block; }
+.top-btn:hover { border-color: #6B3FA0; }
 
 /* ---------- 푸터 ---------- */
 .site-footer {
-  padding: 48px 0;
+  margin-top: 80px;
+  padding: 56px 0 64px;
   border-top: 1px solid #E5E5E5;
   background-color: #F7F7F7;
   color: #666666;
   font-size: 14px;
 }
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* 왼쪽 브랜드 소개, 오른쪽 메뉴 3칸 */
+.footer-inner { display: flex; }
+.footer-brand-box { flex-grow: 1; }
+.footer-brand .logo-en { font-size: 24px; }
+.footer-desc { margin-top: 16px; font-size: 12px; line-height: 1.8; }
+.footer-col { width: 160px; }
+.footer-title {
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #222222;
 }
-.footer-brand .logo-en { font-size: 20px; }
-.to-top { font-size: 14px; border-bottom: 1px solid #222222; }
-.to-top:hover { color: #B4613F; border-bottom-color: #B4613F; }
-.footer-note { margin-top: 16px; font-size: 12px; }
-
-/* 섹션 아래 가운데 버튼 */
-.more-row { margin-top: 16px; text-align: center; }
+.footer-col li { margin-bottom: 8px; }
+.footer-col a { color: #666666; }
+.footer-col a:hover { color: #6B3FA0; }

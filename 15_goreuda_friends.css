@@ -1,0 +1,41 @@
+/* =========================================================
+   15팀 고르다 - 친구 기념일 전용 CSS (15_goreuda_friends.css)
+   담당자: 이지현
+   ========================================================= */
+
+/* 왼쪽 등록 폼, 오른쪽 목록 */
+.friends-layout { display: flex; align-items: flex-start; }
+.friends-title {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #222222;
+  font-size: 20px;
+}
+
+.friend-form-box { width: 360px; min-width: 360px; margin-right: 56px; }
+.friend-form-box .input-box,
+.friend-form-box .select-box { width: 100%; }
+.friend-form-box .error-text { margin-bottom: 16px; }
+.form-buttons { display: flex; }
+.form-buttons .btn { flex-grow: 1; }
+.form-buttons .btn-outline { margin-right: 8px; }
+
+.friend-list-box { flex-grow: 1; }
+.friend-item {
+  display: flex;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid #E5E5E5;
+}
+.friend-dday {
+  width: 88px;
+  min-width: 88px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #6B3FA0;
+}
+.friend-info { flex-grow: 1; }
+.friend-name { font-size: 16px; font-weight: 700; }
+.friend-sub { font-size: 14px; color: #666666; }
+.friend-gifted { font-size: 12px; color: #999999; }
+.friend-buttons .btn { margin-left: 8px; }

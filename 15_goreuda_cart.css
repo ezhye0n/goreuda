@@ -1,0 +1,64 @@
+/* =========================================================
+   15팀 고르다 - 장바구니 전용 CSS (15_goreuda_cart.css)
+   담당자: 이예경
+   ========================================================= */
+
+/* 왼쪽 상품 목록, 오른쪽 결제 금액 */
+.cart-layout { display: flex; align-items: flex-start; }
+.cart-left { flex-grow: 1; margin-right: 40px; }
+
+.cart-tools {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #222222;
+  font-size: 14px;
+}
+/* 체크박스 크기 */
+.check-all input,
+.cart-item input { width: 18px; height: 18px; margin-right: 8px; }
+.text-btn { border: none; background-color: transparent; font-size: 14px; color: #666666; }
+.text-btn:hover { color: #6B3FA0; }
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid #E5E5E5;
+}
+.cart-item img {
+  width: 80px;
+  height: 100px;
+  margin-right: 16px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+.cart-item-info { flex-grow: 1; }
+.cart-item-name { font-size: 16px; }
+.cart-item-option { font-size: 14px; color: #666666; }
+.cart-item .qty { margin: 0 32px; }
+.cart-item-price { width: 104px; font-weight: 700; text-align: right; }
+.remove-btn {
+  width: 32px;
+  height: 32px;
+  margin-left: 16px;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  color: #999999;
+}
+.remove-btn:hover { color: #222222; }
+
+/* 결제 금액 상자: 스크롤해도 따라옴 */
+.cart-summary {
+  position: sticky;
+  top: 160px;
+  width: 320px;
+  min-width: 320px;
+  padding: 24px;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+}
+.summary-row.total dd { font-size: 20px; }
+.free-info { margin-bottom: 16px; font-size: 14px; color: #6B3FA0; }
+.cart-summary .btn { width: 100%; }
