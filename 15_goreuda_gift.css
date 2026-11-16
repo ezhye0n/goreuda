@@ -54,6 +54,7 @@
   border-radius: 4px;
   background-color: #FFFFFF;
   line-height: 1.6;
+  resize: none;   /* 메시지 칸 크기를 사용자가 끌어서 바꾸지 못하게 고정 */
 }
 .message-count { margin-top: 8px; font-size: 12px; color: #666666; text-align: right; }
 
