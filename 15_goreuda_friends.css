@@ -39,3 +39,7 @@
 .friend-sub { font-size: 14px; color: #666666; }
 .friend-gifted { font-size: 12px; color: #999999; }
 .friend-buttons .btn { margin-left: 8px; }
+
+/* 제목을 오른쪽 기념일 목록 기준 가운데에 오게 함
+   왼쪽 등록 폼 너비(360px) + 폼과 목록 사이 여백(56px)만큼 왼쪽 안쪽 여백을 줌 */
+.page-title { padding-left: 416px; }

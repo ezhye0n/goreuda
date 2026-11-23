@@ -40,8 +40,9 @@
   font-size: 28px;
   line-height: 44px;
 }
+/* 화살표 가로 위치는 JS(placeBannerArrows)에서 지금 보이는 화면 기준으로 정함 */
 .banner-arrow.prev { left: 24px; }
-.banner-arrow.next { right: 24px; }
+.banner-arrow.next { left: 1128px; }
 
 /* 상황별 테마 아이콘 한 줄 */
 .theme-section { padding-top: 48px; }

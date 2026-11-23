@@ -119,7 +119,7 @@ function inBudget(price) {
 
 // 상품 하나가 지금 조건에 맞는지 확인
 function matchFilter(product) {
-  if (filter.category !== "all" && product.category !== filter.category) {
+  if (filter.category !== "all" && !inCategory(product, filter.category)) {
     return false;
   }
   if (filter.recipient !== "all" && !hasItem(product.recipients, filter.recipient)) {

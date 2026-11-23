@@ -41,8 +41,26 @@ function drawBanner() {
 function moveToBanner() {
   const slideWidth = document.querySelector(".banner-slide").offsetWidth;
   document.querySelector("#banner-track").style.transform = "translateX(" + (-slideWidth * currentBanner) + "px)";
-
 }
+
+/* 화살표 위치 맞추기
+   창이 사이트 최소 너비(1200px)보다 좁으면 가로 스크롤이 생겨 화살표가 창 밖으로 나갈 수 있음
+   그래서 지금 보이는 화면의 왼쪽 끝, 오른쪽 끝에서 24px 안쪽에 화살표를 둠
+   window.scrollX: 가로로 스크롤한 거리 / clientWidth: 스크롤바를 뺀 창 너비 */
+function placeBannerArrows() {
+  const viewLeft = window.scrollX;
+  const viewWidth = document.documentElement.clientWidth;
+  document.querySelector("#banner-prev").style.left = (viewLeft + 24) + "px";
+  document.querySelector("#banner-next").style.left = (viewLeft + viewWidth - 24 - 48) + "px";
+}
+
+// 창 크기가 바뀌거나 가로로 스크롤하면 화살표 위치와 배너 너비를 다시 맞춤
+window.addEventListener("resize", function () {
+  placeBannerArrows();
+  moveToBanner();
+});
+window.addEventListener("scroll", placeBannerArrows);
+placeBannerArrows();
 
 // 버튼으로 넘긴 뒤에는 자동 넘김 시간을 처음부터 다시 셈
 document.querySelector("#banner-prev").addEventListener("click", function () {
@@ -181,7 +199,7 @@ function selectRankTab(button) {
 function drawRankList(categoryId) {
   const list = [];
   for (let i = 0; i < allProducts.length; i++) {
-    if (allProducts[i].category === categoryId) {
+    if (inCategory(allProducts[i], categoryId)) {
       list.push(allProducts[i]);
     }
   }
