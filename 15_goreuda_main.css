@@ -62,8 +62,13 @@
 .theme-item:hover { color: #6B3FA0; }
 .theme-item:hover .theme-icon { background-color: #F4EFFA; }
 
-/* 선물 찾기는 글자만 보라색으로 강조 */
+/* 선물 찾기 강조: 글자는 보라색, 동그라미에는 보라색 테두리
+   테두리(2px)만큼 안쪽 여백을 줄여서 아이콘 크기는 다른 테마와 같게 유지 */
 .finder-item { font-weight: 700; color: #6B3FA0; }
+.finder-item .theme-icon {
+  padding: 18px;
+  border: 2px solid #6B3FA0;
+}
 
 /* 카테고리 탭 */
 .rank-tabs { margin-bottom: 24px; text-align: center; }
