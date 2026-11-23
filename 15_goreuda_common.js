@@ -46,6 +46,19 @@ function findName(list, id) {
   return "";
 }
 
+/* 상품이 이 카테고리에 속하는지 확인
+   category(기본 카테고리) 말고도 moreCategories(함께 보여줄 카테고리)에 있으면 포함
+   예: 이솝 핸드 워시는 뷰티 상품이지만 리빙에서도 보임 */
+function inCategory(product, categoryId) {
+  if (product.category === categoryId) {
+    return true;
+  }
+  if (product.moreCategories) {
+    return hasItem(product.moreCategories, categoryId);
+  }
+  return false;
+}
+
 // 배열 안에 값이 있는지 확인
 function hasItem(list, value) {
   for (let i = 0; i < list.length; i++) {

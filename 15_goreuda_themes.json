@@ -1,22 +1,22 @@
 {
   "banners": [
     {
+      "image": "images/15_banner03.jpg",
+      "alt": "고마운 마음을 가볍게 전할 때, 부담 없는 커피, 차, 디저트",
+      "color": "#E9EFEC",
+      "link": "15_goreuda_explore.html?occasion=thanks"
+    },
+    {
       "image": "images/15_banner01.jpg",
       "alt": "이번 주 새로 들어온 선물, 지금 가장 먼저 만나는 신상품",
-      "color": "#F0EBF7",
+      "color": "#E7E7E7",
       "link": "15_goreuda_explore.html?sort=new"
     },
     {
       "image": "images/15_banner02.jpg",
       "alt": "새 보금자리를 위한 집들이 선물, 오래 두고 쓰는 리빙 아이템",
-      "color": "#F4EFE7",
-      "link": "15_goreuda_explore.html?occasion=housewarming"
-    },
-    {
-      "image": "images/15_banner03.jpg",
-      "alt": "고마운 마음을 가볍게 전할 때, 부담 없는 커피, 차, 디저트",
-      "color": "#E9EFEC",
-      "link": "15_goreuda_explore.html?occasion=thanks"
+      "color": "#F0EBF7",
+      "link": "15_goreuda_explore.html?category=living"
     }
   ],
   "categories": [
