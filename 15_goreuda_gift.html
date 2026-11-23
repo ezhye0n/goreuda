@@ -63,9 +63,9 @@
 
     <form class="gift-form" id="gift-form">
       <div class="gift-left">
-        <!-- 선물할 상품 -->
+        <!-- 선물하실 상품 -->
         <section class="gift-block">
-          <h2 class="gift-block-title">선물할 상품</h2>
+          <h2 class="gift-block-title">선물하실 상품</h2>
           <ul class="order-list" id="order-list"></ul>
         </section>
 
@@ -79,14 +79,15 @@
             </select>
           </div>
           <div class="form-row">
-            <label for="receiver-name">이름</label>
-            <input type="text" id="receiver-name" class="input-box" placeholder="받는 사람 이름">
-            <p class="error-text" id="name-error" style="display: none;">받는 사람 이름을 입력해 주세요.</p>
+            <label for="receiver-name">이름 <span class="required">*</span></label>
+            <input type="text" id="receiver-name" class="input-box" placeholder="받으시는 분의 이름을 입력해 주세요.">
+            <p class="error-text" id="name-error" style="display: none;">이름을 입력하세요.</p>
           </div>
           <div class="form-row">
-            <label for="receiver-phone">휴대폰 번호</label>
-            <input type="tel" id="receiver-phone" class="input-box" placeholder="010-0000-0000">
-            <p class="error-text" id="phone-error" style="display: none;">휴대폰 번호를 010-0000-0000 형식으로 입력해 주세요.</p>
+            <label for="receiver-phone">휴대폰 번호 <span class="required">*</span></label>
+            <input type="tel" id="receiver-phone" class="input-box" placeholder="휴대폰 번호('-' 제외)를 입력해 주세요.">
+            <p class="error-text" id="phone-empty-error" style="display: none;">휴대폰 번호를 입력해 주세요.</p>
+            <p class="error-text" id="phone-error" style="display: none;">올바른 형식으로 입력해 주세요.</p>
           </div>
         </section>
 
@@ -108,7 +109,7 @@
         <div class="summary-row"><span>상품 금액</span><span id="gift-products">0원</span></div>
         <div class="summary-row"><span>배송비</span><span id="gift-delivery">0원</span></div>
         <div class="summary-row total"><span>결제 금액</span><span id="gift-total">0원</span></div>
-        <button type="submit" class="btn btn-primary">선물 보내기</button>
+        <button type="submit" id="submit-btn" class="btn btn-primary" disabled>선물 보내기</button>
       </aside>
     </form>
   </main>

@@ -13,7 +13,7 @@
   border-bottom: 1px solid #222222;
   font-size: 20px;
 }
-
+ 
 /* 선물할 상품 */
 .order-item {
   display: flex;
@@ -26,9 +26,22 @@
 .order-item-info strong { display: block; font-size: 16px; font-weight: 400; color: #222222; }
 .order-item-price { font-weight: 700; }
 
-/* 입력칸 너비 */
+/* 입력칸: 공통css의 옵션, 입력 박스 덮어쓰고 밑줄로 수정 */
 .gift-block .input-box,
-.gift-block .select-box { width: 360px; }
+.gift-block .select-box { 
+  border: none;
+  border-bottom: 1px solid #E5E5E5;
+  border-radius: 0;
+  width: 360px; }
+
+.gift-block .form-row label {
+  color: #222222;
+  font-size: 14px;
+}
+
+.required {
+  color: #E0524A;
+}
 
 /* 카드 디자인 고르기: 색 칩 */
 .card-choice { margin-bottom: 16px; }
@@ -69,3 +82,10 @@
   border-radius: 8px;
 }
 .gift-summary .btn { width: 100%; }
+
+.gift-summary .btn:disabled {
+  border-color: #E5E5E5;
+  background-color: #E5E5E5;
+  color: #999999;
+  cursor: not-allowed;
+}

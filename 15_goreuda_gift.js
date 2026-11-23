@@ -110,40 +110,80 @@ function countMessage() {
 
 document.querySelector("#message").addEventListener("input", countMessage);
 
-/* 휴대폰 번호 확인: 010-1234-5678처럼 13자리이고 4번째, 9번째 글자가 "-" 인지 */
+// 휴대폰 번호 확인: 올바른 형식(11자리) 
 function isPhone(phone) {
-  return phone.length === 13 && phone[3] === "-" && phone[8] === "-";
+  if (phone.length !== 11) {
+    return false;
+  }
+  if (phone[0] !== "0" || phone[1] !== "1" ) {
+    return false;
+  }
+  for (let i = 0; i < phone.length; i++) {
+    if (phone[i] < "0" || phone[i] > "9") {
+      return false;
+    }
+  }
+  return true;
 }
+
 
 // 입력칸 아래 오류 문구 보이기, 숨기기
 function setError(inputSelector, errorSelector, hasError) {
   if (hasError) {
     document.querySelector(inputSelector).className = "input-box error";
     showElement(errorSelector);
-  } else {
+   } else {
     document.querySelector(inputSelector).className = "input-box";
     hideElement(errorSelector);
   }
 }
 
-document.querySelector("#gift-form").addEventListener("submit", function (event) {
-  event.preventDefault();   // 페이지가 새로고침되지 않게 막음
-
+function updateSubmitBtn() {
   const name = document.querySelector("#receiver-name").value;
   const phone = document.querySelector("#receiver-phone").value;
   const message = document.querySelector("#message").value;
 
-  const nameOk = name !== "";
-  const phoneOk = isPhone(phone);
-  const messageOk = message.length <= MESSAGE_MAX;
+  const isAllValid = (name !== "") && isPhone(phone) && (message.length <= MESSAGE_MAX);
+  document.querySelector("#submit-btn").disabled = !isAllValid;
+}
 
-  setError("#receiver-name", "#name-error", !nameOk);
-  setError("#receiver-phone", "#phone-error", !phoneOk);
-  if (messageOk) { hideElement("#message-error"); } else { showElement("#message-error"); }
+// 이름 칸을 선택했다가 뗄 때(blur) 검사
+document.querySelector("#receiver-name").addEventListener("blur", function () {
+  const name = document.querySelector("#receiver-name").value;
+  setError("#receiver-name", "#name-error", name === "");
+});
 
-  if (!nameOk || !phoneOk || !messageOk) {
-    return;
+// 휴대폰 칸을 선택했다가 뗄 때(blur) 검사
+document.querySelector("#receiver-phone").addEventListener("blur", function () {
+  const phone = document.querySelector("#receiver-phone").value;
+
+  // 이전 에러가 남아있지 않게 둘 다 먼저 숨김
+  hideElement("#phone-empty-error");
+  hideElement("#phone-error");
+
+  if (phone === "") {
+    setError("#receiver-phone", "#phone-empty-error", true);
+  } else if (!isPhone(phone)) {
+    setError("#receiver-phone", "#phone-error", true);
+  } else {
+    setError("#receiver-phone", "#phone-error", false);
   }
+});
+
+// 입력할 때마다 실시간으로 버튼 회색/보라색 상태 바꾸기
+document.querySelector("#receiver-name").addEventListener("input", updateSubmitBtn);
+document.querySelector("#receiver-phone").addEventListener("input", updateSubmitBtn);
+document.querySelector("#message").addEventListener("input", function () {
+  const messageOk = this.value.length <= MESSAGE_MAX;
+  if (messageOk) { hideElement("#message-error"); } else { showElement("#message-error"); }
+  updateSubmitBtn();
+});
+
+document.querySelector("#gift-form").addEventListener("submit", function (event) {
+  event.preventDefault();   // 페이지가 새로고침되지 않게 막음
+
+  const name = document.querySelector("#receiver-name").value;
+  const message = document.querySelector("#message").value;
 
   // 선물함에 저장 (최근 선물이 맨 앞에 오도록 새 배열을 만듦)
   const giftbox = getList("goreuda_giftbox");
