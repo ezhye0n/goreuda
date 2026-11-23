@@ -14,9 +14,16 @@
 .anniversary-bar strong { margin-right: 16px; color: #6B3FA0; }
 .anniversary-bar span { margin-left: auto; font-size: 14px; font-weight: 700; color: #6B3FA0; }
 
-/* 메인 배너: 화면 너비 전체, 이미지 양옆은 배너와 같은 배경색으로 채움 */
+/* 메인 배너: 화면 너비 전체
+   banner-view 밖으로 나간 배너는 숨기고, banner-track이 옆으로 움직이며 넘어감 */
 .banner { position: relative; }
-.banner img {
+.banner-view { overflow: hidden; }
+.banner-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.banner-slide { display: block; min-width: 100%; }   /* 배경색은 JS에서 배너마다 지정 */
+.banner-slide img {
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
@@ -35,16 +42,6 @@
 }
 .banner-arrow.prev { left: 24px; }
 .banner-arrow.next { right: 24px; }
-.banner-page {
-  position: absolute;
-  right: 24px;
-  bottom: 16px;
-  padding: 0 12px;
-  border-radius: 12px;
-  background-color: #FFFFFF;
-  font-size: 12px;
-  line-height: 24px;
-}
 
 /* 상황별 테마 아이콘 한 줄 */
 .theme-section { padding-top: 48px; }
