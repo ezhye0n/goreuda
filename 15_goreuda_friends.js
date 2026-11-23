@@ -7,12 +7,55 @@
    - 그 친구에게 예전에 보낸 선물 표시
    ========================================================= */
 
-const relationNames = { friend: "친구", lover: "연인", family: "가족", coworker: "동료" };
+
 let editIndex = -1;   // 수정 중인 친구 번호, -1이면 새로 등록
+let selectedType = "";
+const typeChips = document.querySelectorAll("#type-chips .chip");
 
 loadProducts().then(function () {
   drawFriends();
 });
+
+document.querySelector("#friend-date").value = todayText();
+
+// 필수 항목(이름, 날짜, 기념일 종류)이 모두 채워졌는지 확인해 버튼 활성화/회색 처리
+function updateSubmitBtn() {
+  const name = document.querySelector("#friend-name").value;
+  const date = document.querySelector("#friend-date").value;
+  const customType = document.querySelector("#friend-type-custom").value;
+
+  let typeOk = selectedType !== "";
+  if (selectedType === "직접입력" && customType === "") {
+    typeOk = false;
+  }
+
+  const isAllValid = (name !== "") && (date !== "") && typeOk;
+  document.querySelector("#friend-submit").disabled = !isAllValid;
+}
+
+// '무슨 날인가요?' 칩 클릭 이벤트
+for (let i = 0; i < typeChips.length; i++) {
+  typeChips[i].addEventListener("click", function () {
+    for (let j = 0; j < typeChips.length; j++) {
+      typeChips[j].className = "chip";
+    }
+    this.className = "chip on";
+    selectedType = this.getAttribute("data-type");
+
+    if (selectedType === "직접입력") {
+      showElement("#friend-type-custom");
+      document.querySelector("#friend-type-custom").focus();
+    } else {
+      hideElement("#friend-type-custom");
+    }
+    updateSubmitBtn();
+  });
+}
+
+// 이름, 날짜, 직접입력 칸 변경 시마다 버튼 상태 업데이트
+document.querySelector("#friend-name").addEventListener("input", updateSubmitBtn);
+document.querySelector("#friend-date").addEventListener("change", updateSubmitBtn);
+document.querySelector("#friend-type-custom").addEventListener("input", updateSubmitBtn);
 
 document.querySelector("#friend-form").addEventListener("submit", function (event) {
   event.preventDefault();
@@ -25,10 +68,14 @@ document.querySelector("#friend-form").addEventListener("submit", function (even
   }
   hideElement("#friend-error");
 
+  let finalType = selectedType;
+  if (selectedType === "직접입력") {
+    finalType = document.querySelector("#friend-type-custom").value;
+  }
+
   const friend = {
     name: name,
-    relation: document.querySelector("#friend-relation").value,
-    type: document.querySelector("#friend-type").value,
+    type: finalType,
     date: date,
     memo: document.querySelector("#friend-memo").value
   };
@@ -85,9 +132,8 @@ function drawFriends() {
     html += '<li class="friend-item">';
     html += '<p class="friend-dday">' + ddayText(list[i].dday) + '</p>';
     html += '<div class="friend-info">';
-    html += '<p class="friend-name">' + friend.name + ' <span class="badge">' + relationNames[friend.relation] + '</span></p>';
-    html += '<p class="friend-sub">' + friend.type + ' ' + monthDayText(friend.date) + memoText + '</p>';
-
+    html += '<p class="friend-name">' + friend.name + ' <span class="badge">' + friend.type + '</span></p>';
+    html += '<p class="friend-sub">' + monthDayText(friend.date) + memoText + '</p>';
     const sent = getSentNames(friend.name);
     if (sent.length > 0) {
       html += '<p class="friend-gifted">이전에 보낸 선물: ' + sent.join(", ") + '</p>';
@@ -112,13 +158,31 @@ function startEdit(button) {
   const friend = getList("goreuda_friends")[editIndex];
 
   document.querySelector("#friend-name").value = friend.name;
-  document.querySelector("#friend-relation").value = friend.relation;
-  document.querySelector("#friend-type").value = friend.type;
   document.querySelector("#friend-date").value = friend.date;
   document.querySelector("#friend-memo").value = friend.memo;
+
+  let matched = false;
+  for (let i = 0; i < typeChips.length; i++) {
+    if (typeChips[i].getAttribute("data-type") === friend.type) {
+      typeChips[i].className = "chip on";
+      selectedType = friend.type;
+      hideElement("#friend-type-custom");
+      matched = true;
+    } else {
+      typeChips[i].className = "chip";
+    }
+  }
+  if (!matched) {
+    document.querySelector('#type-chips .chip[data-type="직접입력"]').className = "chip on";
+    selectedType = "직접입력";
+    document.querySelector("#friend-type-custom").value = friend.type;
+    showElement("#friend-type-custom");
+  }
+
   document.querySelector("#form-title").innerText = "기념일 수정";
   document.querySelector("#friend-submit").innerText = "수정하기";
   showElement("#edit-cancel");
+  updateSubmitBtn();
 }
 
 function deleteFriend(button) {
@@ -140,13 +204,20 @@ function deleteFriend(button) {
 
 function resetForm() {
   editIndex = -1;
+  selectedType = "";
   document.querySelector("#friend-name").value = "";
-  document.querySelector("#friend-relation").value = "friend";
-  document.querySelector("#friend-type").value = "생일";
   document.querySelector("#friend-date").value = "";
   document.querySelector("#friend-memo").value = "";
-  document.querySelector("#form-title").innerText = "기념일 등록";
+  document.querySelector("#friend-type-custom").value = "";
+  hideElement("#friend-type-custom");
+
+  for (let i = 0; i < typeChips.length; i++) {
+    typeChips[i].className = "chip";
+  }
+
+  document.querySelector("#form-title").innerText = "어떤 날에 선물할까요?";
   document.querySelector("#friend-submit").innerText = "등록하기";
   hideElement("#edit-cancel");
   hideElement("#friend-error");
+  updateSubmitBtn();
 }

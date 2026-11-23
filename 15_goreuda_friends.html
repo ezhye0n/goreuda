@@ -59,12 +59,13 @@
     <div class="friends-layout">
       <!-- 등록 폼 -->
       <section class="friend-form-box">
-        <h2 class="friends-title" id="form-title">기념일 등록</h2>
+        <h2 class="friends-title" id="form-title">어떤 날에 선물할까요?</h2>
         <form id="friend-form">
           <div class="form-row">
             <label for="friend-name">이름</label>
             <input type="text" id="friend-name" class="input-box" placeholder="예: 김민지">
           </div>
+          <!--
           <div class="form-row">
             <label for="friend-relation">관계</label>
             <select id="friend-relation" class="select-box">
@@ -74,18 +75,25 @@
               <option value="coworker">동료</option>
             </select>
           </div>
+          -->
           <div class="form-row">
-            <label for="friend-type">기념일</label>
-            <select id="friend-type" class="select-box">
-              <option>생일</option>
-              <option>기념일</option>
-              <option>결혼기념일</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <label for="friend-date">날짜</label>
+            <label for="friend-date">언제 선물이 필요한가요?</label>
             <input type="date" id="friend-date" class="input-box">
           </div>
+          <div class="form-row">
+            <label>무슨 날인가요?</label>
+            <div class="type-chips" id="type-chips">
+              <button type="button" class="chip" data-type="생일">생일</button>
+              <button type="button" class="chip" data-type="이사/집들이">집들이</button>
+              <button type="button" class="chip" data-type="이사/집들이">감사</button>
+              <button type="button" class="chip" data-type="기념일">기념일</button>
+              <button type="button" class="chip" data-type="축하">축하</button>
+              <button type="button" class="chip" data-type="응원">응원</button>
+              <button type="button" class="chip" data-type="직접입력">직접입력</button>
+            </div>
+            <input type="text" id="friend-type-custom" class="input-box" placeholder="예: 전역, 승진, 입학" style="display: none;">
+          </div>
+
           <div class="form-row">
             <label for="friend-memo">메모 (선택)</label>
             <input type="text" id="friend-memo" class="input-box" placeholder="예: 향 좋아함, 핸드크림은 많음">
@@ -93,7 +101,7 @@
           <p class="error-text" id="friend-error" style="display: none;">이름과 날짜를 입력해 주세요.</p>
           <div class="form-buttons">
             <button type="button" class="btn btn-outline" id="edit-cancel" style="display: none;">취소</button>
-            <button type="submit" class="btn btn-primary" id="friend-submit">등록하기</button>
+            <button type="submit" class="btn btn-primary" id="friend-submit" disabled>등록하기</button>
           </div>
         </form>
       </section>
