@@ -1,24 +1,13 @@
-/* =========================================================
-   15팀 고르다 - 선물 찾기 JS (15_goreuda_finder.js)
-   담당자: 이지현
-   - 질문을 한 단계씩 보여주고 답을 모으기
-   - 상품마다 답과 맞는 정도를 점수로 계산해서 높은 순으로 추천
-   - 마지막 답은 localStorage에 저장해서 다음에 그대로 다시 찾기
-   - 친구 기념일에서 들어오면(?friend=번호) 받는 사람을 미리 채우고,
-     그 친구에게 이미 보낸 선물은 따로 표시
-   ========================================================= */
-
 let themes = null;
 let questions = [];
-let step = 0;          // 지금 보고 있는 질문 번호 (0부터)
-let answers = {};      // 고른 답 { recipient: "friend", occasion: "birthday", ... }
-let friendName = null; // 친구 기념일에서 들어온 경우 그 친구 이름
+let step = 0;
+let answers = {};
+let friendName = null;
 
 loadProducts().then(function () {
   loadThemes().then(function (data) {
     themes = data;
 
-    // 질문 목록: 각 질문의 선택지는 테마 JSON에서 가져옴
     questions = [
       { key: "recipient", text: "누구에게 선물하나요?", options: themes.recipients },
       { key: "occasion", text: "어떤 날인가요?", options: themes.occasions },
@@ -26,7 +15,6 @@ loadProducts().then(function () {
       { key: "taste", text: "받는 분은 어떤 스타일인가요?", options: themes.tastes }
     ];
 
-    // 친구 기념일에서 들어온 경우: 저장된 친구 정보로 첫 질문을 채우고 두 번째 질문부터
     const friendIndex = getParam("friend");
     if (friendIndex !== null) {
       const friend = getList("goreuda_friends")[parseInt(friendIndex)];
@@ -37,7 +25,6 @@ loadProducts().then(function () {
       }
     }
 
-    // 지난번 답이 있으면 "지난번 조건으로 찾기" 버튼을 보여줌
     if (localStorage.getItem("goreuda_finder") !== null && friendName === null) {
       showElement("#finder-last");
     }
@@ -46,7 +33,7 @@ loadProducts().then(function () {
   });
 });
 
-/* ---------- 질문 그리기 ---------- */
+/* 질문 그리기 */
 function drawQuestion() {
   const question = questions[step];
   document.querySelector("#finder-step").innerText = "질문 " + (step + 1) + " / " + questions.length;
@@ -63,11 +50,9 @@ function drawQuestion() {
   }
   document.querySelector("#finder-options").innerHTML = html;
 
-  // 첫 질문에서는 이전 버튼을 숨김
   if (step === 0) { hideElement("#finder-prev"); } else { showElement("#finder-prev"); }
 }
 
-// 선택지를 누르면 답을 저장하고 다음 질문으로, 마지막이면 결과 보여주기
 function chooseOption(button) {
   answers[questions[step].key] = button.getAttribute("data-id");
 
@@ -101,9 +86,7 @@ document.querySelector("#finder-restart").addEventListener("click", function () 
   drawQuestion();
 });
 
-/* ---------- 점수 계산 ----------
-   받는 사람이 맞으면 3점, 상황이 맞으면 3점, 취향이 맞으면 2점
-   예산을 벗어난 상품은 -1점을 돌려줘서 결과에서 뺌 */
+/* 점수 계산: 받는 사람 3점, 상황 3점, 취향 2점, 예산 밖이면 제외 */
 function findBudget(id) {
   for (let i = 0; i < themes.budgets.length; i++) {
     if (themes.budgets[i].id === id) {
@@ -136,7 +119,6 @@ function scoreProduct(product) {
   return { score: score, reasons: reasons };
 }
 
-// 이름이 같은 사람에게 선물함에서 보낸 상품 id 목록
 function getSentIds(name) {
   const ids = [];
   if (name === null) {
@@ -153,20 +135,18 @@ function getSentIds(name) {
   return ids;
 }
 
-/* ---------- 결과 보여주기 ---------- */
+/* 결과 보여주기 */
 function showResult() {
   const sentIds = getSentIds(friendName);
   const list = [];
 
   for (let i = 0; i < allProducts.length; i++) {
     const result = scoreProduct(allProducts[i]);
-    // 받는 사람이나 상황 중 하나는 맞아야 추천
     if (result.score >= 3) {
       list.push({ product: allProducts[i], score: result.score, reasons: result.reasons });
     }
   }
 
-  // 점수가 높은 순, 점수가 같으면 인기 순
   list.sort(function (a, b) {
     if (b.score !== a.score) {
       return b.score - a.score;
@@ -186,7 +166,6 @@ function showResult() {
   document.querySelector("#finder-list").innerHTML = html;
   if (top.length === 0) { showElement("#finder-empty"); } else { hideElement("#finder-empty"); }
 
-  // 고른 조건을 배지로 보여줌
   let conditionHtml = "";
   conditionHtml += '<li class="badge">' + findName(themes.recipients, answers.recipient) + '</li>';
   conditionHtml += '<li class="badge">' + findName(themes.occasions, answers.occasion) + '</li>';
