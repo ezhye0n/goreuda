@@ -22,7 +22,7 @@ loadProducts().then(function (products) {
   for (let i = 0; i < giftbox.length; i++) {
     const gift = giftbox[i];
 
-     //선물을ㄹ 감싸는 목록 항목 만들기
+     //선물을 감싸는 목록 항목 만들기
     html += '<li class="giftbox-item">';
     html += '<div class="giftbox-head">';
 
@@ -42,10 +42,10 @@ loadProducts().then(function (products) {
      
     for (let j = 0; j < gift.items.length; j++) {
       const product = findProduct(products, gift.items[j].id); //상품ID로 전체 상품 데이터에서 상품 찾기
-      html += '<li class="giftbox-product">'; //이미지 
-      html += '<img src="' + product.image + '" alt="' + product.alt + '">'; //이름
-      html += '<a href="15_goreuda_detail.html?id=' + product.id + '">' + product.name + '<br>' + gift.items[j].option + ', ' + gift.items[j].qty + '개</a>'; //옵션
-      html += '</li>'; //수랑
+      html += '<li class="giftbox-product">'; //상품 항목
+      html += '<img src="' + product.image + '" alt="' + product.alt + '">'; //이미지
+      html += '<a href="15_goreuda_detail.html?id=' + product.id + '">' + product.name + '<br>' + gift.items[j].option + ', ' + gift.items[j].qty + '개</a>'; //이름, 옵션
+      html += '</li>'; //수량
     }
      
     html += '</ul>';
