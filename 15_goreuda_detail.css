@@ -1,9 +1,7 @@
-/* =========================================================
-   15팀 고르다 - 상품 상세 전용 CSS (15_goreuda_detail.css)
-   담당자: 오현채
-   ========================================================= */
+/* 15팀 고르다 - 상품 상세 전용 CSS (15_goreuda_detail.css)
+   담당자: 오현채 */
 
-/* 상품 정보: 왼쪽 사진, 오른쪽 정보 */
+/* 상품 정보 */
 .detail-page .product { display: flex; padding: 40px 0 64px; }
 .detail-page .product-image {
   width: 480px;
@@ -33,7 +31,7 @@
 .detail-total { margin: 24px 0; text-align: right; font-size: 14px; }
 .detail-total strong { margin-left: 8px; font-size: 28px; }
 
-/* 찜(정사각형), 장바구니, 선물하기 버튼 한 줄 */
+/* 찜, 장바구니, 선물하기 버튼 */
 .detail-buttons { display: flex; }
 .detail-buttons .btn { flex-grow: 1; margin-left: 8px; }
 .wish-big {

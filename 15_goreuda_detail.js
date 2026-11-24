@@ -1,11 +1,5 @@
-/* =========================================================
-   15팀 고르다 - 상품 상세 JS (15_goreuda_detail.js)
-   담당자: 오현채
-   - 주소의 ?id= 값으로 상품을 찾아 화면 채우기
-   - 옵션, 수량, 총 금액
-   - 찜, 장바구니 담기, 바로 선물하기
-   - 최근 본 상품 저장, 비슷한 상품 보여주기
-   ========================================================= */
+/* 15팀 고르다 - 상품 상세 JS (15_goreuda_detail.js)
+   담당자: 오현채 */
 
 let product = null;
 let qty = 1;
@@ -14,7 +8,7 @@ loadProducts().then(function (products) {
   loadThemes().then(function (themes) {
     product = findProduct(products, getParam("id"));
 
-    // 없는 상품이면 안내만 보여줌
+    // 없는 상품이면 안내만 보여주기
     if (product === null) {
       hideElement("#product");
       hideElement("#detail-more");
@@ -33,7 +27,7 @@ function showProduct(themes) {
   const img = document.querySelector("#detail-img");
   img.setAttribute("src", product.image);
   img.setAttribute("alt", product.alt);
-  // 브랜드가 없는 상품은 브랜드 줄을 숨김
+  // 브랜드가 없는 상품은 브랜드 줄 숨기기
   if (product.brand === "") {
     hideElement("#detail-brand");
   } else {
@@ -48,7 +42,6 @@ function showProduct(themes) {
   categoryLink.innerText = findName(themes.categories, product.category);
   categoryLink.setAttribute("href", "15_goreuda_explore.html?category=" + product.category);
 
-  // 추천 대상, 상황은 이름으로 바꿔서 쉼표로 이어 붙임
   const recipientNames = [];
   for (let i = 0; i < product.recipients.length; i++) {
     recipientNames.push(findName(themes.recipients, product.recipients[i]));
@@ -106,7 +99,7 @@ document.querySelector("#detail-cart").addEventListener("click", function () {
   addToCart(product.id, document.querySelector("#detail-option").value, qty);
 });
 
-// 바로 선물하기: 이 상품 하나만 주문서에 담고 선물하기 페이지로 이동
+// 바로 선물하기
 document.querySelector("#detail-gift").addEventListener("click", function () {
   const order = {
     from: "detail",
@@ -126,7 +119,7 @@ function saveRecent(id) {
   saveList("goreuda_recent", result);
 }
 
-// 같은 카테고리의 다른 상품 4개
+// 같은 카테고리 상품 4개
 function showSimilar(products) {
   const list = [];
   for (let i = 0; i < products.length; i++) {

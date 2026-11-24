@@ -1,9 +1,6 @@
-/* =========================================================
-   15팀 고르다 - 전체 상품, 랭킹 전용 CSS (15_goreuda_explore.css)
-   담당자: 오현채
-   ========================================================= */
+/* 15팀 고르다 - 상품 목록(랭킹·신상품) CSS (15_goreuda_explore.css)
+   담당자: 오현채 */
 
-/* 왼쪽 필터, 오른쪽 상품 목록 */
 .explore-layout { display: flex; align-items: flex-start; }
 
 .filter-side {
@@ -63,11 +60,9 @@
 .keyword-info { margin-bottom: 24px; font-size: 16px; }
 .keyword-info strong { color: #6B3FA0; }
 
-/* 오른쪽 공간이 좁아서 한 줄에 3개 */
+
 .explore-result .product-card { width: 33.33%; }
-.explore-result .card-thumb { height: 293px; }   /* 3개일 때 카드 너비에 맞춘 정사각형 */
+.explore-result .card-thumb { height: 293px; }   
 .explore-result .wish-btn { top: 245px; }
 
-/* 제목을 상품 목록(오른쪽) 기준 가운데에 오게 함
-   왼쪽 필터 너비(220px) + 필터와 목록 사이 여백(40px)만큼 왼쪽 안쪽 여백을 줌 */
 #explore-title { padding-left: 260px; }

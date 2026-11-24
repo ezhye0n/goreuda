@@ -1,15 +1,9 @@
-/* =========================================================
-   15팀 고르다 - 전체 상품, 랭킹 JS (15_goreuda_explore.js)
-   담당자: 오현채
-   - 주소의 값(?occasion=, ?recipient=, ?category=, ?sort=, ?view=search)으로 처음 필터 정하기
-   - 필터, 정렬을 바꿀 때마다 목록 다시 그리기
-   - 필터 상태를 sessionStorage에 저장해서 뒤로 가기를 해도 유지
-   ========================================================= */
+/* 15팀 고르다 - 상품 목록(랭킹·신상품) JS (15_goreuda_explore.js)
+   담당자: 오현채 */
 
 let filter = {};
 let budgets = [];
 
-// 아무 조건도 없는 처음 상태
 function defaultFilter() {
   return { category: "all", recipient: "all", occasion: "all", price: "all", sort: "rank", keyword: "", view: "all" };
 }
@@ -29,7 +23,7 @@ loadProducts().then(function (products) {
   });
 });
 
-// 라디오 버튼이 바뀌면 그 값을 filter에 넣고 다시 그림
+// 라디오 버튼이 바뀌면 필터 값 바꾸고 목록 다시 그리기
 document.querySelector(".filter-side").addEventListener("change", function (event) {
   filter[event.target.name] = event.target.value;
   drawList();
@@ -47,12 +41,11 @@ document.querySelector("#filter-reset").addEventListener("click", function () {
   drawList();
 });
 
-// 라디오 버튼 하나 만들기 (label 안에 넣어서 글자를 눌러도 선택됨)
 function makeRadio(name, value, text) {
   return '<label class="filter-option"><input type="radio" name="' + name + '" value="' + value + '"> ' + text + '</label>';
 }
 
-// 테마 JSON 목록으로 라디오 버튼 만들기 (맨 앞에 "전체")
+
 function makeFilterOptions(name, list) {
   let html = makeRadio(name, "all", "전체");
   for (let i = 0; i < list.length; i++) {
@@ -61,7 +54,7 @@ function makeFilterOptions(name, list) {
   document.querySelector("#filter-" + name).innerHTML = html;
 }
 
-// 가격은 테마 JSON의 budgets(최소, 최대 금액)로 만듦
+
 function makePriceOptions() {
   let html = "";
   for (let i = 0; i < budgets.length; i++) {
@@ -70,9 +63,8 @@ function makePriceOptions() {
   document.querySelector("#filter-price").innerHTML = html;
 }
 
-/* 처음 필터 정하기
-   - 같은 주소로 다시 들어온 경우(상세 페이지에서 뒤로 가기 등)에는 저장해 둔 필터를 그대로 씀
-   - 다른 주소로 들어온 경우(홈 테마, 검색, 메뉴)에는 주소의 값으로 새로 정함 */
+/* - 같은 주소로 다시 들어온 경우: 필터 그대로
+   - 다른 주소로 들어온 경우: 주소의 값으로 새로 */
 function readStartFilter() {
   const saved = JSON.parse(sessionStorage.getItem("goreuda_filter"));
   if (saved !== null && saved.url === location.search) {
@@ -88,13 +80,12 @@ function readStartFilter() {
     filter.sort = getParam("sort");
     filter.view = getParam("sort");
   }
-  // 헤더 검색으로 들어온 경우 검색어는 sessionStorage에서 꺼냄
+  // 헤더 검색
   if (getParam("view") === "search") {
     filter.keyword = sessionStorage.getItem("goreuda_keyword") || "";
   }
 }
 
-// filter 값에 맞게 라디오, 정렬칸, 검색창을 체크
 function applyFilterToForm() {
   const names = ["category", "recipient", "occasion", "price"];
   for (let i = 0; i < names.length; i++) {
@@ -107,7 +98,7 @@ function applyFilterToForm() {
   document.querySelector("#search").value = filter.keyword;
 }
 
-// 가격이 고른 예산 안에 드는지 확인
+// 조건 확인하기
 function inBudget(price) {
   for (let i = 0; i < budgets.length; i++) {
     if (budgets[i].id === filter.price) {
@@ -117,7 +108,6 @@ function inBudget(price) {
   return true;
 }
 
-// 상품 하나가 지금 조건에 맞는지 확인
 function matchFilter(product) {
   if (filter.category !== "all" && !inCategory(product, filter.category)) {
     return false;
@@ -125,13 +115,14 @@ function matchFilter(product) {
   if (filter.recipient !== "all" && !hasItem(product.recipients, filter.recipient)) {
     return false;
   }
+
   if (filter.occasion !== "all" && !hasItem(product.occasions, filter.occasion)) {
     return false;
   }
   if (!inBudget(product.price)) {
     return false;
   }
-  // 검색어가 상품 이름이나 브랜드에 들어 있는지 확인
+
   if (filter.keyword !== "") {
     const text = product.name + " " + product.brand;
     if (text.indexOf(filter.keyword) === -1) {
@@ -179,7 +170,7 @@ function drawList() {
   sessionStorage.setItem("goreuda_filter", JSON.stringify({ url: location.search, filter: filter }));
 }
 
-// 랭킹, 신상품 메뉴도 이 페이지를 쓰므로 어떤 메뉴로 들어왔는지(view)에 따라 제목을 바꿈
+// 메뉴에 따라 제목 다르게 설정
 function updateTitle() {
   let title = "전체 상품";
   let navKey = "explore";
