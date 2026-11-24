@@ -127,7 +127,7 @@ document.querySelector("#receiver-name").addEventListener("blur", function () {
 document.querySelector("#receiver-phone").addEventListener("blur", function () {
   const phone = document.querySelector("#receiver-phone").value;
 
-  // 에러 두 개 겹치지 않게 먼저 둘 다 숨기고 조건에 맞게 에러 메시지 세팅
+  // 에러 두 개 겹치지 않게 먼저 둘 다 숨기기 
   hideElement("#phone-empty-error");
   hideElement("#phone-error");
 
@@ -136,7 +136,7 @@ document.querySelector("#receiver-phone").addEventListener("blur", function () {
   } else if (!isPhone(phone)) {
     setError("#receiver-phone", "#phone-error", true);
   } else {
-    setError("#receiver-phone", "#phone-error", false); // 에러 없으면 숨기기
+    document.querySelector("#receiver-phone").className = "input-box"; // 정상일 때는 에러 클래스 제거
   }
 });
 
