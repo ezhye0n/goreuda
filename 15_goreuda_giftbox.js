@@ -73,7 +73,7 @@ function toggleCard(button) {
   }
 }
 
-// 다시 선물하기: 같은 상품으로 주문서를 만들어 선물하기 페이지로 이동
+// 다시 선물하기. 같은 상품으로 주문서를 만들어 선물하기 페이지로 이동
 function giftAgain(button) {
   const items = giftbox[parseInt(button.getAttribute("data-index"))].items; //클릭한 버튼의 번호로 상품 목록 가져옴
   sessionStorage.setItem("goreuda_order", JSON.stringify({ from: "giftbox", items: items })); //선택한 상품을 sessionStorage에 임시저장
