@@ -6,12 +6,14 @@
 .gift-form { display: flex; align-items: flex-start; }
 .gift-left { flex-grow: 1; margin-right: 40px; }
 
+/* 선물 상품 */
 .gift-block { padding-bottom: 40px; }
 .gift-block-title {
   margin-bottom: 16px;
   padding-bottom: 16px;
   border-bottom: 1px solid #222222;
 }
+/* 장바구니로 돌아 가기 칩 때문에 따로 설정 */
 .gift-block-head {
   display: flex;
   align-items: center;
@@ -74,7 +76,7 @@
   border-bottom-color: #6B3FA0;
 }
 
-/* 카드 디자인 고르기: 색 칩 */
+/* 카드 고르는 칩 */
 .card-choice { margin-bottom: 16px; }
 .card-chip {
   margin: 0 8px 8px 0;
@@ -85,7 +87,7 @@
 }
 .card-chip.on { border-color: #6B3FA0; color: #6B3FA0; font-weight: 700; }
 
-/* 메시지 카드 미리보기: 고른 카드 색이 배경이 됨 */
+/* 메시지 카드 배경 색 */
 .message-card {
   width: 480px;
   padding: 24px;
@@ -98,7 +100,7 @@
   border-radius: 4px;
   background-color: #FFFFFF;
   line-height: 1.6;
-  resize: none;   /* 메시지 칸 크기를 사용자가 끌어서 바꾸지 못하게 고정 */
+  resize: none;   /* 메시지 칸 크기를 끌어서 바꾸지 못하게 고정 */
 }
 .message-count { margin-top: 8px; font-size: 12px; color: #666666; text-align: right; }
 
