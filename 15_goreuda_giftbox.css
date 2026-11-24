@@ -21,7 +21,7 @@
 
 .giftbox-products { display: flex; flex-wrap: wrap; } 
 .giftbox-product { display: flex; align-items: center; width: 50%; margin-bottom: 8px; font-size: 14px; }
-.giftbox-product img { width: 56px; height: 64px; margin-right: 16px; border-radius: 4px; object-fit: cover; } //비율 유지
+.giftbox-product img { width: 56px; height: 64px; margin-right: 16px; border-radius: 4px; object-fit: cover; } /*비율 유지*/
 
 /* 메시지 카드 다시 보기 (처음에는 숨김) */
 .giftbox-card {
