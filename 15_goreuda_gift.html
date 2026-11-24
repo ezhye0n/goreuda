@@ -56,15 +56,21 @@
     <h1 class="page-title">선물하기</h1>
 
     <div class="empty-box" id="gift-empty" style="display: none;">
-      <p>선물할 상품이 없어요.<br>상품 상세나 장바구니에서 선물하기를 눌러 주세요.</p>
-      <a href="15_goreuda_cart.html" class="btn btn-outline">장바구니로 가기</a>
+      <p>선물할 상품이 없어요.<br>소중한 사람에게 줄 선물을 골라보세요.</p>
+      <a href="15_goreuda_finder.html" class="btn btn-outline">선물 찾기</a>
     </div>
 
     <form class="gift-form" id="gift-form">
       <div class="gift-left">
         <!-- 선물하실 상품 -->
         <section class="gift-block">
+          <div class="gift-block-head">
           <h2 class="gift-block-title">선물하실 상품</h2>
+          <a href="15_goreuda_cart.html" class="chip cart-link-chip">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="1.6"><path d="M3 4h2l2.4 11h11.2L21 8H7"/><circle cx="9" cy="19" r="1.5"/><circle cx="18" cy="19" r="1.5"/></svg>
+            <span>장바구니 돌아가기</span>
+          </a>
+          </div>
           <ul class="order-list" id="order-list"></ul>
         </section>
 
@@ -74,7 +80,7 @@
           <div class="form-row" id="friend-row" style="display: none;">
             <label for="friend-select">친구 목록에서 고르기</label>
             <select id="friend-select" class="select-box">
-              <option value="">직접 입력</option>
+              <option value="self">직접 입력</option>
             </select>
           </div>
           <div class="form-row">
@@ -93,10 +99,10 @@
         <!-- 메시지 카드 -->
         <section class="gift-block">
           <h2 class="gift-block-title">메시지 카드</h2>
-          <div class="card-choice" id="card-choice" aria-label="카드 디자인"></div>
-          <div class="message-card" id="message-preview">
+          <div class="card-choice" id="card-choice"></div>
+          <div class="message-card" id="message-box">
             <label for="message" class="hidden-text">메시지</label>
-            <textarea id="message" rows="4"></textarea>
+            <textarea id="message" rows="4" maxlength="100"></textarea>
             <p class="message-count"><span id="message-count">0</span> / 100</p>
             <p class="error-text" id="message-error" style="display: none;">메시지는 100자까지 쓸 수 있어요.</p>
           </div>

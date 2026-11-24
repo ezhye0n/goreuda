@@ -48,7 +48,7 @@
 #friend-type-custom { margin-top: 8px; }
 .form-buttons .btn-primary:disabled { border-color: #E5E5E5; background-color: #E5E5E5; color: #999999; cursor: not-allowed; }
 
-/* 입력칸 밑줄형 디자인 (공통 CSS의 사각 테두리 덮어쓰기) */
+/* 입력칸 받는 칸인데 공통css의 입력 칸 덮어쓰고 밑줄로 수정 */
 .friend-form-box .input-box,
 .friend-form-box .select-box {
   width: 100%;

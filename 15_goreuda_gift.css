@@ -11,9 +11,33 @@
   margin-bottom: 16px;
   padding-bottom: 16px;
   border-bottom: 1px solid #222222;
-  font-size: 20px;
 }
- 
+.gift-block-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #222222;
+}
+.gift-block-head .gift-block-title{
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+
+.cart-link-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+.cart-link-chip svg {
+  display: block;
+  flex-shrink: 0;
+}
+
 /* 선물할 상품 */
 .order-item {
   display: flex;
@@ -26,7 +50,7 @@
 .order-item-info strong { display: block; font-size: 16px; font-weight: 400; color: #222222; }
 .order-item-price { font-weight: 700; }
 
-/* 입력칸: 공통css의 옵션, 입력 박스 덮어쓰고 밑줄로 수정 */
+/* 입력칸 받는 칸인데 공통css의 입력 칸 덮어쓰고 밑줄로 수정 */
 .gift-block .input-box,
 .gift-block .select-box { 
   border: none;
@@ -41,6 +65,13 @@
 
 .required {
   color: #E0524A;
+}
+
+/* 포커스할 때 보라색 밑줄 강조 */
+.gift-block .input-box:focus,
+.gift-block .select-box:focus {
+  outline: none;
+  border-bottom-color: #6B3FA0;
 }
 
 /* 카드 디자인 고르기: 색 칩 */
