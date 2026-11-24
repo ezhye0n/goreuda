@@ -1,6 +1,6 @@
 /*선물함 전용 css 담당자: 이예경*/
 
-//상단 배너 설정
+/*상단 배너 설정*/
 .sent-notice {
   margin-bottom: 24px;
   padding: 16px;
@@ -10,13 +10,13 @@
   text-align: center;
 }
 
-.giftbox-list { border-top: 1px solid #222222; } //짙은 색 구분선
-.giftbox-item { padding: 24px 0; border-bottom: 1px solid #E5E5E5; } //옅은 색 구분선
+.giftbox-list { border-top: 1px solid #222222; } /*짙은 색 구분선*/
+.giftbox-item { padding: 24px 0; border-bottom: 1px solid #E5E5E5; } /*옅은 색 구분선*/
 .giftbox-head { display: flex; align-items: center; margin-bottom: 16px; } 
 .giftbox-date { margin-right: 16px; font-size: 14px; color: #666666; } 
 .giftbox-name { font-size: 16px; font-weight: 700; }
-.giftbox-buttons { margin-left: auto; } // 왼쪽을 채워서 버튼을 오른쪽 끝으로 붙이기
-.giftbox-buttons .btn { margin-left: 8px; } //버튼끼리의 간격
+.giftbox-buttons { margin-left: auto; } /*왼쪽을 채워서 버튼을 오른쪽 끝으로 붙이기*/
+.giftbox-buttons .btn { margin-left: 8px; } /*버튼끼리의 간격*/
 
 
 .giftbox-products { display: flex; flex-wrap: wrap; } 
