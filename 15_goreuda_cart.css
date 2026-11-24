@@ -3,7 +3,7 @@
    담당자: 우은민
    ========================================================= */
 
-/* 왼쪽 상품 목록, 오른쪽 결제 금액 */
+/* 왼쪽은 상품 목록 오른쪽은 결제 금액 */
 .cart-layout { display: flex; align-items: flex-start; }
 .cart-left { flex-grow: 1; margin-right: 40px; }
 
@@ -49,7 +49,7 @@
 }
 .remove-btn:hover { color: #222222; }
 
-/* 결제 금액 상자: 스크롤해도 따라옴 */
+/* 결제 금액 상자가 스크롤해도 따라오게 */
 .cart-summary {
   position: sticky;
   top: 160px;

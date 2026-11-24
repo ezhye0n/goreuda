@@ -45,7 +45,6 @@ for (let i = 0; i < typeChips.length; i++) {
 
     if (selectedType === "직접입력") {
       showElement("#friend-type-custom");
-      document.querySelector("#friend-type-custom");
     } else {
       hideElement("#friend-type-custom");
     }
