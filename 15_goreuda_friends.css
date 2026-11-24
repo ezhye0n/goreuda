@@ -3,7 +3,7 @@
    담당자: 우은민
    ========================================================= */
 
-/* 왼쪽 등록 폼, 오른쪽 목록 */
+/* 왼쪽은 등록 폼 오른쪽은 목록 */
 .friends-layout { display: flex; align-items: flex-start; }
 .friends-title {
   margin-bottom: 16px;
@@ -15,7 +15,6 @@
 .friend-form-box { width: 360px; min-width: 360px; margin-right: 56px; }
 .friend-form-box .input-box,
 .friend-form-box .select-box { width: 100%; }
-.friend-form-box .error-text { margin-bottom: 16px; }
 .form-buttons { display: flex; }
 .form-buttons .btn { flex-grow: 1; }
 .form-buttons .btn-outline { margin-right: 8px; }
@@ -37,16 +36,16 @@
 .friend-info { flex-grow: 1; }
 .friend-name { font-size: 16px; font-weight: 700; }
 .friend-sub { font-size: 14px; color: #666666; }
-.friend-gifted { font-size: 12px; color: #999999; }
+.friend-gifted { font-size: 12px; color: #999999;} 
+.friend-buttons { flex-shrink: 0; } /* 글자 길이 길어져도 버튼 위치 고정 */
 .friend-buttons .btn { margin-left: 8px; }
 
-/* 제목을 오른쪽 기념일 목록 기준 가운데에 오게 함
-   왼쪽 등록 폼 너비(360px) + 폼과 목록 사이 여백(56px)만큼 왼쪽 안쪽 여백을 줌 */
+
 .page-title { padding-left: 416px; }
 
 .type-chips { display: flex; flex-wrap: wrap; }
 #friend-type-custom { margin-top: 8px; }
-.form-buttons .btn-primary:disabled { border-color: #E5E5E5; background-color: #E5E5E5; color: #999999; cursor: not-allowed; }
+.form-buttons .btn-primary:disabled { border-color: #E5E5E5; background-color: #E5E5E5; color: #999999; }
 
 /* 입력칸 받는 칸인데 공통css의 입력 칸 덮어쓰고 밑줄로 수정 */
 .friend-form-box .input-box,
@@ -59,7 +58,7 @@
   background-color: transparent;
 }
 
-/* 클릭(포커스) 시 보라색 밑줄 강조 */
+/* 포커스할 때 보라색 밑줄 강조 */
 .friend-form-box .input-box:focus,
 .friend-form-box .select-box:focus {
   outline: none;
