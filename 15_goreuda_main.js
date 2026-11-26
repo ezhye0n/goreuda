@@ -1,4 +1,4 @@
-/* 홈 전용 JS, 담당: 이지현 */
+/* 홈 JS, 담당: 이지현 */
 
 let banners = [];
 let currentBanner = 0;

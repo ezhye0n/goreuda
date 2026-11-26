@@ -1,4 +1,4 @@
-/* 선물함 전용 JS, 담당: 이예경 */
+/* 선물함 JS, 담당: 이예경 */
 
 // 보낸 선물 목록
 const giftbox = getList("goreuda_giftbox");

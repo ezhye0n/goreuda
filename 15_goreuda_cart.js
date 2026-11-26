@@ -1,4 +1,4 @@
-/* 장바구니 전용 JS, 담당: 우은민 */
+/* 장바구니 JS, 담당: 우은민 */
 
 const FREE_DELIVERY = 30000;   // 3만원 이상이면 무료배송
 const DELIVERY_FEE = 3000;

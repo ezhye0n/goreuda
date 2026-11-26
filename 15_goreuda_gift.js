@@ -1,4 +1,4 @@
-/* 선물하기 전용 JS, 담당: 우은민 */
+/* 선물하기 JS, 담당: 우은민 */
 
 const MESSAGE_MAX = 100;
 const order = JSON.parse(sessionStorage.getItem("goreuda_order")); // 상품 상세나 카트에서 넘어 온 주문 상품 정보

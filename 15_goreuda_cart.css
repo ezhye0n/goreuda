@@ -1,4 +1,4 @@
-/* 장바구니 전용 CSS, 담당: 우은민 */
+/* 장바구니 CSS, 담당: 우은민 */
 
 /* 왼쪽은 상품 목록 오른쪽은 결제 금액 */
 .cart-layout { display: flex; align-items: flex-start; }

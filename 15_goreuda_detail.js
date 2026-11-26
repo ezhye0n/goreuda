@@ -1,4 +1,4 @@
-/* 상품 상세 전용 JS, 담당: 오현채 */
+/* 상품 상세 JS, 담당: 오현채 */
 
 let product = null;
 let qty = 1;

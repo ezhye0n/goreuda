@@ -1,4 +1,4 @@
-/* 친구 기념일 전용 JS, 담당: 우은민 */
+/* 친구 기념일 JS, 담당: 우은민 */
 
 let editIndex = -1;   // 새로 등록은 -1
 let selectedType = "";

@@ -1,4 +1,4 @@
-/* 위시 전용 JS, 담당: 이예경 */
+/* 위시 JS, 담당: 이예경 */
 
 loadProducts().then(function () {
   drawWish();
