@@ -2,7 +2,7 @@
   {
     "id": "gift01",
     "name": "록시땅 시어 버터 핸드크림 30ml",
-    "brand": "L'Occitane",
+    "brand": "L'OCCITANE",
     "category": "beauty",
     "price": 16000,
     "image": "images/15_gift01.jpg",
@@ -19,7 +19,7 @@
   {
     "id": "gift02",
     "name": "탬버린즈 퍼퓸 핸드크림 30ml",
-    "brand": "Tamburins",
+    "brand": "TAMBURINS",
     "category": "beauty",
     "price": 25000,
     "image": "images/15_gift02.jpg",
@@ -53,7 +53,7 @@
   {
     "id": "gift04",
     "name": "이솝 레저렉션 핸드 워시 500ml",
-    "brand": "Aesop",
+    "brand": "AESOP",
     "category": "beauty",
     "moreCategories": ["living"],
     "price": 49000,
@@ -71,7 +71,7 @@
   {
     "id": "gift05",
     "name": "고디바 클래식 골드 컬렉션 8개입",
-    "brand": "Godiva",
+    "brand": "GODIVA",
     "category": "food",
     "price": 29000,
     "image": "images/15_gift05.jpg",
@@ -88,7 +88,7 @@
   {
     "id": "gift06",
     "name": "워커스 쇼트브레드 어소트먼트",
-    "brand": "Walker's",
+    "brand": "WALKER'S",
     "category": "food",
     "price": 15000,
     "image": "images/15_gift06.jpg",
@@ -105,7 +105,7 @@
   {
     "id": "gift07",
     "name": "오설록 프리미엄 티 컬렉션 10종 40입",
-    "brand": "Osulloc",
+    "brand": "OSULLOC",
     "category": "food",
     "price": 30000,
     "image": "images/15_gift07.jpg",
@@ -121,7 +121,7 @@
   },
   {
     "id": "gift08",
-    "name": "핸드드립 커피 드립백 선물 세트",
+    "name": "모모스 핸드드립 커피 드립백 선물 세트",
     "brand": "MOMOS",
     "category": "food",
     "moreCategories": ["living"],
@@ -140,7 +140,7 @@
   {
     "id": "gift09",
     "name": "스탠리 퀜처 텀블러 887ml",
-    "brand": "Stanley",
+    "brand": "STANLEY",
     "category": "living",
     "price": 45000,
     "image": "images/15_gift09.jpg",
@@ -174,7 +174,7 @@
   {
     "id": "gift11",
     "name": "코코도르 디퓨저 200ml 숲속새벽공기",
-    "brand": "Cocodor",
+    "brand": "COCODOR",
     "category": "living",
     "price": 19900,
     "image": "images/15_gift11.jpg",
@@ -241,8 +241,8 @@
   },
   {
     "id": "gift15",
-    "name": "드파운드 대니 키링_Brown",
-    "brand": "Depound",
+    "name": "드파운드 대니 키링 브라운",
+    "brand": "DEPOUND",
     "category": "fashion",
     "price": 15000,
     "image": "images/15_gift15.jpg",
@@ -252,14 +252,14 @@
     "tastes": ["trendy", "emotional"],
     "rank": 79,
     "date": "2026-11-08",
-    "options": ["Brown"],
+    "options": ["브라운"],
     "desc": "가방에 달기 좋은 작은 인형 키링이에요. 상자에 담겨 있어 선물하기 좋아요.",
     "review": "친구랑 같이 하나씩 달았어요."
   },
   {
     "id": "gift16",
-    "name": "캐시미어 블렌드 머플러",
-    "brand": "Acne",
+    "name": "마리끌레르 캐시미어 블렌드 머플러",
+    "brand": "MARIE CLAIRE",
     "category": "fashion",
     "price": 59000,
     "image": "images/15_gift16.jpg",
@@ -275,7 +275,7 @@
   },
   {
     "id": "gift17",
-    "name": "미니 보조배터리 10000mAh",
+    "name": "앤커 미니 보조배터리 10000mAh",
     "brand": "ANKER",
     "category": "digital",
     "price": 25000,
@@ -292,8 +292,8 @@
   },
   {
     "id": "gift18",
-    "name": "STANMORE III 블루투스 스피커",
-    "brand": "Marshall",
+    "name": "마샬 스탠모어 III 블루투스 스피커",
+    "brand": "MARSHALL",
     "category": "digital",
     "price": 49000,
     "image": "images/15_gift18.jpg",
@@ -310,7 +310,7 @@
   {
     "id": "gift19",
     "name": "온더바디 발을씻자 코튼풋샴푸",
-    "brand": "온더바디",
+    "brand": "ON: THE BODY",
     "category": "beauty",
     "price": 32000,
     "image": "images/15_gift19.jpg",
