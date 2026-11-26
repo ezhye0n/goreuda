@@ -161,7 +161,7 @@ function startEdit(button) {
   const friend = getList("goreuda_friends")[editIndex];
 
   document.querySelector("#friend-name").value = friend.name;
-  document.querySelector("#friend-relation").value = friend.relation || "friend";
+  document.querySelector("#friend-relation").value = friend.relation || "";
   document.querySelector("#friend-date").value = friend.date;
   document.querySelector("#friend-memo").value = friend.memo;
 
@@ -219,7 +219,7 @@ function resetForm() {
   editIndex = -1;
   selectedType = "";
   document.querySelector("#friend-name").value = "";
-  document.querySelector("#friend-relation").value = "friend";
+  document.querySelector("#friend-relation").value = "";
   document.querySelector("#friend-date").value = "";
   document.querySelector("#friend-memo").value = "";
   document.querySelector("#friend-type-custom").value = "";
