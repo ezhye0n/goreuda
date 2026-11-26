@@ -31,12 +31,11 @@ function showOrder(products) {
     const product = findProduct(products, item.id); //주문 상품 정보와 일치하는 상품 정보 반환
     sum += product.price * item.qty;
 
-    producttext += `
-      <li class="order-item">
-        <img src="${product.image}" alt="${product.alt}">
-        <p class="order-item-info"><strong>${product.name}</strong>옵션 : ${item.option}/${item.qty}개</p>
-        <p class="order-item-price">${formatPrice(product.price * item.qty)}</p>
-      </li>`;
+    producttext += '<li class="order-item">';
+    producttext += '<img src="' + product.image + '" alt="' + product.alt + '">';
+    producttext += '<p class="order-item-info"><strong>' + product.name + '</strong>옵션 : ' + item.option + '/' + item.qty + '개</p>';
+    producttext += '<p class="order-item-price">' + formatPrice(product.price * item.qty) + '</p>';
+    producttext += '</li>';
   }
   document.querySelector("#order-list").innerHTML = producttext;
 
@@ -141,7 +140,7 @@ document.querySelector("#receiver-phone").addEventListener("input", updateSubmit
 function showCards() {
   let cardtext = "";
   for (let i = 0; i < cards.length; i++) {
-    cardtext += `<button type="button" class="card-chip" onclick="selectCard(${i})" style="background-color: ${cards[i].color};">${cards[i].name}</button>`;
+    cardtext += '<button type="button" class="card-chip" onclick="selectCard(' + i + ')" style="background-color: ' + cards[i].color + ';">' + cards[i].name + '</button>';
   }
   document.querySelector("#card-choice").innerHTML = cardtext;
   selectCard(0); // 기본은 첫 번째 카드로 선택

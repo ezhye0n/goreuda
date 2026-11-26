@@ -126,28 +126,24 @@ function drawFriends() {
       memoText = ", " + friend.memo;
     }
 
-    friendtext += `
-      <li class="friend-item">
-        <p class="friend-dday">${ddayText(list[i].dday)}</p>
-        <div class="friend-info">
-          <p class="friend-name">${friend.name} <span class="badge">${friend.type}</span></p>
-          <p class="friend-sub">${relationText}${monthDayText(friend.date)}${memoText}</p>
-    `;
+    friendtext += '<li class="friend-item">';
+    friendtext += '<p class="friend-dday">' + ddayText(list[i].dday) + '</p>';
+    friendtext += '<div class="friend-info">';
+    friendtext += '<p class="friend-name">' + friend.name + ' <span class="badge">' + friend.type + '</span></p>';
+    friendtext += '<p class="friend-sub">' + relationText + monthDayText(friend.date) + memoText + '</p>';
 
     const sent = getSentNames(friend.name);
     if (sent.length > 0) {
-      friendtext += `<p class="friend-gifted">이전에 보낸 선물: ${sent.join(", ")}</p>`;
+      friendtext += '<p class="friend-gifted">이전에 보낸 선물: ' + sent.join(", ") + '</p>';
     }
 
-    friendtext += `
-        </div>
-        <div class="friend-buttons">
-          <a href="15_goreuda_finder.html?friend=${index}" class="btn btn-primary btn-small">선물 고르기</a>
-          <button type="button" class="btn btn-outline btn-small" value="${index}" onclick="startEdit(this)">수정</button>
-          <button type="button" class="btn btn-outline btn-small" value="${index}" onclick="deleteFriend(this)">삭제</button>
-        </div>
-      </li>
-    `;
+    friendtext += '</div>';
+    friendtext += '<div class="friend-buttons">';
+    friendtext += '<a href="15_goreuda_finder.html?friend=' + index + '" class="btn btn-primary btn-small">선물 고르기</a>';
+    friendtext += '<button type="button" class="btn btn-outline btn-small" value="' + index + '" onclick="startEdit(this)">수정</button>';
+    friendtext += '<button type="button" class="btn btn-outline btn-small" value="' + index + '" onclick="deleteFriend(this)">삭제</button>';
+    friendtext += '</div>';
+    friendtext += '</li>';
   }
 
   document.querySelector("#friend-list").innerHTML = friendtext;
