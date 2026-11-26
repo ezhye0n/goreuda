@@ -1,4 +1,4 @@
-/* 담당: 우은민 */
+/* 선물하기 전용 CSS, 담당: 우은민 */
 
 .gift-form { display: flex; align-items: flex-start; }
 .gift-left { flex-grow: 1; margin-right: 40px; }

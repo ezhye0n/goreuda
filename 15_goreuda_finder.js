@@ -1,4 +1,4 @@
-/* 담당: 이지현 */
+/* 선물 찾기 전용 JS, 담당: 이지현 */
 
 let themes = null;
 let questions = [];
