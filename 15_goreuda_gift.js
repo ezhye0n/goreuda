@@ -57,9 +57,9 @@ function showFriends() {
     return;
   }
   let selecttext = '<option value="self">직접 입력</option>';
-  selecttext += friends.map((friend, i) => 
-    `<option value="${i}">${friend.name} (${friend.type} ${monthDayText(friend.date)})</option>`
-  ).join('');
+  for (let i = 0; i < friends.length; i++) {
+    selecttext += '<option value="' + i + '">' + friends[i].name + ' (' + friends[i].type + ' ' + monthDayText(friends[i].date) + ')</option>';
+  }
   document.querySelector("#friend-select").innerHTML = selecttext;
   showElement("#friend-row");
 }

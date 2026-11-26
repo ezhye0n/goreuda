@@ -148,7 +148,7 @@ function drawFriends() {
         </div>
       </li>
     `;
-      }
+  }
 
   document.querySelector("#friend-list").innerHTML = friendtext;
 

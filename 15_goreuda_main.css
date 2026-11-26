@@ -7,7 +7,7 @@
   padding: 16px 0;
   font-size: 16px;
 }
-.anniversary-bar strong { margin-right: 16px; color: #6B3FA0; }
+.anniversary-bar strong { margin-left: 4px; color: #6B3FA0; }
 .anniversary-bar span { margin-left: auto; font-size: 14px; font-weight: 700; color: #6B3FA0; }
 
 .banner { position: relative; }
