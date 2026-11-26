@@ -5,6 +5,7 @@ let questions = [];
 let step = 0;
 let answers = {};
 let friendName = null;
+let presetKeys = {};
 
 loadProducts().then(function () {
   loadThemes().then(function (data) {
@@ -24,18 +25,47 @@ loadProducts().then(function () {
         friendName = friend.name;
         if (friend.relation) {
           answers.recipient = friend.relation;
-          step = 1;
+          presetKeys.recipient = true;
         }
+        const occasion = findOccasion(friend.type);
+        if (occasion !== null) {
+          answers.occasion = occasion;
+          presetKeys.occasion = true;
+        }
+        step = nextStep(0);
       }
     }
 
-    if (localStorage.getItem("goreuda_finder") !== null && friendName === null) {
+    const last = JSON.parse(localStorage.getItem("goreuda_finder"));
+    if (last !== null && friendName === null && findName(themes.budgets, last.budget) !== "" && findName(themes.occasions, last.occasion) !== "") {
       showElement("#finder-last");
     }
 
     drawQuestion();
   });
 });
+
+/* 친구 기념일 종류를 선물 찾기 상황으로 바꾸기 */
+function findOccasion(type) {
+  if (type === "축하" || type === "응원") {
+    return "cheer";
+  }
+  for (let i = 0; i < themes.occasions.length; i++) {
+    if (themes.occasions[i].name === type) {
+      return themes.occasions[i].id;
+    }
+  }
+  return null;
+}
+
+/* 친구 정보로 미리 고른 질문은 건너뛰기 */
+function nextStep(from) {
+  let next = from;
+  while (next < questions.length - 1 && presetKeys[questions[next].key]) {
+    next++;
+  }
+  return next;
+}
 
 /* 질문 그리기 */
 function drawQuestion() {
@@ -61,7 +91,7 @@ function chooseOption(button) {
   answers[questions[step].key] = button.getAttribute("data-id");
 
   if (step < questions.length - 1) {
-    step++;
+    step = nextStep(step + 1);
     drawQuestion();
   } else {
     localStorage.setItem("goreuda_finder", JSON.stringify(answers));
@@ -85,6 +115,7 @@ document.querySelector("#finder-restart").addEventListener("click", function () 
   answers = {};
   step = 0;
   friendName = null;
+  presetKeys = {};
   hideElement("#finder-result");
   showElement("#finder-box");
   drawQuestion();

@@ -14,19 +14,19 @@
 | 페이지 | 파일 | 주요 내용 |
 |---|---|---|
 | 홈 | `15_goreuda_main.html` | 배너, 상황별 테마, 다가오는 기념일, 이 상품 어때요, 카테고리별 인기 상품, 신상품 |
-| 선물 찾기 | `15_goreuda_finder.html` | 질문 4개(받는 사람, 상황, 예산, 취향)에 답하면 어울리는 선물과 추천 이유 표시 |
+| 선물 찾기 | `15_goreuda_finder.html` | 질문 4개(받는 사람, 상황, 예산, 취향)에 답하면 어울리는 선물과 추천 이유 표시, 친구 기념일에서 오면 받는 사람과 상황 자동 선택 |
 | 전체 상품, 랭킹 | `15_goreuda_explore.html` | 카테고리, 받는 사람, 상황, 가격 필터와 정렬, 검색 결과 |
 | 상품 상세 | `15_goreuda_detail.html` | `?id=`로 상품 표시, 옵션과 수량, 찜, 장바구니, 선물하기 |
 | 위시 | `15_goreuda_wishlist.html` | 찜한 상품 목록 |
 | 장바구니 | `15_goreuda_cart.html` | 수량 변경, 선택 삭제, 합계, 무료배송 안내 |
 | 선물하기 | `15_goreuda_gift.html` | 받는 사람 입력, 메시지 카드 작성 |
 | 선물함 | `15_goreuda_giftbox.html` | 보낸 선물과 메시지 카드 다시 보기 |
-| 친구 기념일 | `15_goreuda_friends.html` | 기념일 등록, D-day, 관계에 맞는 선물 연결 |
+| 친구 기념일 | `15_goreuda_friends.html` | 관계와 기념일 등록, D-day, 선물 찾기로 연결 |
 
 ## 사용한 기술
 
 - **이벤트 처리**: 필터, 정렬, 탭, 수량 버튼, 찜 버튼, 폼 제출
-- **fetch와 JSON**: `15_goreuda_products.json`(상품 20개), `15_goreuda_themes.json`(배너, 카테고리, 상황, 메시지 카드)
+- **fetch와 JSON**: `15_goreuda_products.json`(상품 20개), `15_goreuda_themes.json`(배너, 카테고리, 받는 사람, 상황, 예산, 취향, 메시지 카드)
 - **웹 스토리지**
   - localStorage: 위시, 장바구니, 최근 본 상품, 선물함, 친구 기념일
   - sessionStorage: 탐색 필터 상태, 작성 중인 주문서
