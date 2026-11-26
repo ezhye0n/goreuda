@@ -31,7 +31,7 @@
     { "id": "friend", "name": "친구" },
     { "id": "lover", "name": "연인" },
     { "id": "family", "name": "가족" },
-    { "id": "coworker", "name": "동료" }
+    { "id": "coworker", "name": "지인" }
   ],
   "occasions": [
     {

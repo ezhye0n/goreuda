@@ -2,7 +2,7 @@
 
 let editIndex = -1;   // 새로 등록은 -1
 let selectedType = "";
-const relationNames = { friend: "친구", lover: "연인", family: "가족", coworker: "동료" };
+const relationNames = { friend: "친구", lover: "연인", family: "가족", coworker: "지인" };
 const typeChips = document.querySelectorAll("#type-chips .chip");
 
 loadProducts().then(function () {
