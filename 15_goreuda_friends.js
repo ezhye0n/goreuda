@@ -2,6 +2,7 @@
 
 let editIndex = -1;   // 새로 등록은 -1
 let selectedType = "";
+const relationNames = { friend: "친구", lover: "연인", family: "가족", coworker: "동료" };
 const typeChips = document.querySelectorAll("#type-chips .chip");
 
 loadProducts().then(function () {
@@ -62,6 +63,7 @@ document.querySelector("#friend-form").addEventListener("submit", function (even
 
   const friend = {
     name: name,
+    relation: document.querySelector("#friend-relation").value,
     type: finalType,
     date: date,
     memo: document.querySelector("#friend-memo").value
@@ -114,6 +116,11 @@ function drawFriends() {
     const friend = list[i].friend;
     const index = list[i].index;
 
+    let relationText = "";
+    if (friend.relation) {
+      relationText = relationNames[friend.relation] + ", ";
+    }
+
     let memoText = "";
     if (friend.memo !== "") {
       memoText = ", " + friend.memo;
@@ -124,7 +131,7 @@ function drawFriends() {
         <p class="friend-dday">${ddayText(list[i].dday)}</p>
         <div class="friend-info">
           <p class="friend-name">${friend.name} <span class="badge">${friend.type}</span></p>
-          <p class="friend-sub">${monthDayText(friend.date)}${memoText}</p>
+          <p class="friend-sub">${relationText}${monthDayText(friend.date)}${memoText}</p>
     `;
 
     const sent = getSentNames(friend.name);
@@ -154,6 +161,7 @@ function startEdit(button) {
   const friend = getList("goreuda_friends")[editIndex];
 
   document.querySelector("#friend-name").value = friend.name;
+  document.querySelector("#friend-relation").value = friend.relation || "friend";
   document.querySelector("#friend-date").value = friend.date;
   document.querySelector("#friend-memo").value = friend.memo;
 
@@ -211,6 +219,7 @@ function resetForm() {
   editIndex = -1;
   selectedType = "";
   document.querySelector("#friend-name").value = "";
+  document.querySelector("#friend-relation").value = "friend";
   document.querySelector("#friend-date").value = "";
   document.querySelector("#friend-memo").value = "";
   document.querySelector("#friend-type-custom").value = "";
