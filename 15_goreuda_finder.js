@@ -1,3 +1,5 @@
+/* 담당: 이지현 */
+
 let themes = null;
 let questions = [];
 let step = 0;

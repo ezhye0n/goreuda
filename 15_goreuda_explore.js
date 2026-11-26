@@ -1,5 +1,4 @@
-/* 15팀 고르다 - 상품 목록(랭킹·신상품) JS (15_goreuda_explore.js)
-   담당자: 오현채 */
+/* 담당: 오현채 */
 
 let filter = {};
 let budgets = [];

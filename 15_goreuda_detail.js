@@ -1,5 +1,4 @@
-/* 15팀 고르다 - 상품 상세 JS (15_goreuda_detail.js)
-   담당자: 오현채 */
+/* 담당: 오현채 */
 
 let product = null;
 let qty = 1;

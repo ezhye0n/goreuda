@@ -1,11 +1,4 @@
-/* =========================================================
-   15팀 고르다 - 선물하기 JS (15_goreuda_gift.js)
-   담당자: 우은민
-   - sessionStorage의 주문서(goreuda_order)로 선물할 상품 보여주기
-   - 친구 목록에서 받는 사람 불러오기
-   - 메시지 카드 고르기, 글자 수 세기
-   - 입력값 확인 후 선물함(goreuda_giftbox)에 저장
-   ========================================================= */
+/* 담당: 우은민 */
 
 const MESSAGE_MAX = 100;
 const order = JSON.parse(sessionStorage.getItem("goreuda_order")); // 상품 상세나 카트에서 넘어 온 주문 상품 정보

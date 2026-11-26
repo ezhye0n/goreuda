@@ -1,3 +1,5 @@
+/* 담당: 이지현 */
+
 let banners = [];
 let currentBanner = 0;
 let rankCategories = [];

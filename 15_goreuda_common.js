@@ -1,3 +1,5 @@
+/* 담당: 이지현 */
+
 let allProducts = [];
 
 /* JSON 불러오기 */

@@ -1,5 +1,4 @@
-/* 15팀 고르다 - 위시 JS (15_goreuda_wishlist.js)
-   담당자: 이예경 (localStorage의 찜 목록으로 상품 카드 만들기, 하트 누른 경우 변경된 화면을 표시) */
+/* 담당: 이예경 */
 
 loadProducts().then(function () {
   drawWish();
