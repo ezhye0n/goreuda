@@ -62,8 +62,7 @@ function makePriceOptions() {
   document.querySelector("#filter-price").innerHTML = html;
 }
 
-/* - 같은 주소로 다시 들어온 경우: 필터 그대로
-   - 다른 주소로 들어온 경우: 주소의 값으로 새로 */
+/* 같은 주소면 저장된 필터, 다른 주소면 주소 값으로 */
 function readStartFilter() {
   const saved = JSON.parse(sessionStorage.getItem("goreuda_filter"));
   if (saved !== null && saved.url === location.search) {

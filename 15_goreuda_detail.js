@@ -35,7 +35,7 @@ function showProduct(themes) {
   document.querySelector("#detail-name").innerText = product.name;
   document.querySelector("#detail-desc").innerText = product.desc;
   document.querySelector("#detail-price").innerText = formatPrice(product.price);
-  document.querySelector("#detail-review").innerText = "“" + product.review + "”";
+  document.querySelector("#detail-review").innerText = '"' + product.review + '"';
 
   const categoryLink = document.querySelector("#detail-category");
   categoryLink.innerText = findName(themes.categories, product.category);
