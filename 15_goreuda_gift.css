@@ -1,7 +1,4 @@
-/* =========================================================
-   15팀 고르다 - 선물하기 전용 CSS (15_goreuda_gift.css)
-   담당자: 우은민
-   ========================================================= */
+/* 선물하기 CSS, 담당: 우은민 */
 
 .gift-form { display: flex; align-items: flex-start; }
 .gift-left { flex-grow: 1; margin-right: 40px; }

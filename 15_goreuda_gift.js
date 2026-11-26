@@ -1,11 +1,4 @@
-/* =========================================================
-   15팀 고르다 - 선물하기 JS (15_goreuda_gift.js)
-   담당자: 우은민
-   - sessionStorage의 주문서(goreuda_order)로 선물할 상품 보여주기
-   - 친구 목록에서 받는 사람 불러오기
-   - 메시지 카드 고르기, 글자 수 세기
-   - 입력값 확인 후 선물함(goreuda_giftbox)에 저장
-   ========================================================= */
+/* 선물하기 JS, 담당: 우은민 */
 
 const MESSAGE_MAX = 100;
 const order = JSON.parse(sessionStorage.getItem("goreuda_order")); // 상품 상세나 카트에서 넘어 온 주문 상품 정보
@@ -38,12 +31,11 @@ function showOrder(products) {
     const product = findProduct(products, item.id); //주문 상품 정보와 일치하는 상품 정보 반환
     sum += product.price * item.qty;
 
-    producttext += `
-      <li class="order-item">
-        <img src="${product.image}" alt="${product.alt}">
-        <p class="order-item-info"><strong>${product.name}</strong>옵션 : ${item.option}/${item.qty}개</p>
-        <p class="order-item-price">${formatPrice(product.price * item.qty)}</p>
-      </li>`;
+    producttext += '<li class="order-item">';
+    producttext += '<img src="' + product.image + '" alt="' + product.alt + '">';
+    producttext += '<p class="order-item-info"><strong>' + product.name + '</strong>옵션 : ' + item.option + '/' + item.qty + '개</p>';
+    producttext += '<p class="order-item-price">' + formatPrice(product.price * item.qty) + '</p>';
+    producttext += '</li>';
   }
   document.querySelector("#order-list").innerHTML = producttext;
 
@@ -64,9 +56,9 @@ function showFriends() {
     return;
   }
   let selecttext = '<option value="self">직접 입력</option>';
-  selecttext += friends.map((friend, i) => 
-    `<option value="${i}">${friend.name} (${friend.type} ${monthDayText(friend.date)})</option>`
-  ).join('');
+  for (let i = 0; i < friends.length; i++) {
+    selecttext += '<option value="' + i + '">' + friends[i].name + ' (' + friends[i].type + ' ' + monthDayText(friends[i].date) + ')</option>';
+  }
   document.querySelector("#friend-select").innerHTML = selecttext;
   showElement("#friend-row");
 }
@@ -148,7 +140,7 @@ document.querySelector("#receiver-phone").addEventListener("input", updateSubmit
 function showCards() {
   let cardtext = "";
   for (let i = 0; i < cards.length; i++) {
-    cardtext += `<button type="button" class="card-chip" onclick="selectCard(${i})" style="background-color: ${cards[i].color};">${cards[i].name}</button>`;
+    cardtext += '<button type="button" class="card-chip" onclick="selectCard(' + i + ')" style="background-color: ' + cards[i].color + ';">' + cards[i].name + '</button>';
   }
   document.querySelector("#card-choice").innerHTML = cardtext;
   selectCard(0); // 기본은 첫 번째 카드로 선택

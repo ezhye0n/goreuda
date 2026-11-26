@@ -1,10 +1,4 @@
-/* =========================================================
-   15팀 고르다 - 장바구니 JS (15_goreuda_cart.js)
-   담당자: 우은민
-   - 담은 상품 목록, 수량 변경, 선택, 삭제
-   - 선택한 상품의 금액, 배송비, 무료배송까지 남은 금액 계산
-   - 선택한 상품으로 선물하기
-   ========================================================= */
+/* 장바구니 JS, 담당: 우은민 */
 
 const FREE_DELIVERY = 30000;   // 3만원 이상이면 무료배송
 const DELIVERY_FEE = 3000;
@@ -26,23 +20,21 @@ function drawCart() {
     }
 
     // 상품 카드
-    itemtext += `
-      <li class="cart-item">
-        <input type="checkbox" value="${i}" onchange="checkItem(this)" aria-label="${product.name} 선택"${checked}>
-        <a href="${link}"><img src="${product.image}" alt="${product.alt}"></a>
-        <div class="cart-item-info">
-          <a href="${link}" class="cart-item-name">${product.name}</a>
-          <p class="cart-item-option">옵션: ${cart[i].option}</p>
-        </div>
-        <div class="qty">
-          <button type="button" value="${i}" onclick="changeQty(this, -1)" aria-label="수량 빼기">-</button>
-          <span>${cart[i].qty}</span>
-          <button type="button" value="${i}" onclick="changeQty(this, 1)" aria-label="수량 더하기">+</button>
-        </div>
-        <p class="cart-item-price">${formatPrice(product.price * cart[i].qty)}</p>
-        <button type="button" class="remove-btn" value="${i}" onclick="removeCartItem(this)" aria-label="${product.name} 삭제">×</button>
-      </li>
-    `;
+    itemtext += '<li class="cart-item">';
+    itemtext += '<input type="checkbox" value="' + i + '" onchange="checkItem(this)" aria-label="' + product.name + ' 선택"' + checked + '>';
+    itemtext += '<a href="' + link + '"><img src="' + product.image + '" alt="' + product.alt + '"></a>';
+    itemtext += '<div class="cart-item-info">';
+    itemtext += '<a href="' + link + '" class="cart-item-name">' + product.name + '</a>';
+    itemtext += '<p class="cart-item-option">옵션: ' + cart[i].option + '</p>';
+    itemtext += '</div>';
+    itemtext += '<div class="qty">';
+    itemtext += '<button type="button" value="' + i + '" onclick="changeQty(this, -1)" aria-label="수량 빼기">-</button>';
+    itemtext += '<span>' + cart[i].qty + '</span>';
+    itemtext += '<button type="button" value="' + i + '" onclick="changeQty(this, 1)" aria-label="수량 더하기">+</button>';
+    itemtext += '</div>';
+    itemtext += '<p class="cart-item-price">' + formatPrice(product.price * cart[i].qty) + '</p>';
+    itemtext += '<button type="button" class="remove-btn" value="' + i + '" onclick="removeCartItem(this)" aria-label="' + product.name + ' 삭제">×</button>';
+    itemtext += '</li>';
   }
   document.querySelector("#cart-list").innerHTML = itemtext;
 

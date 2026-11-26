@@ -1,3 +1,5 @@
+/* 홈 JS, 담당: 이지현 */
+
 let banners = [];
 let currentBanner = 0;
 let rankCategories = [];
@@ -125,7 +127,7 @@ function showAnniversary() {
 
   const friend = friends[nearestIndex];
   const bar = document.querySelector("#anniversary-bar");
-  bar.innerHTML = "<strong>" + ddayText(nearestDday) + "</strong>" + friend.name + "님의 " + friend.type + "이 다가와요. 어울리는 선물을 찾아볼까요?<span>선물 찾기 &rsaquo;</span>";
+  bar.innerHTML = friend.name + "님의 " + friend.type + " <strong>" + ddayText(nearestDday) + "</strong>, 어울리는 선물을 찾아볼까요?<span>선물 찾기 &rsaquo;</span>";
   bar.setAttribute("href", "15_goreuda_finder.html?friend=" + nearestIndex);
   showElement("#anniversary");
 }

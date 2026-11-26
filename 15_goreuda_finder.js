@@ -1,3 +1,5 @@
+/* 선물 찾기 JS, 담당: 이지현 */
+
 let themes = null;
 let questions = [];
 let step = 0;
@@ -20,8 +22,10 @@ loadProducts().then(function () {
       const friend = getList("goreuda_friends")[parseInt(friendIndex)];
       if (friend) {
         friendName = friend.name;
-        answers.recipient = friend.relation;
-        step = 1;
+        if (friend.relation) {
+          answers.recipient = friend.relation;
+          step = 1;
+        }
       }
     }
 

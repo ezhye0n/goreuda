@@ -1,15 +1,8 @@
-/* =========================================================
-   15팀 고르다 - 친구 기념일 JS (15_goreuda_friends.js)
-   담당자: 우은민
-   - 친구 기념일 등록, 수정, 삭제 (localStorage)
-   - 남은 날(D-day)이 적은 순서로 목록 보여주기
-   - 선물 고르기: 그 친구 정보로 선물 찾기 시작
-   - 그 친구에게 예전에 보낸 선물 표시
-   ========================================================= */
-
+/* 친구 기념일 JS, 담당: 우은민 */
 
 let editIndex = -1;   // 새로 등록은 -1
 let selectedType = "";
+const relationNames = { friend: "친구", lover: "연인", family: "가족", coworker: "지인" };
 const typeChips = document.querySelectorAll("#type-chips .chip");
 
 loadProducts().then(function () {
@@ -70,6 +63,7 @@ document.querySelector("#friend-form").addEventListener("submit", function (even
 
   const friend = {
     name: name,
+    relation: document.querySelector("#friend-relation").value,
     type: finalType,
     date: date,
     memo: document.querySelector("#friend-memo").value
@@ -122,34 +116,35 @@ function drawFriends() {
     const friend = list[i].friend;
     const index = list[i].index;
 
+    let relationText = "";
+    if (friend.relation) {
+      relationText = relationNames[friend.relation] + ", ";
+    }
+
     let memoText = "";
     if (friend.memo !== "") {
       memoText = ", " + friend.memo;
     }
 
-    friendtext += `
-      <li class="friend-item">
-        <p class="friend-dday">${ddayText(list[i].dday)}</p>
-        <div class="friend-info">
-          <p class="friend-name">${friend.name} <span class="badge">${friend.type}</span></p>
-          <p class="friend-sub">${monthDayText(friend.date)}${memoText}</p>
-    `;
+    friendtext += '<li class="friend-item">';
+    friendtext += '<p class="friend-dday">' + ddayText(list[i].dday) + '</p>';
+    friendtext += '<div class="friend-info">';
+    friendtext += '<p class="friend-name">' + friend.name + ' <span class="badge">' + friend.type + '</span></p>';
+    friendtext += '<p class="friend-sub">' + relationText + monthDayText(friend.date) + memoText + '</p>';
 
     const sent = getSentNames(friend.name);
     if (sent.length > 0) {
-      friendtext += `<p class="friend-gifted">이전에 보낸 선물: ${sent.join(", ")}</p>`;
+      friendtext += '<p class="friend-gifted">이전에 보낸 선물: ' + sent.join(", ") + '</p>';
     }
 
-    friendtext += `
-        </div>
-        <div class="friend-buttons">
-          <a href="15_goreuda_finder.html?friend=${index}" class="btn btn-primary btn-small">선물 고르기</a>
-          <button type="button" class="btn btn-outline btn-small" value="${index}" onclick="startEdit(this)">수정</button>
-          <button type="button" class="btn btn-outline btn-small" value="${index}" onclick="deleteFriend(this)">삭제</button>
-        </div>
-      </li>
-    `;
-      }
+    friendtext += '</div>';
+    friendtext += '<div class="friend-buttons">';
+    friendtext += '<a href="15_goreuda_finder.html?friend=' + index + '" class="btn btn-primary btn-small">선물 고르기</a>';
+    friendtext += '<button type="button" class="btn btn-outline btn-small" value="' + index + '" onclick="startEdit(this)">수정</button>';
+    friendtext += '<button type="button" class="btn btn-outline btn-small" value="' + index + '" onclick="deleteFriend(this)">삭제</button>';
+    friendtext += '</div>';
+    friendtext += '</li>';
+  }
 
   document.querySelector("#friend-list").innerHTML = friendtext;
 
@@ -162,6 +157,7 @@ function startEdit(button) {
   const friend = getList("goreuda_friends")[editIndex];
 
   document.querySelector("#friend-name").value = friend.name;
+  document.querySelector("#friend-relation").value = friend.relation || "";
   document.querySelector("#friend-date").value = friend.date;
   document.querySelector("#friend-memo").value = friend.memo;
 
@@ -219,6 +215,7 @@ function resetForm() {
   editIndex = -1;
   selectedType = "";
   document.querySelector("#friend-name").value = "";
+  document.querySelector("#friend-relation").value = "";
   document.querySelector("#friend-date").value = "";
   document.querySelector("#friend-memo").value = "";
   document.querySelector("#friend-type-custom").value = "";

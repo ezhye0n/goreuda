@@ -1,6 +1,6 @@
-/*선물함 전용 css 담당자: 이예경*/
+/* 선물함 CSS, 담당: 이예경 */
 
-/*상단 배너 설정*/
+/* 보낸 직후 안내 문구 */
 .sent-notice {
   margin-bottom: 24px;
   padding: 16px;
@@ -10,20 +10,19 @@
   text-align: center;
 }
 
-.giftbox-list { border-top: 1px solid #222222; } /*짙은 색 구분선*/
-.giftbox-item { padding: 24px 0; border-bottom: 1px solid #E5E5E5; } /*옅은 색 구분선*/
-.giftbox-head { display: flex; align-items: center; margin-bottom: 24px; } /*사이 여백 늘림*/
-.giftbox-date { margin-right: 16px; font-size: 14px; color: #666666; } 
+.giftbox-list { border-top: 1px solid #222222; } /* 위쪽 진한 선 */
+.giftbox-item { padding: 24px 0; border-bottom: 1px solid #E5E5E5; } /* 선물마다 연한 선 */
+.giftbox-head { display: flex; align-items: center; margin-bottom: 24px; }
+.giftbox-date { margin-right: 16px; font-size: 14px; color: #666666; }
 .giftbox-name { font-size: 16px; font-weight: 700; }
-.giftbox-buttons { margin-left: auto; } /*왼쪽을 채워서 버튼을 오른쪽 끝으로 붙이기*/
-.giftbox-buttons .btn { margin-left: 8px; } /*버튼끼리의 간격*/
+.giftbox-buttons { margin-left: auto; } /* 버튼을 오른쪽 끝으로 */
+.giftbox-buttons .btn { margin-left: 8px; }
 
-
-.giftbox-products { display: flex; flex-wrap: wrap; } 
+.giftbox-products { display: flex; flex-wrap: wrap; }
 .giftbox-product { display: flex; align-items: center; width: 50%; margin-bottom: 8px; font-size: 14px; }
-.giftbox-product img { width: 56px; height: 64px; margin-right: 16px; border-radius: 4px; object-fit: cover; } /*비율 유지*/
+.giftbox-product img { width: 56px; height: 64px; margin-right: 16px; border-radius: 4px; object-fit: cover; } /* 사진 비율 유지 */
 
-/* 메시지 카드 다시 보기 (처음에는 숨김) */
+/* 메시지 카드 */
 .giftbox-card {
   margin-top: 16px;
   padding: 24px;
