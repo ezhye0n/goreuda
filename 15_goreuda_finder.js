@@ -50,6 +50,9 @@ function findOccasion(type) {
   if (type === "축하" || type === "응원") {
     return "cheer";
   }
+  if (type === "이사/집들이") {
+    return "housewarming";
+  }
   for (let i = 0; i < themes.occasions.length; i++) {
     if (themes.occasions[i].name === type) {
       return themes.occasions[i].id;

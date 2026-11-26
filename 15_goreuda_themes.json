@@ -41,7 +41,7 @@
     },
     {
       "id": "housewarming",
-      "name": "이사/집들이",
+      "name": "집들이",
       "icon": "<path d=\"M3 11l9-7 9 7M5 9.5V20h14V9.5M10 20v-6h4v6\"/>"
     },
     {
@@ -64,7 +64,8 @@
     { "id": "all", "name": "상관없어요", "min": 0, "max": 9999999 },
     { "id": "under2", "name": "2만원 미만", "min": 0, "max": 20000 },
     { "id": "2man", "name": "2만원대", "min": 20000, "max": 30000 },
-    { "id": "over3", "name": "3만원 이상", "min": 30000, "max": 9999999 }
+    { "id": "3to5", "name": "3만원에서 5만원", "min": 30000, "max": 50000 },
+    { "id": "over5", "name": "5만원 이상", "min": 50000, "max": 9999999 }
   ],
   "tastes": [
     { "id": "practical", "name": "실용적인" },
