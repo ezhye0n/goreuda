@@ -4,7 +4,7 @@ loadProducts().then(function () {
   drawWish();
 });
 
-// 찜 목록 추가
+// 찜 목록 표시
 function drawWish() {
   const wish = getList("goreuda_wish");
   const list = [];
@@ -30,7 +30,7 @@ function drawWish() {
   }
 }
 
-// 하트를 누르면 목록 다시 추가
+// 하트를 누르면 목록 다시 표시
 function afterWishChange() {
   drawWish();
 }

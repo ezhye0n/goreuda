@@ -17,7 +17,7 @@ loadProducts().then(function (products) {
 
   let html = "";
 
-  // 선물 목록 추가
+  // 선물 목록 표시
   for (let i = 0; i < giftbox.length; i++) {
     const gift = giftbox[i];
 
