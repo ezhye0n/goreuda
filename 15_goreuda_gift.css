@@ -84,7 +84,7 @@
   color: #222222;
   background: #FFFFFF;
 }
-.card-chip.on { color: #fff; font-size: 14px; }
+.card-chip.on { color: #FFFFFF; font-size: 14px; }
 
 /* 메시지 카드 배경 색 */
 .message-card {
@@ -101,7 +101,7 @@
   line-height: 1.6;
   resize: none;   /* 메시지 칸 크기를 끌어서 바꾸지 못하게 고정 */
 }
-.message-count { margin-top: 8px; font-size: 12px; color: #666666; text-align: right; }
+.message-count { margin-top: 8px; font-size: 12px; color: #FFFFFF; text-align: right; }
 
 /* 결제 금액 */
 .gift-summary {
