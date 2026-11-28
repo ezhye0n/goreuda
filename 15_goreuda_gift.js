@@ -70,6 +70,16 @@ document.querySelector("#friend-select").addEventListener("change", function () 
     document.querySelector("#receiver-name").value = friends[parseInt(this.value)].name;
     setError("#receiver-name", "#name-error", document.querySelector("#receiver-name").value === "");
     updateSubmitBtn();
+
+    const friend = friends[parseInt(this.value)];
+    let found = cards.length - 1;   // 맞는 카드가 없으면 직접입력
+    for (let i = 0; i < cards.length; i++) {
+      if (cards[i].type === friend.type) {
+        found = i;
+        break;
+      }
+    }
+    selectCard(found);
   }
 });
 
@@ -140,7 +150,7 @@ document.querySelector("#receiver-phone").addEventListener("input", updateSubmit
 function showCards() {
   let cardtext = "";
   for (let i = 0; i < cards.length; i++) {
-    cardtext += '<button type="button" class="card-chip" onclick="selectCard(' + i + ')" style="background-color: ' + cards[i].color + ';">' + cards[i].name + '</button>';
+    cardtext += '<button type="button" class="card-chip" onclick="selectCard(' + i + ')">'  + cards[i].name + '</button>';
   }
   document.querySelector("#card-choice").innerHTML = cardtext;
   selectCard(0); // 기본은 첫 번째 카드로 선택
@@ -155,11 +165,13 @@ function selectCard(index) {
 
   const chips = document.querySelectorAll(".card-chip");
   for (let i = 0; i < chips.length; i++) {
-    if (i === index) {
-      chips[i].className = "card-chip on"; // 선택된 버튼에만 강조
-    } else {
-      chips[i].className = "card-chip";
-    }
+  if (i === index) {
+    chips[i].className = "card-chip on";
+    chips[i].style.backgroundColor = selectedCard.color;
+  } else {
+    chips[i].className = "card-chip";
+    chips[i].style.backgroundColor = "";
+  }
   }
 }
 

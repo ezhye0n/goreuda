@@ -75,9 +75,12 @@
     { "id": "any", "name": "잘 모르겠어요" }
   ],
   "cards": [
-    { "id": "basic", "name": "기본", "color": "#F4EFFA", "text": "늘 고마워요. 작은 선물이지만 마음을 담았어요." },
-    { "id": "birthday", "name": "생일 축하", "color": "#FDEDEC", "text": "생일 축하해! 오늘 하루 가장 행복하길 바라." },
-    { "id": "thanks", "name": "감사", "color": "#EEF6EE", "text": "그동안 정말 감사했어요. 앞으로도 잘 부탁드려요." },
-    { "id": "cheer", "name": "응원", "color": "#FFF6DD", "text": "언제나 응원하고 있어. 힘내!" }
+  { "id": "birthday", "name": "🎂 생일", "type": "생일", "color": "#B08F94", "text": "생일 축하해요! 행복한 하루 보내길!" },
+  { "id": "housewarming", "name": "🏠 집들이", "type": "집들이", "color": "#A37E84", "text": "따뜻하고 행복한 공간이 되길 바라요." },
+  { "id": "thanks", "name": "🙏 감사", "type": "감사", "color": "#917F88", "text": "말로는 다 할 수 없는 감사한 마음을 전합니다." },
+  { "id": "anniversary", "name": "💍 기념일", "type": "기념일", "color": "#836871", "text": "우리의 특별한 날, 함께해줘서 고마워요." },
+  { "id": "congrats", "name": "🎉 축하", "type": "축하", "color": "#A8607A", "text": "정말 축하해요! 앞으로 더 좋은 일만 가득하길 바라요." },
+  { "id": "cheer", "name": "🍀 응원", "type": "응원", "color": "#7A9A7E", "text": "다 잘될거에요. 행운을 가득담아!" },
+  { "id": "custom", "name": "📝 직접입력", "type": "직접입력", "color": "#587780", "text": "메시지를 직접 입력해보세요!" }
   ]
 }
